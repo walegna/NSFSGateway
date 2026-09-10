@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#77441d"></rect><circle cx="50" cy="44" r="19" fill="none" stroke="#f5d06a" stroke-width="4"></circle><circle cx="50" cy="44" r="7" fill="#f5d06a"></circle><rect x="30" y="74" width="40" height="6" rx="3" fill="#fdfbf6"></rect><rect x="45" y="76" width="10" height="2" rx="1" fill="#f5d06a"></rect></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..900;1,400..800&amp;family=Lora:ital,wght@0,400..600;1,400..600&amp;family=Caveat:wght@400;600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #fdfbf6; color: #1f1a14; font-family: 'Nunito', ui-sans-serif, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #57a143; text-decoration: none; transition: color 160ms cubic-bezier(0.22,1,0.36,1); }
+  a:hover { color: #46852f; }
+  ::selection { background: #afd274; color: #1f1a14; }
+  @keyframes ns-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes ns-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 900px) {
+    [data-hero] { grid-template-columns: 1fr !important; }
+    [data-eplist] { grid-template-columns: 1fr !important; }
+    [data-host] { grid-template-columns: 1fr !important; }
+    [data-lede] { grid-template-columns: 1fr !important; }
+    [data-lede] > img { grid-column: 1 !important; grid-row: auto !important; margin-top: 28px; max-width: 320px !important; }
+  }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; overflow-x: clip;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(253,251,246,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #e7e0d2;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 24px;">
+      <a href="./final_Homepage.dc.html" style="display: flex; align-items: center; height: 48px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred—30 years" style="height: 48px; width: auto; display: block;">
+      </a>
+      <a href="./final_Donate.dc.html" style="margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; background: #ff4800; color: #fff; font-size: 14px; font-weight: 700; box-shadow: 0 4px 14px rgba(255,72,0,0.28); transition: transform 200ms cubic-bezier(0.22,1,0.36,1), background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#e64000; transform:translateY(-1px);"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex: none;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Donate</a>
+      <button onClick="{{ openMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; gap: 6px; background: transparent; border: none; cursor: pointer; padding: 8px;">
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="background: #77441d; padding: clamp(44px, 5.6vw, 84px) 0 clamp(44px, 5.6vw, 80px);">
+    <div data-hero="" style="max-width: 1360px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: clamp(300px, 32vw, 440px) minmax(0, 1fr); gap: clamp(32px, 5vw, 76px); align-items: center;">
+      <img src="./assets/podlet/benchstories-cover.png" alt="BenchStories cover art: a Little Yellow Journal page in handwriting" style="display: block; width: 100%; max-width: 440px; height: auto; border-radius: 18px; box-shadow: 0 26px 60px rgba(31,26,20,0.38); animation: ns-fade 700ms cubic-bezier(0.22,1,0.36,1) both;">
+      <div>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a;">
+          <span>A Nature Sacred podlet</span>
+          <span style="color: rgba(253,251,246,0.6);">·</span>
+          <span style="color: rgba(253,251,246,0.78);">Twelve episodes in 2026</span>
+        </div>
+        <h1 style="margin: clamp(18px, 2vw, 24px) 0 0; max-width: 30ch; font-family: 'Caveat', cursive; font-size: clamp(28px, 3vw, 40px); font-weight: 600; line-height: 1.24; letter-spacing: 0; color: #fdfbf6; text-wrap: pretty;">Journal entries left under benches in Sacred Places, read aloud and reflected on.</h1>
+        <div style="margin-top: clamp(16px, 1.8vw, 22px); font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,251,246,0.72);">Three to five minutes an episode</div>
+        <div style="margin-top: clamp(26px, 3.2vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+          <a href="#listen" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; border-radius: 999px; background: #f5d06a; color: #4a2a10; font-size: 15px; font-weight: 800;" style-hover="background:#ffdd82;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>Listen here now</a>
+          <a href="https://podcasts.apple.com/us/podcast/nature-sacreds-benchstories/id1887919122" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; padding: 10px 18px 10px 13px; border: 1px solid rgba(253,251,246,0.28); border-radius: 999px; background: rgba(253,251,246,0.06); font-size: 13.5px; font-weight: 700; color: #fdfbf6; transition: background 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:rgba(253,251,246,0.14); border-color:rgba(253,251,246,0.5);">
+            <span style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 999px; background: #fdfbf6; flex: none;"><img src="./assets/podlet/apple-podcasts.png" alt="" aria-hidden="true" style="width: 17px; height: 17px; object-fit: contain; display: block;"></span>Apple Podcasts
+          </a>
+          <a href="https://open.spotify.com/show/64anjkYEOZsBxMXljlh9sH?si=935514a4092e4a6c" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; padding: 10px 18px 10px 13px; border: 1px solid rgba(253,251,246,0.28); border-radius: 999px; background: rgba(253,251,246,0.06); font-size: 13.5px; font-weight: 700; color: #fdfbf6; transition: background 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:rgba(253,251,246,0.14); border-color:rgba(253,251,246,0.5);">
+            <span style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 999px; background: #fdfbf6; flex: none;"><img src="./assets/podlet/spotify.png" alt="" aria-hidden="true" style="width: 17px; height: 17px; object-fit: contain; display: block;"></span>Spotify
+          </a>
+          <a href="https://music.amazon.com/podcasts/05acf714-ce9f-45fa-868b-f5299fe98326/nature-sacred%E2%80%99s-benchstories" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; padding: 10px 18px 10px 13px; border: 1px solid rgba(253,251,246,0.28); border-radius: 999px; background: rgba(253,251,246,0.06); font-size: 13.5px; font-weight: 700; color: #fdfbf6; transition: background 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:rgba(253,251,246,0.14); border-color:rgba(253,251,246,0.5);">
+            <span style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 999px; background: #fdfbf6; flex: none;"><img src="./assets/podlet/amazon-icon.png" alt="" aria-hidden="true" style="width: 17px; height: 17px; object-fit: contain; display: block;"></span>Amazon Music
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section style="background: #f5f1e8; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2; padding: clamp(48px, 6vw, 92px) 0;">
+    <div data-lede="" style="max-width: 1360px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 400px); column-gap: clamp(32px, 5vw, 72px); align-items: center;">
+      <img src="./assets/podlet/journal-sketch-reader.png" alt="Journal sketch: a person reclining on a bench, writing" style="grid-column: 2; grid-row: 1 / span 2; justify-self: center; width: 100%; max-width: 400px; height: auto; mix-blend-mode: multiply;">
+      <p style="grid-column: 1; margin: 0; max-width: 34ch; font-family: 'Lora', Georgia, serif; font-size: clamp(22px, 2.6vw, 34px); font-weight: 600; line-height: 1.34; letter-spacing: -0.015em; color: #1f1a14; text-wrap: pretty;">Across the country, in contemplative green spaces known as Sacred Places, little waterproof yellow journals sit tucked under benches. People write in them. Not because anyone asked them to, but because something happens when you sit quietly in nature, even for a minute.</p>
+      <p style="grid-column: 1; margin: clamp(22px, 2.6vw, 32px) 0 0; font-size: clamp(16px, 1.6vw, 20px); font-weight: 800; letter-spacing: -0.01em; color: #77441d;">Twelve episodes. Four quarterly releases in 2026. A year of listening.</p>
+    </div>
+  </section>
+
+  <!-- LISTEN -->
+  <section id="listen" style="scroll-margin-top: 90px; max-width: 1360px; margin: 0 auto; padding: clamp(48px, 6vw, 92px) 32px 0;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">The Summer Drop</span>
+      <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a;">Episodes 4–6</span>
+    </div>
+    <h2 style="font-family: 'Lora', Georgia, serif; font-size: clamp(26px, 3.2vw, 40px); font-weight: 600; line-height: 1.14; letter-spacing: -0.02em; margin: clamp(18px, 2.2vw, 28px) 0 0; max-width: 30ch; color: #1f1a14; text-wrap: balance;">Listen to the latest episodes—and then re-listen to the first three</h2>
+
+    <div style="margin-top: clamp(32px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(18px, 2.2vw, 28px);">
+      <sc-for list="{{ featured }}" as="ep" hint-placeholder-count="3">
+        <article style="background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 16px; padding: clamp(24px, 3vw, 40px); box-shadow: 0 2px 10px rgba(31,26,20,0.04);">
+          <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a;">
+            <span style="color: #57a143;">{{ ep.label }}</span>
+            <span>{{ ep.season }}</span>
+            <span style="margin-left: auto;">{{ ep.length }}</span>
+          </div>
+          <h3 style="margin: clamp(14px, 1.8vw, 20px) 0 0; font-size: clamp(25px, 3.2vw, 40px); font-weight: 800; line-height: 1.08; letter-spacing: -0.028em; color: #1f1a14; max-width: 26ch;">{{ ep.title }}</h3>
+          <p style="margin: 14px 0 0; max-width: 60ch; font-family: 'Lora', Georgia, serif; font-size: clamp(16px, 1.5vw, 18px); line-height: 1.7; color: #3a3128; text-wrap: pretty;">{{ ep.blurb }}</p>
+          <sc-if value="{{ ep.note }}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 18px 0 0; max-width: 60ch; padding: 14px 18px; background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 12px; font-size: 14px; line-height: 1.6; color: #6b5e51;">{{ ep.note }}</p>
+          </sc-if>
+          <div style="margin-top: clamp(22px, 2.6vw, 30px); display: flex; align-items: center; gap: clamp(14px, 2vw, 22px);">
+            <button onClick="{{ ep.toggle }}" aria-label="{{ ep.action }}" style="flex: none; width: 58px; height: 58px; border-radius: 999px; border: none; cursor: pointer; background: #57a143; color: #fff; display: flex; align-items: center; justify-content: center; transition: background 200ms cubic-bezier(0.22,1,0.36,1), transform 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#46852f; transform:translateY(-1px);">
+              <sc-if value="{{ ep.playing }}" hint-placeholder-val="{{ false }}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
+              </sc-if>
+              <sc-if value="{{ ep.stopped }}" hint-placeholder-val="{{ true }}">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-left: 3px;"><path d="M8 5v14l11-7z"></path></svg>
+              </sc-if>
+            </button>
+            <div style="flex: 1; min-width: 0;">
+              <div onClick="{{ ep.seek }}" style="height: 8px; border-radius: 999px; background: #e7e0d2; cursor: pointer; overflow: hidden;">
+                <div style="height: 100%; width: {{ ep.pct }}; background: #f5d06a; border-radius: 999px;"></div>
+              </div>
+              <div style="margin-top: 9px; display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 700; color: #8a7a6a; font-variant-numeric: tabular-nums;">
+                <span>{{ ep.pos }}</span>
+                <span>{{ ep.dur }}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- EARLIER -->
+  <section style="max-width: 1360px; margin: clamp(56px, 7vw, 96px) auto 0; padding: 0 32px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1px solid #d8cebb; padding-top: 13px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">The Spring Drop</span>
+      <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a;">Episodes 1–3</span>
+    </div>
+    <div data-eplist="" style="margin-top: clamp(24px, 3vw, 36px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #e7e0d2; border: 1px solid #e7e0d2; border-radius: 16px; overflow: hidden;">
+      <sc-for list="{{ earlier }}" as="ep" hint-placeholder-count="3">
+        <div style="background: #fdfbf6; padding: clamp(20px, 2.4vw, 28px); display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: baseline; gap: 12px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a;">
+            <span style="color: #57a143;">{{ ep.label }}</span>
+            <span style="margin-left: auto;">{{ ep.length }}</span>
+          </div>
+          <h3 style="margin: 0; font-size: clamp(20px, 2.2vw, 26px); font-weight: 800; line-height: 1.12; letter-spacing: -0.025em; color: #1f1a14;">{{ ep.title }}</h3>
+          <p style="margin: 0; font-family: 'Lora', Georgia, serif; font-size: 15.5px; line-height: 1.66; color: #3a3128; text-wrap: pretty;">{{ ep.blurb }}</p>
+          <div style="margin-top: auto; padding-top: 6px; display: flex; align-items: center; gap: 14px;">
+            <button onClick="{{ ep.toggle }}" aria-label="{{ ep.action }}" style="flex: none; width: 42px; height: 42px; border-radius: 999px; border: 1px solid #57a143; cursor: pointer; background: transparent; color: #57a143; display: flex; align-items: center; justify-content: center; transition: background 200ms cubic-bezier(0.22,1,0.36,1), color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#57a143; color:#ffffff;">
+              <sc-if value="{{ ep.playing }}" hint-placeholder-val="{{ false }}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
+              </sc-if>
+              <sc-if value="{{ ep.stopped }}" hint-placeholder-val="{{ true }}">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-left: 2px;"><path d="M8 5v14l11-7z"></path></svg>
+              </sc-if>
+            </button>
+            <div style="flex: 1; min-width: 0;">
+              <div onClick="{{ ep.seek }}" style="height: 6px; border-radius: 999px; background: #e7e0d2; cursor: pointer; overflow: hidden;">
+                <div style="height: 100%; width: {{ ep.pct }}; background: #f5d06a; border-radius: 999px;"></div>
+              </div>
+              <div style="margin-top: 8px; font-size: 12px; font-weight: 700; color: #8a7a6a; font-variant-numeric: tabular-nums;">{{ ep.pos }} / {{ ep.dur }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- JOURNAL LINES -->
+  <section style="margin-top: clamp(72px, 9vw, 128px); background: #77441d; padding: clamp(52px, 6.4vw, 96px) 0;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 0 32px;">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a;">What people leave behind</div>
+      <div style="margin-top: clamp(28px, 3.4vw, 44px); display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(28px, 4vw, 56px);">
+        <sc-for list="{{ lines }}" as="l" hint-placeholder-count="3">
+          <figure style="margin: 0; display: flex; flex-direction: column; gap: 14px;">
+            <blockquote style="margin: 0; font-family: 'Caveat', cursive; font-size: clamp(28px, 3vw, 40px); font-weight: 600; line-height: 1.16; color: #fdfbf6; text-wrap: pretty;">{{ l.quote }}</blockquote>
+            <figcaption style="font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(253,251,246,0.66);">{{ l.source }}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT, CONTINUED -->
+  <section style="max-width: 1360px; margin: clamp(64px, 8vw, 112px) auto 0; padding: 0 32px;">
+    <div style="max-width: 66ch; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+      <p style="margin: 0; text-wrap: pretty;">For more than 30 years, these journals have been filled with thousands of entries. Words about love. About encouragement. About pain and loss. About what it feels like to finally sit still, to just be, and to look around.</p>
+      <p style="margin: 18px 0 0; text-wrap: pretty;">BenchStories brings those words to life, hosted by <strong>Salma Hasan Ali</strong>, editor of Nature Sacred's <em>BenchTalk: Wisdoms Inspired in Nature</em>. Her voice is at the same time soothing and utterly immersive. Each episode runs about three to five minutes: the entries, what she hears in them, and some space to breathe.</p>
+    </div>
+  </section>
+
+  <!-- HOST -->
+  <section style="max-width: 1360px; margin: clamp(64px, 8vw, 112px) auto 0; padding: 0 32px;">
+    <div style="border-top: 3px double #b9a894; padding-top: 13px; font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">Host and narrator</div>
+    <div data-host="" style="margin-top: clamp(28px, 3.4vw, 44px); display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: start;">
+      <div style="width: 100%; max-width: 220px; aspect-ratio: 1 / 1; border-radius: 999px; overflow: hidden; background: #f5f1e8;">
+        <img src="./assets/podlet/salma.png" alt="Salma Hasan Ali" style="display: block; width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div>
+        <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 44px); font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; color: #1f1a14;">Salma Hasan Ali</h2>
+        <p style="margin: 18px 0 0; max-width: 62ch; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128; text-wrap: pretty;"><strong>Salma Hasan Ali</strong> is a Washington, D.C.,-based writer and storyteller. She is the editor of Nature Sacred's <em>BenchTalk: Wisdoms Inspired in Nature</em>, a curated collection of journal entries from Sacred Places across the country, and the author of <em>30 Days: Stories of Gratitude, Traditions, and Wisdom</em>. Her work has appeared in The Washington Post, the Washingtonian, and NPR's Morning Edition. You can follow Salma's stories through her humanKIND newsletter available through her <a href="https://www.salmahasanali.com/" target="_blank" rel="noopener">website</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE CTA -->
+  <section style="max-width: 1360px; margin: clamp(72px, 9vw, 128px) auto 0; padding: 0 32px;">
+    <h2 style="font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 4.4vw, 56px); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; color: #1f1a14; margin: 0; max-width: 22ch; text-wrap: balance;">A new drop every quarter of 2026.</h2>
+    <p style="margin: 18px 0 0; max-width: 52ch; font-size: clamp(16px, 1.5vw, 18px); line-height: 1.7; color: #3a3128; text-wrap: pretty;">Follow BenchStories on your platform of choice to get each new episode. Our newsletter covers all of Nature Sacred's work, new episodes included.</p>
+    <div style="margin-top: clamp(24px, 3vw, 36px); display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+      <a href="https://naturesacred.org/subscribe" target="_blank" rel="noopener" style="background: #57a143; color: #fff; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700;" style-hover="background:#46852f;">Subscribe to our newsletter</a>
+      <a href="./final_The Bench and Journal.dc.html" style="background: transparent; color: #1f1a14; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700; border: 1px solid #1f1a14;" style-hover="background:#1f1a14; color:#fdfbf6;">The bench and journal</a>
+    </div>
+
+    <!-- SHARE -->
+    <div style="margin-top: clamp(36px, 4.4vw, 60px); padding-top: 22px; border-top: 1px solid #e7e0d2; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px;">
+      <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #9d877a;">Share BenchStories</span>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
+        <a href="{{ shareFacebook }}" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook" style="display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px; border: 1px solid #e7e0d2; background: #fdfbf6; color: #77441d; transition: background 200ms cubic-bezier(0.22,1,0.36,1), color 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#57a143; border-color:#57a143; color:#ffffff;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3-.04-1.3-.13-2.47-.13-2.45 0-4.13 1.5-4.13 4.24V9.9H7.4V13h2.7v8h3.4z"></path></svg>
+        </a>
+        <a href="{{ shareLinkedIn }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn" title="Share on LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px; border: 1px solid #e7e0d2; background: #fdfbf6; color: #77441d; transition: background 200ms cubic-bezier(0.22,1,0.36,1), color 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#57a143; border-color:#57a143; color:#ffffff;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5.5a1.94 1.94 0 11-3.88 0 1.94 1.94 0 013.88 0zM3.3 20.5h3.4V9.2H3.3v11.3zM9.2 9.2h3.26v1.55h.05c.45-.86 1.57-1.77 3.23-1.77 3.45 0 4.09 2.27 4.09 5.22v6.3h-3.4v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.68H9.2V9.2z"></path></svg>
+        </a>
+        <a href="{{ shareEmail }}" aria-label="Share by email" title="Share by email" style="display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px; border: 1px solid #e7e0d2; background: #fdfbf6; color: #77441d; transition: background 200ms cubic-bezier(0.22,1,0.36,1), color 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#57a143; border-color:#57a143; color:#ffffff;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.5 7.5l8.5 6 8.5-6"></path></svg>
+        </a>
+        <button onClick="{{ copyLink }}" style="display: inline-flex; align-items: center; gap: 9px; height: 42px; padding: 0 18px; border-radius: 999px; border: 1px solid #e7e0d2; background: #fdfbf6; cursor: pointer; font-family: inherit; font-size: 13.5px; font-weight: 700; color: #77441d; transition: background 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#f5f1e8; border-color:#d8cebb;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 14.5l5-5"></path><path d="M12.5 7.5l1.6-1.6a3.6 3.6 0 015.1 5.1L17.6 12.5"></path><path d="M11.5 16.5l-1.6 1.6a3.6 3.6 0 01-5.1-5.1L6.4 11.5"></path></svg>
+          {{ copyLabel }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div style="overflow-x: clip;">
+  <footer style="position: relative; z-index: 10; width: 132%; margin-left: -16%; background: #926948; margin-top: clamp(140px, 16vw, 210px); padding: clamp(24px, 3vw, 40px) 32px 44px;">
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; bottom: 100%; width: 100%; height: min(9vw, 104px); display: block;"><path d="M0,260 L0,168 C0,84 176,30 468,14 C560,9 640,7 720,7 C800,7 880,9 972,14 C1264,30 1440,84 1440,168 L1440,260 Z" fill="#926948"></path></svg>
+    <div style="max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 40px 48px;">
+      <div style="grid-column: span 1; min-width: 240px;">
+        <img src="./assets/logo-30-wordmark-white-sm.png" alt="Nature Sacred" style="height: 48px; width: auto;">
+        <p style="font-size: 14px; color: rgba(253,251,246,0.9); line-height: 1.7; margin: 18px 0 0; max-width: 30ch;">105 Annapolis Street, Suite D<br>Annapolis, MD 21401<br>410.268.1376</p>
+        <p style="font-size: 12px; color: #fdfbf6; margin: 16px 0 0; line-height: 1.5;">A 501(c)(3) private operating foundation. Formerly the TKF Foundation.</p>
+      </div>
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+        <div>
+          <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a; font-weight: 800; margin-bottom: 16px;">{{ col.title }}</div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ col.items }}" as="item" hint-placeholder-count="4">
+              <li><a href="#" style="font-size: 14px; color: #fdfbf6;" style-hover="color:#ffffff;">{{ item }}</a></li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+    <div style="max-width: 760px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid rgba(253,251,246,0.2); display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: #fdfbf6;">© 1996–2026 Nature Sacred. All rights reserved.</span>
+      <span style="font-size: 12px; color: #fdfbf6;">Privacy · Terms · Contact</span>
+    </div>
+  </footer>
+  </div>
+
+  <!-- MENU -->
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 100; background: #fdfbf6; overflow-y: auto; animation: ns-fade 240ms cubic-bezier(0.22,1,0.36,1) both;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; gap: 24px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred" style="height: 46px; width: auto;">
+        <button onClick="{{ closeMenu }}" aria-label="Close menu" style="margin-left: auto; display: flex; align-items: center; gap: 10px; background: transparent; border: 1px solid #e7e0d2; border-radius: 999px; padding: 9px 16px; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1f1a14;" style-hover="background:#efe9dc;">
+          <span style="position: relative; width: 16px; height: 16px; display: inline-block;">
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(45deg);"></span>
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(-45deg);"></span>
+          </span>
+          Close
+        </button>
+      </div>
+      <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(24px, 5vw, 64px) 32px 80px;">
+        <nav style="display: flex; flex-direction: column; gap: clamp(6px, 1vw, 12px);">
+          <sc-for list="{{ menu }}" as="group" hint-placeholder-count="6">
+            <a href="{{ group.href }}" style="font-size: clamp(30px, 5vw, 54px); font-weight: 700; letter-spacing: -0.02em; color: #1f1a14; line-height: 1.12;" style-hover="color:#57a143;">{{ group.title }}</a>
+          </sc-for>
+        </nav>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const EPISODES = [
+  { id: 'ep4', n: 4, season: 'Summer 2026', title: 'This Place Saved My Life',
+    blurb: 'Someone found this place accidentally the day they almost didn\u2019t survive it. Walking dogs through a cemetery, a headstone caught their attention\u2014a gay veteran, proud. That moment, that place, saved their life.',
+    note: 'This episode contains references to suicidal thoughts. If you or someone you know is struggling or needs support, call or text 988 anytime to reach the Suicide & Crisis Lifeline.',
+    src: 'https://podcasts.captivate.fm/media/ec1c19a8-c9ff-44f8-8a83-56a71afcf6d3/Episode-04-Cemetary-061426-converted.mp3' },
+  { id: 'ep5', n: 5, season: 'Summer 2026', title: 'What Surfaces',
+    blurb: '\u201cI came to talk to the willows. They speak very slowly. No rush.\u201d This is what people write when they finally sit still.',
+    src: 'https://podcasts.captivate.fm/media/fffb6ef1-ab9c-4bfa-8d08-289b7b28d381/Episode-05-Natures-Healing-Power-converted.mp3' },
+  { id: 'ep6', n: 6, season: 'Summer 2026', title: 'What Emerges in Nature',
+    blurb: 'One person described two worlds. At home: yelling, slamming doors. On a bench in nature: a breeze rustling, a fountain gurgling. Everything changes.',
+    src: 'https://podcasts.captivate.fm/media/77cd7663-478b-43d0-93bd-c5d23e6436bc/Episode-06-What-Emerges-In-Nature-converted.mp3' },
+  { id: 'ep1', n: 1, season: 'Spring 2026', title: 'Encouragement',
+    blurb: 'A stranger sat on a bench, picked up a journal, and wrote a message to someone they\u2019d never meet. So did dozens of others.',
+    src: 'https://podcasts.captivate.fm/media/ac6024f5-67be-4004-af7a-5bc2d8f36d10/Episode-01-Encouragement-Final-032526.mp3' },
+  { id: 'ep2', n: 2, season: 'Spring 2026', title: 'Love',
+    blurb: 'Someone proposed on a bench. Then they picked up a yellow journal and wrote it all down \u2014 for the next person to find. That\u2019s not the only love story in here.',
+    src: 'https://podcasts.captivate.fm/media/2498f0ee-e677-4b8d-964c-0c4a5ed18b4a/Episode-02-Love-Final-032526.mp3' },
+  { id: 'ep3', n: 3, season: 'Spring 2026', title: 'Spring & Renewal',
+    blurb: '\u201cThose trees, these turtles, they don\u2019t care about politics.\u201d What do people write when they finally sit still and look around \u2014 and leave behind for strangers?',
+    src: 'https://podcasts.captivate.fm/media/0468359a-df8f-4a58-a977-e09e4bf15096/Episode-03-Renewal-Final-032526.mp3' },
+];
+
+const LINES = [
+  { quote: '\u201cI came to talk to the willows. They speak very slowly. No rush.\u201d', source: 'Episode 5 \u2014 What Surfaces' },
+  { quote: '\u201cThose trees, these turtles, they don\u2019t care about politics.\u201d', source: 'Episode 3 \u2014 Spring & Renewal' },
+  { quote: 'A breeze rustling. A fountain gurgling. Everything changes.', source: 'Episode 6 \u2014 What Emerges in Nature' },
+];
+
+class Component extends DCLogic {
+  state = { menuOpen: false, playing: null, paused: true, pos: 0, dur: 0, copied: false };
+
+  shareUrl() {
+    return (typeof location !== 'undefined' && location.href) ? location.href.split('#')[0] : 'https://naturesacred.org/benchstories';
+  }
+
+  copyLink() {
+    const url = this.shareUrl();
+    const done = () => { this.setState({ copied: true }); clearTimeout(this._ct); this._ct = setTimeout(() => this.setState({ copied: false }), 2200); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, () => {});
+    else done();
+  }
+
+  componentWillUnmount() { if (this._a) { this._a.pause(); } }
+
+  audio() {
+    if (!this._a) {
+      const a = new Audio();
+      a.preload = 'metadata';
+      a.addEventListener('timeupdate', () => this.setState({ pos: a.currentTime, dur: a.duration || 0 }));
+      a.addEventListener('loadedmetadata', () => this.setState({ dur: a.duration || 0 }));
+      a.addEventListener('ended', () => this.setState({ paused: true, pos: 0 }));
+      this._a = a;
+    }
+    return this._a;
+  }
+
+  toggle(ep) {
+    const a = this.audio();
+    if (this.state.playing === ep.id) {
+      if (a.paused) { a.play().catch(() => {}); this.setState({ paused: false }); }
+      else { a.pause(); this.setState({ paused: true }); }
+      return;
+    }
+    a.src = ep.src;
+    a.play().catch(() => {});
+    this.setState({ playing: ep.id, paused: false, pos: 0, dur: 0 });
+  }
+
+  seek(ep, e) {
+    const a = this.audio();
+    if (this.state.playing !== ep.id || !a.duration) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    const f = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    a.currentTime = f * a.duration;
+    this.setState({ pos: a.currentTime });
+  }
+
+  clock(t) {
+    if (!t || !isFinite(t)) return '0:00';
+    const m = Math.floor(t / 60), s = Math.floor(t % 60);
+    return m + ':' + String(s).padStart(2, '0');
+  }
+
+  view(ep) {
+    const live = this.state.playing === ep.id;
+    const playing = live && !this.state.paused;
+    const pct = live && this.state.dur ? (this.state.pos / this.state.dur) * 100 : 0;
+    return {
+      ...ep,
+      label: 'Episode ' + ep.n,
+      length: live && this.state.dur ? this.clock(this.state.dur) : '3–5 minutes',
+      note: ep.note || false,
+      playing,
+      stopped: !playing,
+      action: playing ? 'Pause episode ' + ep.n : 'Play episode ' + ep.n,
+      pct: pct.toFixed(2) + '%',
+      pos: live ? this.clock(this.state.pos) : '0:00',
+      dur: live && this.state.dur ? this.clock(this.state.dur) : '—:—',
+      toggle: () => this.toggle(ep),
+      seek: (e) => this.seek(ep, e),
+    };
+  }
+
+  renderVals() {
+    const u = encodeURIComponent(this.shareUrl());
+    const t = encodeURIComponent('BenchStories: journal entries from Sacred Places, read aloud');
+    return {
+      shareFacebook: 'https://www.facebook.com/sharer/sharer.php?u=' + u,
+      shareLinkedIn: 'https://www.linkedin.com/sharing/share-offsite/?url=' + u,
+      shareEmail: 'mailto:?subject=' + t + '&body=' + u,
+      copyLink: () => this.copyLink(),
+      copyLabel: this.state.copied ? 'Link copied' : 'Copy link',
+      menuOpen: this.state.menuOpen,
+      openMenu: () => { this.setState({ menuOpen: true }); document.body.style.overflow = 'hidden'; },
+      closeMenu: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ menuOpen: false }); document.body.style.overflow = ''; },
+      featured: EPISODES.filter(e => e.season === 'Summer 2026').map(e => this.view(e)),
+      earlier: EPISODES.filter(e => e.season === 'Spring 2026').map(e => this.view(e)),
+      lines: LINES,
+      platforms: [
+        { name: 'Apple Podcasts', icon: './assets/podlet/apple-podcasts.png', iconSmall: './assets/podlet/apple-podcasts.png', showName: true, href: 'https://podcasts.apple.com/us/podcast/nature-sacreds-benchstories/id1887919122' },
+        { name: 'Spotify', icon: './assets/podlet/spotify.png', iconSmall: './assets/podlet/spotify.png', showName: true, href: 'https://open.spotify.com/show/64anjkYEOZsBxMXljlh9sH?si=935514a4092e4a6c' },
+        { name: 'Amazon Music', icon: './assets/podlet/amazon-music-wordmark.png', iconSmall: './assets/podlet/amazon-icon.png', showName: true, href: 'https://music.amazon.com/podcasts/05acf714-ce9f-45fa-868b-f5299fe98326/nature-sacred%E2%80%99s-benchstories' },
+      ],
+      footerCols: [
+        { title: 'The Network', items: ['Our Sacred Places', 'The Firesoul Network', 'Our Design Process', 'Our Bench & Journal'] },
+        { title: 'Impact & Learning', items: ['Little Yellow Journal', 'Research & Resources', 'News & Stories', 'Why Sacred Places?'] },
+        { title: 'Join the Movement', items: ['Create a Sacred Place', 'Design with Us', 'Volunteer', 'Donate'] },
+      ],
+      menu: [
+        { title: 'Why Sacred Places?', href: './final_Why Sacred Places.dc.html' },
+        { title: 'The Network', href: './final_The Network.dc.html' },
+        { title: 'Sacred Places', href: './Review_Sacred Places Directory.dc.html' },
+        { title: 'Join the Movement', href: './final_Join the Movement.dc.html' },
+        { title: 'About', href: './final_About.dc.html' },
+        { title: 'Donate', href: './final_Donate.dc.html' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

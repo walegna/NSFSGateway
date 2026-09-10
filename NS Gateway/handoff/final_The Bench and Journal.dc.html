@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#57a143"></rect><path d="M50 74 C50 74 30 60 30 44 C30 34 39 30 50 42 C61 30 70 34 70 44 C70 60 50 74 50 74Z" fill="#fdfbf6"></path><path d="M50 74 L50 38" stroke="#57a143" stroke-width="3" fill="none"></path></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..900;1,400..800&amp;family=Lora:ital,wght@0,400..600;1,400..600&amp;family=Caveat:wght@400;600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  input::placeholder { color: rgba(253,251,246,0.65); }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #fdfbf6; color: #1f1a14; font-family: 'Nunito', ui-sans-serif, sans-serif; -webkit-font-smoothing: antialiased; cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='%2357a143' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4C10 4 5 9 5 15a5 5 0 0 0 5 5c6 0 11-6 11-16z' fill='%2357a143' stroke='none'/%3E%3Cpath d='M9 19c1.6-5 4.6-8 9-10' stroke='%23fdfbf6' stroke-width='1.1' opacity='.85'/%3E%3C/svg%3E") 5 4, auto; }
+  a, button, [onClick], .ns-cta, .ns-approach { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='%2357a143' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4C10 4 5 9 5 15a5 5 0 0 0 5 5c6 0 11-6 11-16z' fill='%2357a143' stroke='none'/%3E%3Cpath d='M9 19c1.6-5 4.6-8 9-10' stroke='%23fdfbf6' stroke-width='1.1' opacity='.85'/%3E%3C/svg%3E") 5 4, pointer; }
+  a { color: #57a143; text-decoration: none; transition: color 160ms cubic-bezier(0.22,1,0.36,1); }
+  a:hover { color: #46852f; }
+  ::selection { background: #afd274; color: #1f1a14; }
+  @keyframes ns-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ns-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes ns-fade-sketch { from { opacity: 0; } to { opacity: 0.85; } }
+  @keyframes ns-mailbox-door { 0%, 18% { transform: rotateX(0deg); } 42%, 74% { transform: rotateX(-108deg); } 96%, 100% { transform: rotateX(0deg); } }
+  @keyframes ns-mailbox-envelope { 0%, 22% { transform: translateY(14px); opacity: 0; } 46%, 68% { transform: translateY(-22px); opacity: 1; } 92%, 100% { transform: translateY(14px); opacity: 0; } }
+  @media (max-width: 820px) {
+    [data-menu-sketch] { width: 168px !important; right: 6px !important; top: auto !important; bottom: 10px !important; opacity: 0.5 !important; }
+  }
+  @keyframes ns-menu-panel { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  image-slot { --is-empty-bg: #ede5dd; }
+  .ns-story { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms cubic-bezier(0.22,1,0.36,1), border-color 300ms cubic-bezier(0.22,1,0.36,1); }
+  .ns-story:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(31,26,20,0.13); border-color: #d8cfbe; }
+  .ns-story img, .ns-story .ns-frame { transition: transform 620ms cubic-bezier(0.22,1,0.36,1); }
+  .ns-story:hover img { transform: scale(1.045); }
+  .ns-rail { scrollbar-width: thin; scroll-behavior: smooth; }
+  .ns-rail::-webkit-scrollbar { height: 6px; }
+  .ns-rail::-webkit-scrollbar-thumb { background: #d8cfbe; border-radius: 999px; }
+  .ns-arrow { transition: background 200ms cubic-bezier(0.22,1,0.36,1), color 200ms cubic-bezier(0.22,1,0.36,1), transform 200ms cubic-bezier(0.22,1,0.36,1); }
+  .ns-arrow:hover { background: #57a143; color: #fdfbf6; transform: translateY(-1px); }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(253,251,246,0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #e7e0d2;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 24px;">
+      <a href="Nature Sacred Homepage.dc.html" style="display: flex; align-items: center; height: 48px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred—30 years" style="height: 48px; width: auto; display: block;">
+      </a>
+      <a href="./final_Donate.dc.html" style="margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; background: #ff4800; color: #fff; font-size: 14px; font-weight: 700; letter-spacing: 0.01em; box-shadow: 0 4px 14px rgba(255,72,0,0.28); transition: transform 200ms cubic-bezier(0.22,1,0.36,1), box-shadow 200ms cubic-bezier(0.22,1,0.36,1), background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#e64000; transform:translateY(-1px); box-shadow:0 6px 18px rgba(255,72,0,0.34);"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex: none;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Donate</a>
+      <button onClick="{{ openMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; gap: 6px; background: transparent; border: none; cursor: pointer; padding: 8px;">
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="max-width: 1360px; margin: 0 auto; padding: clamp(72px, 10vw, 148px) 32px clamp(36px, 5vw, 60px);">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #c2b6a4; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">The Bench &amp; Journal</span>
+      <a href="The Network.dc.html" style="font-family: 'Lora', Georgia, serif; font-size: 14px; color: #9d877a;" style-hover="color:#57a143;">← Part of The Network</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(24px, 4vw, 48px); align-items: start;">
+      <h1 style="grid-column: 1 / span 7; font-size: clamp(44px, 8vw, 116px); font-weight: 800; line-height: 0.95; letter-spacing: -0.035em; color: #1f1a14; margin: 0; max-width: 12ch; text-wrap: balance; animation: ns-fade-up 680ms cubic-bezier(0.22,1,0.36,1) both;">The bench, and the journal.</h1>
+      <p style="grid-column: 8 / span 5; font-size: clamp(18px, 1.8vw, 22px); line-height: 1.6; color: #3a3128; margin: 0; animation: ns-fade-up 680ms cubic-bezier(0.22,1,0.36,1) 120ms both;">What happens when we pause, if only for a moment, in nature? Every journal entry is a snapshot of that moment; a record of what's stirring within us. At the heart of every Sacred Place: a handcrafted wooden bench, and a place to leave your thoughts.</p>
+    </div>
+  </section>
+
+  <!-- HERO PHOTO (full-bleed) -->
+  <div style="width: 100%; margin-top: clamp(20px, 3vw, 36px); height: clamp(320px, 54vh, 600px); overflow: hidden; position: relative;">
+    <image-slot id="bj-hero" shape="rect" fit="cover" src="./assets/sm/bench-hero.jpg" data-parallax="14" style="position:absolute; top:-7%; left:0; width:100%; height:114%;" placeholder="Drop a bench photo"></image-slot>
+  </div>
+
+  <!-- 01 · WHY THIS BENCH -->
+  <section style="max-width: 1360px; margin: clamp(72px, 10vw, 140px) auto 0; padding: 0 32px;">
+    <div data-reveal="" style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #c2b6a4; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">Why this bench</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">01 / 05</span>
+    </div>
+    <div data-reveal="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(28px, 4vw, 52px); align-items: center;">
+      <div style="grid-column: 1 / span 6;">
+        <h2 style="font-size: clamp(28px, 4vw, 56px); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin: 0; color: #1f1a14; text-wrap: balance;">Not just any bench.</h2>
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 22px 0 0; max-width: 48ch;">One designed with intent. Its curved back and soft lines invite you to sit and stay a while, and a special pocket built beneath the seat holds a waterproof journal. So the bench isn't only a place to rest. It's a place to be heard.</p>
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 18px 0 0; max-width: 48ch;">Every part of it is shaped with the visitor in mind. It's meant to welcome, offer solace, or companionship, and make room for reflection.</p>
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 18px 0 0; max-width: 48ch;">Since the very first Sacred Place, every one that has come to be has included the Nature Sacred Bench and Journal.</p>
+      </div>
+      <div style="grid-column: 7 / span 6; border-radius: 4px; overflow: hidden; aspect-ratio: 4 / 3;">
+        <image-slot id="bj-why" shape="rect" fit="cover" src="./assets/sm/plaza-bench.jpg" placeholder="Drop a bench photo"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01.5 · JOURNAL SKETCH MOMENT -->
+  <section data-reveal="" style="max-width: 1180px; margin: clamp(56px, 7vw, 96px) auto 0; padding: 0 32px;">
+    <div style="border-top: 1px solid #dcd2c2;"></div>
+    <div style="display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(8px, 1.5vw, 20px); align-items: center; padding: clamp(44px, 6vw, 84px) 0 clamp(8px, 1.5vw, 20px);">
+      <div>
+        <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(22px, 2.6vw, 34px); line-height: 1.32; color: #1f1a14; margin: 0; max-width: 20ch; text-wrap: balance;">"Life is hard today. Thanks for being here, bench."</p>
+        <div style="font-size: 13px; letter-spacing: 0.02em; color: #6b5e51; margin-top: 16px; line-height: 1.5; max-width: 32ch;">—Little Yellow Journal, Sacred Place at Stony Run Park, Baltimore, MD</div>
+      </div>
+      <img src="./assets/journal-sketch-bench-ap-transparent.png" alt="A hand-drawn sketch of a visitor journaling on a Nature Sacred bench" style="display: block; width: 100%; max-width: 660px; height: auto; margin: 0 0 0 auto;">
+    </div>
+  </section>
+
+  <!-- 02 · HOW IT'S MADE -->
+  <section data-reveal="" style="width: 100%; background: #77441d; margin-top: clamp(80px, 11vw, 150px);">
+    <div style="max-width: 1360px; margin: 0 auto; padding: clamp(64px, 9vw, 128px) 32px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid rgba(253,251,246,0.42); padding-top: 14px;">
+        <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #f5d06a;">How it's made</span>
+        <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: rgba(253,251,246,0.75);">02 / 05</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(32px, 5vw, 64px); margin-top: clamp(32px, 4vw, 56px); align-items: end;">
+        
+        <h2 style="grid-column: 1 / span 5; font-size: clamp(28px, 3.4vw, 50px); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin: 0; color: #fdfbf6; text-wrap: balance;">Every bench carries a story.<span style="display: block; margin-top: 20px; font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(19px, 1.9vw, 26px); font-weight: 500; letter-spacing: -0.01em; line-height: 1.4; color: #f5d06a;">Crafted with care. Crafted by hand. For every community.</span></h2><div style="grid-column: 7 / span 6; position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; background: #5e3415; box-shadow: 0 18px 44px rgba(31,26,20,0.3);"><iframe title="How a Nature Sacred bench is made" src="https://player.vimeo.com/video/1103926245?h=918d843a8a" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen="" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block;"></iframe></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · THE LITTLE YELLOW JOURNAL -->
+  <section style="max-width: 1360px; margin: clamp(80px, 11vw, 150px) auto 0; padding: 0 32px;">
+    <div data-reveal="" style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #c2b6a4; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">The Little Yellow Journal</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">03 / 05</span>
+    </div>
+    <div data-reveal="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(28px, 4vw, 52px); align-items: stretch;">
+      <div style="grid-column: 1 / span 6; border-radius: 4px; overflow: hidden; position: sticky; top: 100px; align-self: start; aspect-ratio: 3 / 4;">
+        <image-slot id="bj-journal" shape="rect" fit="cover" src="./assets/sm/journal-open-entry.jpg" placeholder="Drop a journal photo"></image-slot>
+      </div>
+      <div style="grid-column: 8 / span 5;">
+        <img src="./assets/lyj-icon.png" alt="" aria-hidden="true" style="display: block; width: 52px; height: auto; margin: 0 0 16px;">
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 0;">Tucked beneath the bench is a Little Yellow Journal—waterproof, blank, anonymous. Since 1996, people have been writing in them, leaving entries that range from the profound to the whimsical.</p>
+        
+        
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 28px 0 0;">We've always considered these entries some of the most powerful evidence of nature's power to touch us, move us, and let us connect more deeply with ourselves and those around us.</p>
+        <div style="height: 1px; background: #d8cebb; margin: 28px 0 0;"></div>
+        <span style="display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #9d877a; margin-top: 24px;">The archive</span>
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 12px 0 0; text-wrap: pretty;">Once a journal is filled, Firesouls are invited to mail them back to us. We archive every page, then send a fresh journal back—ready to be filled again.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIT WITH THE ENTRIES -->
+  <section data-reveal="" style="max-width: 1360px; margin: clamp(72px, 9vw, 120px) auto 0; padding: 0 32px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #1f1a14; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">Sit with the entries</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">04 / 05</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: clamp(28px, 4vw, 56px); margin-top: clamp(28px, 3.5vw, 44px);">
+      <a href="#" class="ns-story" style="display: grid; grid-template-columns: clamp(140px, 30%, 200px) 1fr; gap: clamp(22px, 2.8vw, 36px); align-items: center; background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 24px; padding: clamp(24px, 3vw, 38px); text-decoration: none;">
+        <img src="./assets/sm/benchtalk-book-square.jpg" alt="BenchTalk: Wisdoms Inspired in Nature" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; border-radius: 4px; box-shadow: 0 14px 32px rgba(31,26,20,0.18);">
+        <div>
+          <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #9d877a;">The book · 208 pages</span>
+          <h3 style="font-size: clamp(21px, 2.2vw, 28px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin: 10px 0 0; color: #1f1a14;">BenchTalk: Wisdoms Inspired in Nature</h3>
+          <p style="font-size: clamp(14px, 1.3vw, 16px); line-height: 1.6; color: #5a4d3f; margin: 14px 0 0; max-width: 34ch;">Hundreds of entries gathered from the Little Yellow Journals and curated in one volume.</p>
+          <span style="display: inline-block; margin-top: 16px; font-size: 15px; font-weight: 700; color: #57a143;">Buy the book →</span>
+        </div>
+      </a>
+      <a href="#" class="ns-story" style="display: grid; grid-template-columns: clamp(140px, 30%, 200px) 1fr; gap: clamp(22px, 2.8vw, 36px); align-items: center; background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 24px; padding: clamp(24px, 3vw, 38px); text-decoration: none;">
+        <div style="position: relative;">
+          <img src="./assets/sm/benchstories-podlet.jpg" alt="Nature Sacred's BenchStories podlet" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; border-radius: 8px; box-shadow: 0 14px 32px rgba(31,26,20,0.18);">
+          <span style="position: absolute; right: -12px; bottom: -12px; width: 52px; height: 52px; border-radius: 50%; background: #57a143; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(31,26,20,0.28);"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fdfbf6" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></span>
+        </div>
+        <div>
+          <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #9d877a;">The podlet · 3 minutes</span>
+          <h3 style="font-size: clamp(21px, 2.2vw, 28px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin: 10px 0 0; color: #1f1a14;">BenchStories, read aloud</h3>
+          <p style="font-size: clamp(14px, 1.3vw, 16px); line-height: 1.6; color: #5a4d3f; margin: 14px 0 0; max-width: 34ch;">A few minutes of entries in the voices of the people who came to sit—the shortest way to hear what a bench holds.</p>
+          <span style="display: inline-block; margin-top: 16px; font-size: 15px; font-weight: 700; color: #57a143;">Listen to the podlet →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- THIS BENCH CHANGED MY LIFE -->
+  <section data-reveal="" style="max-width: 1360px; margin: clamp(72px, 9vw, 120px) auto 0; padding: 0 32px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #1f1a14; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">In their words</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">05 / 05</span>
+    </div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 72px); align-items: end; margin-top: clamp(24px, 3vw, 40px);">
+      <h2 style="margin: 0; font-size: clamp(32px, 4.4vw, 62px); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; color: #1f1a14; max-width: 18ch; text-wrap: balance;">This bench changed my life.</h2>
+      <p style="margin: 0; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.62; color: #5a4d3f; max-width: 46ch; text-wrap: pretty;">Vignettes from Sacred Places across the country—a wedding, a memorial, a first sober week, a last quiet afternoon.&nbsp;</p>
+    </div>
+    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: clamp(20px, 2.4vw, 30px);">
+      <button class="ns-arrow" onClick="{{ storyPrev }}" aria-label="Previous stories" style="width: 38px; height: 38px; border-radius: 50%; border: 1px solid #c2b6a4; background: transparent; color: #1f1a14; display: flex; align-items: center; justify-content: center; padding: 0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+      <button class="ns-arrow" onClick="{{ storyNext }}" aria-label="More stories" style="width: 38px; height: 38px; border-radius: 50%; border: 1px solid #c2b6a4; background: transparent; color: #1f1a14; display: flex; align-items: center; justify-content: center; padding: 0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+    </div>
+    <div id="ns-story-rail" class="ns-rail" style="display: flex; gap: clamp(20px, 2.4vw, 32px); margin-top: clamp(14px, 1.6vw, 20px); align-items: stretch; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 14px;">
+      <figure class="ns-story" style="margin: 0; flex: 0 0 clamp(290px, 30vw, 380px); scroll-snap-align: start; display: flex; flex-direction: column; overflow: hidden; background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 24px; padding: clamp(26px, 3vw, 36px);">
+        <div class="ns-frame" style="border-radius: 14px; overflow: hidden; margin-bottom: 20px;"><img src="./assets/sm/story-joplin.jpg" alt="A bench facing the Hope stone at the Joplin Sacred Place" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; margin-bottom: 0;"></div>
+        <span style="display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #9d877a;">Joplin, MO</span>
+        <h3 style="font-size: clamp(20px, 2vw, 26px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin: 10px 0 0; color: #1f1a14;">A keeper of what was lost</h3>
+        <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.65; color: #5a4d3f;">An EF5 tornado took 161 lives in thirty-eight minutes. Firesoul Chris Cotten was there in the rubble, and was certain even then that part of the recovery lay in nature. The bench placed on the storm’s path became where the community recorded what it remembered.</p>
+        <figcaption style="margin-top: auto; padding-top: 18px; font-size: 13px; font-weight: 700; color: #5a4d3f;">Chris Cotten, Firesoul<span style="display: block; margin-top: 4px; font-weight: 400; color: #9d877a;">Landscapes of Resilience</span></figcaption>
+      </figure>
+      <figure class="ns-story" style="margin: 0; flex: 0 0 clamp(290px, 30vw, 380px); scroll-snap-align: start; display: flex; flex-direction: column; overflow: hidden; background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 24px; padding: clamp(26px, 3vw, 36px);">
+        <div class="ns-frame" style="border-radius: 14px; overflow: hidden; margin-bottom: 20px;"><img src="./assets/sm/story-wedding.jpg" alt="A couple walking the labyrinth after their wedding" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; margin-bottom: 0;"></div>
+        <span style="display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #9d877a;">Baltimore, MD</span>
+        <h3 style="font-size: clamp(20px, 2vw, 26px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin: 10px 0 0; color: #1f1a14;">Married on the labyrinth</h3>
+        <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.65; color: #5a4d3f;">Nicole spent her workday breaks on the bench, then weekends too—a peaceful meditative space in the city, as she put it. When she and her partner decided to marry, they gathered a small group on the labyrinth. Her mother and grandmother left notes in the yellow journal.</p>
+        <figcaption style="margin-top: auto; padding-top: 18px; font-size: 13px; font-weight: 700; color: #5a4d3f;">Paula Teague, Firesoul<span style="display: block; margin-top: 4px; font-weight: 400; color: #9d877a;">Johns Hopkins Bayview Medical Center</span></figcaption>
+      </figure>
+      <figure class="ns-story" style="margin: 0; flex: 0 0 clamp(290px, 30vw, 380px); scroll-snap-align: start; display: flex; flex-direction: column; overflow: hidden; background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 24px; padding: clamp(26px, 3vw, 36px);">
+        <div style="width: 100%; aspect-ratio: 4/3; border-radius: 14px; margin-bottom: 20px; background: #e7e0d2; display: flex; align-items: center; justify-content: center; padding: 22px; box-sizing: border-box;">
+          <p style="margin: 0; font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.4; color: #5a4d3f; text-align: center; text-wrap: pretty;">Nature carries on. Some believe it’s this simple truth that draws people who know they are at the end of their lives to it.</p>
+        </div>
+        <span style="display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #9d877a;">Baltimore, MD</span>
+        <h3 style="font-size: clamp(20px, 2vw, 26px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin: 10px 0 0; color: #1f1a14;">Eric’s hours in the garden</h3>
+        <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.65; color: #5a4d3f;">Being treated for stage four cancer nearby, Eric came to the meditation garden at the American Visionary Art Museum and sat on the bench for hours at a time. Until one day he didn’t. His family called the Firesoul afterward, to say what the place had meant in his final days.</p>
+        <figcaption style="margin-top: auto; padding-top: 18px; font-size: 13px; font-weight: 700; color: #5a4d3f;">Shared by Erin Robertson<span style="display: block; margin-top: 4px; font-weight: 400; color: #9d877a;">American Visionary Art Museum</span></figcaption>
+      </figure>
+      <figure class="ns-story" style="margin: 0; flex: 0 0 clamp(290px, 30vw, 380px); scroll-snap-align: start; display: flex; flex-direction: column; overflow: hidden; background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 24px; padding: clamp(26px, 3vw, 36px);">
+        <div class="ns-frame" style="border-radius: 14px; overflow: hidden; margin-bottom: 20px;"><img src="./assets/sm/story-anniston.jpg" alt="Community elders gathered in rocking chairs at the 15th Street Sacred Place" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; margin-bottom: 0;"></div>
+        <span style="display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #9d877a;">Anniston, AL</span>
+        <h3 style="font-size: clamp(20px, 2vw, 26px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin: 10px 0 0; color: #1f1a14;">Where elders tell it themselves</h3>
+        <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.65; color: #5a4d3f;">At the entrance to 15th Street—once a “City within a City” and now part of the Anniston Civil Rights Trail—Firesoul Steven Folks invited community elders to gather and record their own histories. Visitors still pause on the bench to leave their reactions.</p>
+        <figcaption style="margin-top: auto; padding-top: 18px; font-size: 13px; font-weight: 700; color: #5a4d3f;">Steven Folks, Firesoul<span style="display: block; margin-top: 4px; font-weight: 400; color: #9d877a;">15th Street Gateway</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section data-reveal="" style="max-width: 1360px; margin: clamp(80px, 11vw, 150px) auto 0; padding: 0 32px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+      <a href="Nature Sacred Homepage.dc.html#places" style="background: #57a143; color: #fff; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700;" style-hover="background:#46852f;">Explore Sacred Places →</a>
+      <a href="Join the Movement.dc.html" style="background: transparent; color: #1f1a14; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700; border: 1px solid #1f1a14;" style-hover="background:#1f1a14; color:#fdfbf6;">Join the Movement →</a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <div style="overflow-x: clip;">
+  <footer style="position: relative; z-index: 10; width: 132%; margin-left: -16%; background: #926948; margin-top: clamp(150px, 17vw, 220px); padding: clamp(24px, 3vw, 40px) 32px 44px;">
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; bottom: 100%; width: 100%; height: min(9vw, 104px); display: block;"><path d="M0,260 L0,168 C0,84 176,30 468,14 C560,9 640,7 720,7 C800,7 880,9 972,14 C1264,30 1440,84 1440,168 L1440,260 Z" fill="#926948"></path></svg>
+    <div style="max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 40px 48px;">
+      <div style="grid-column: span 1; min-width: 240px;">
+        <img src="./assets/logo-30-wordmark-white-sm.png" alt="Nature Sacred" style="height: 48px; width: auto;">
+        <p style="font-size: 14px; color: rgba(253,251,246,0.9); line-height: 1.7; margin: 18px 0 0; max-width: 30ch;">105 Annapolis Street, Suite D<br>Annapolis, MD 21401<br>410.268.1376</p>
+        <p style="font-size: 12px; color: rgba(253,251,246,0.62); margin: 16px 0 0; line-height: 1.5;">A 501(c)(3) private operating foundation. Formerly the TKF Foundation.</p>
+      </div>
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+        <div>
+          <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a; font-weight: 800; margin-bottom: 16px;">{{ col.title }}</div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ col.items }}" as="item" hint-placeholder-count="4">
+              <li><a href="#" style="font-size: 14px; color: rgba(253,251,246,0.88);" style-hover="color:#ffffff;">{{ item }}</a></li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+    <div style="max-width: 620px; margin: 48px auto 0; padding-top: 40px; border-top: 1px solid rgba(253,251,246,0.2); text-align: center;">
+      <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a; font-weight: 800;">Stay connected</div>
+      <h3 style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 700; color: #fdfbf6; margin: 12px 0 0; line-height: 1.2;">Updates, inspiration, and news from Nature Sacred.</h3>
+      <form onSubmit="{{ onSubscribe }}" style="margin: 22px auto 0; max-width: 460px; display: flex; gap: 10px;">
+        <input type="email" required="" placeholder="Your email address" style="flex: 1 1 auto; min-width: 0; padding: 13px 18px; border-radius: 999px; border: 1px solid rgba(253,251,246,0.35); background: rgba(253,251,246,0.08); color: #fdfbf6; font-family: inherit; font-size: 15px;">
+        <button type="submit" class="ns-cta" style="flex: none; padding: 0 26px; height: 48px; border: none; border-radius: 999px; background: #57a143; color: #fff; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer;" style-hover="background:#46852f;">Sign up</button>
+      </form>
+    </div>
+    <div style="max-width: 760px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid rgba(253,251,246,0.2); display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: rgba(253,251,246,0.62);">© 1996–2026 Nature Sacred. All rights reserved.</span>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" aria-label="Instagram" style="display: flex; color: rgba(253,251,246,0.82);" style-hover="color:#f5d06a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+        <a href="#" aria-label="Facebook" style="display: flex; color: rgba(253,251,246,0.82);" style-hover="color:#f5d06a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"></path></svg></a>
+        <a href="#" aria-label="LinkedIn" style="display: flex; color: rgba(253,251,246,0.82);" style-hover="color:#f5d06a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5A1.94 1.94 0 1 1 3.06 5a1.94 1.94 0 0 1 3.88 0zM3.4 8.5h3.1V21H3.4zM9.2 8.5h2.97v1.7h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.32c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21H9.2z"></path></svg></a>
+      </div>
+      <span style="font-size: 12px; color: rgba(253,251,246,0.62);">Privacy · Terms · Contact</span>
+    </div>
+  </footer>
+  </div>
+
+  <!-- FULL-SCREEN MENU OVERLAY -->
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 100; background: #fdfbf6; overflow-y: auto; animation: ns-fade 240ms cubic-bezier(0.22,1,0.36,1) both;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; gap: 24px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred" style="height: 46px; width: auto;">
+        <button onClick="{{ closeMenu }}" aria-label="Close menu" style="margin-left: auto; display: flex; align-items: center; gap: 10px; background: transparent; border: 1px solid #e7e0d2; border-radius: 999px; padding: 9px 16px; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1f1a14;" style-hover="background:#f5f1e8;">
+          <span style="position: relative; width: 16px; height: 16px; display: inline-block;">
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(45deg);"></span>
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(-45deg);"></span>
+          </span>
+          Close
+        </button>
+      </div>
+      <img data-menu-sketch="" src="./assets/journal-butterfly.png" alt="" aria-hidden="true" style="position: absolute; right: clamp(40px, 13vw, 260px); top: clamp(90px, 14vh, 170px); width: clamp(270px, 39vw, 510px); height: auto; opacity: 0.85; mix-blend-mode: multiply; pointer-events: none; animation: ns-fade-sketch 900ms cubic-bezier(0.22,1,0.36,1) 200ms both;">
+      <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(24px, 5vw, 64px) 32px 80px; animation: ns-menu-panel 360ms cubic-bezier(0.22,1,0.36,1) both;">
+        <nav style="display: flex; flex-direction: column; gap: clamp(6px, 1vw, 12px);">
+          <sc-for list="{{ menu }}" as="group" hint-placeholder-count="6">
+            <a href="{{ group.href }}" style="font-size: clamp(30px, 5vw, 54px); font-weight: 800; letter-spacing: -0.025em; color: #1f1a14; line-height: 1.12;" style-hover="color:#57a143;">{{ group.title }}</a>
+          </sc-for>
+        </nav>
+        <div style="margin-top: clamp(44px, 7vw, 80px); padding-top: 28px; border-top: 1px solid #e7e0d2; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center;">
+          <sc-for list="{{ menuMinor }}" as="u" hint-placeholder-count="4">
+            <a href="#" onClick="{{ closeMenu }}" style="font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #6b5e51;" style-hover="color:#57a143;">{{ u }}</a>
+          </sc-for>
+          <a href="Donate.dc.html" style="margin-left: auto; display: inline-flex; align-items: center; gap: 8px; background: #ff4800; color: #fff; padding: 11px 24px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;" style-hover="background:#e64000;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Donate</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:720}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+
+    componentDidMount() {
+    this._reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._parallax = () => {
+      this._raf = null;
+      if (this._reduce) return;
+      const vh = window.innerHeight;
+      document.querySelectorAll('[data-parallax]').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        const amp = parseFloat(el.getAttribute('data-parallax')) || 24;
+        const progress = (vh - r.top) / (vh + r.height);
+        const shift = (Math.max(0, Math.min(1, progress)) - 0.5) * 2 * amp;
+        el.style.transform = 'translate3d(0,' + shift.toFixed(1) + 'px,0)';
+      });
+    };
+    this._reqParallax = () => { if (!this._raf) this._raf = requestAnimationFrame(this._parallax); };
+    window.addEventListener('scroll', this._reqParallax, { passive: true });
+    window.addEventListener('resize', this._reqParallax);
+    this._parallax();
+
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false }); };
+    document.addEventListener('keydown', this._onKey);
+
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && 'IntersectionObserver' in window) {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      els.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(22px)';
+        el.style.transition = 'opacity 720ms cubic-bezier(0.22,1,0.36,1), transform 720ms cubic-bezier(0.22,1,0.36,1)';
+      });
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.style.opacity = '1'; en.target.style.transform = 'none'; this._io.unobserve(en.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+      els.forEach(el => this._io.observe(el));
+    }
+  }
+    componentWillUnmount() {
+    window.removeEventListener('scroll', this._reqParallax);
+    window.removeEventListener('resize', this._reqParallax);
+    if (this._raf) cancelAnimationFrame(this._raf);
+
+    document.removeEventListener('keydown', this._onKey);
+    if (this._io) this._io.disconnect();
+  }
+
+  renderVals() {
+    return {
+      menuOpen: this.state.menuOpen,
+      openMenu: () => { this.setState({ menuOpen: true }); if (typeof document !== 'undefined') document.body.style.overflow = 'hidden'; },
+      closeMenu: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ menuOpen: false }); if (typeof document !== 'undefined') document.body.style.overflow = ''; },
+      onSubscribe: (e) => { e.preventDefault(); },
+      storyPrev: () => { const r = document.getElementById('ns-story-rail'); if (r) r.scrollBy({ left: -Math.max(320, r.clientWidth * 0.8), behavior: 'smooth' }); },
+      storyNext: () => { const r = document.getElementById('ns-story-rail'); if (r) r.scrollBy({ left: Math.max(320, r.clientWidth * 0.8), behavior: 'smooth' }); },
+
+      footerCols: [
+        { title: 'The Network', items: ['Our Sacred Places', 'The Firesoul Network', 'Our Design Process', 'Our Bench & Journal'] },
+        { title: 'Impact & Learning', items: ['Little Yellow Journal', 'Research & Resources', 'News & Stories', 'Why Sacred Places?'] },
+        { title: 'Join the Movement', items: ['Create a Sacred Place', 'Design with Us', 'Bring Your Service', 'Volunteer', 'Donate'] },
+        { title: 'About', items: ['Our History', 'Our Team', '2025 Gratitude Report', 'Invite Us to Speak'] },
+      ],
+      menu: [
+        { title: 'Why Sacred Places?', href: 'Why Sacred Places.dc.html' },
+        { title: 'The Network', href: 'The Network.dc.html' },
+        { title: 'Impact & Learning', href: 'Impact and Learning.dc.html' },
+        { title: 'Join the Movement', href: 'Join the Movement.dc.html' },
+        { title: 'About', href: 'About.dc.html' },
+        { title: 'Donate', href: 'Donate.dc.html' },
+      ],
+      menuMinor: ['About', 'The Gateway Dashboard', 'Subscribe', 'For Firesouls (login)'],
+    };
+  }
+}
+</script>
+</body>
+</html>

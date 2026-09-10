@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="ext-resource-dependency" content="./assets/sm/support-gathering.jpg">
+<meta name="ext-resource-dependency" content="./assets/sm/bench-hero.jpg">
+<meta name="ext-resource-dependency" content="./assets/sm/journal-open-entry.jpg">
+<meta name="ext-resource-dependency" content="./assets/sm/labyrinth.jpg">
+<meta name="ext-resource-dependency" content="./assets/sm/firesoul-street.jpg">
+<meta name="ext-resource-dependency" content="./assets/sm/plaza-bench.jpg">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#57a143"></rect><path d="M28 52 50 32l22 20" fill="none" stroke="#fdfbf6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M35 50v20h30V50" fill="none" stroke="#f5d06a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..900;1,400..800&amp;family=Lora:ital,wght@0,400..600;1,400..600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  image-slot { --is-empty-bg: #ede5dd; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ece7db; color: #1f1a14; font-family: 'Nunito', ui-sans-serif, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #57a143; text-decoration: none; }
+  a:hover { color: #46852f; }
+  ::selection { background: #afd274; color: #1f1a14; }
+  @media (min-width: 760px) {
+    [data-shell] { padding: 26px 0 34px; }
+    [data-app] { border-radius: 30px; box-shadow: 0 24px 60px rgba(31,26,20,0.16); border: 1px solid #ded6c6; height: calc(100svh - 60px) !important; }
+  }
+  @media (min-width: 620px) {
+    [data-tiles] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  }
+  @media (min-width: 1180px) {
+    [data-app] { max-width: 1060px; }
+    [data-tabs] { display: none !important; }
+    [data-body] { padding-bottom: 40px !important; }
+    [data-tiles] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 22px !important; }
+    [data-rest] { margin-top: 26px !important; }
+    [data-featured] { min-height: 340px !important; }
+    [data-featured] > div:last-child { padding: 220px 34px 30px !important; }
+    [data-greet] { padding: 44px 40px 38px !important; }
+    [data-contact] { padding: 26px 40px 28px !important; }
+    [data-tend] { margin: 26px 40px 0 !important; padding: 20px 24px 20px !important; }
+    [data-inspire] { padding: 34px 0 4px !important; }
+    [data-inspire-head] { padding-left: 40px !important; }
+    [data-inspire-stage] { padding: 0 40px 2px !important; }
+    [data-inspire-stage] image-slot { height: 360px !important; }
+    [data-inspire] > div:last-child { padding-left: 40px !important; padding-right: 40px !important; }
+    [data-tend-rows] > a { padding: 15px 4px !important; }
+    [data-greet] h1 { font-size: 44px !important; }
+    [data-portals] { padding: 38px 40px 8px !important; }
+  }
+</style>
+</helmet>
+
+<div data-shell="" style="min-height: 100svh; background: #ece7db;">
+  <div data-app="" style="position: relative; overflow: hidden; max-width: 480px; margin: 0 auto; height: 100svh; background: #fdfbf6; display: flex; flex-direction: column;">
+
+    <header style="position: relative; z-index: 10; flex: none; display: flex; align-items: center; gap: 14px; padding: 10px 16px; background: rgba(253,251,246,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #e7dfcd;">
+      <button onClick="{{ toggleMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 7px; background: transparent; border: none; cursor: pointer; flex: none;">
+        <span style="height: 2.5px; border-radius: 2px; background: #1f1a14;"></span>
+        <span style="height: 2.5px; border-radius: 2px; background: #1f1a14;"></span>
+        <span style="height: 2.5px; border-radius: 2px; background: #1f1a14;"></span>
+      </button>
+      <a href="#top" style="display: flex; align-items: center; margin: 0 auto;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred — 30 years, 1996–2026" style="height: 58px; width: auto; display: block;">
+      </a>
+      <button aria-label="Notifications" style="position: relative; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: transparent; border: none; cursor: pointer; flex: none;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3d352a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>
+        <span style="position: absolute; top: 9px; right: 10px; width: 8px; height: 8px; border-radius: 50%; background: #ff4800; border: 2px solid #fdfbf6;"></span>
+      </button>
+      <div style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #57a143; color: #fdfbf6; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800;">{{ initials }}</div>
+    </header>
+
+    <div data-body="" id="top" style="flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 40px;">
+
+      <section data-greet="" style="position: relative; overflow: hidden; border-bottom: 1px solid #eae3d3;">
+        <image-slot id="gateway-banner" shape="rect" fit="cover" src="./assets/w/bench-three-women-journals.jpeg" style="position: absolute; inset: 0; width: 100%; height: 100%;" placeholder="Banner photo"></image-slot>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(31,26,20,0.92) 0%, rgba(31,26,20,0.88) 55%, rgba(31,26,20,0.62) 100%);"></div>
+        <div style="position: relative; padding: 30px 22px 30px;">
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(253,251,246,0.92);">Firesoul Gateway</div>
+          <h1 style="font-family: 'Lora', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1.1; letter-spacing: -0.015em; color: #fff; margin: 10px 0 0; text-shadow: 0 2px 18px rgba(31,26,20,0.5);">{{ greeting }} {{ firstName }}.</h1>
+          <p style="font-size: 16px; line-height: 1.62; color: #fdfbf6; margin: 14px 0 0; max-width: 62ch;">The Firesoul<sup style="font-size:0.55em; font-weight:700; vertical-align:super; line-height:0; margin-left:1px;">™</sup> Network is powered by the people who care for Sacred Places—and there is so much to learn, share, and discover from one another. This is your place to connect with fellow Firesouls, find inspiration, exchange ideas, and see what's happening across the Network.</p>
+        </div>
+      </section>
+
+      <section data-contact="" style="padding: 20px 22px 24px; border-bottom: 1px solid #eae3d3;">
+        <div style="font-size: 19px; font-weight: 800; letter-spacing: -0.01em; color: #1f1a14;">We've got you!</div>
+        <div style="display: flex; align-items: center; gap: 16px; margin-top: 14px;">
+          <image-slot id="contact-kerry" shape="circle" fit="cover" style="flex: none; width: 84px; height: 84px;" placeholder="Kerry"></image-slot>
+          <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+            <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #57a143;">Your Nature Sacred contact</span>
+            <span style="font-size: 21px; font-weight: 800; letter-spacing: -0.015em; color: #1f1a14;">Kerry McCullough</span>
+            <span style="font-size: 15px; line-height: 1.4; color: #6b6053;">Nature Sacred Program Lead</span>
+          </div>
+        </div>
+        <p style="font-size: 16px; line-height: 1.62; color: #4a4137; margin: 16px 0 0; max-width: 60ch;">Reach out anytime for help navigating the Gateway, finding Network resources, or connecting with the right support.</p>
+        <a href="mailto:kerry@naturesacred.org" style="margin-top: 14px; display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; border-radius: 999px; border: 1px solid #cfc3ab; font-size: 15px; font-weight: 700; color: #1f1a14;" style-hover="background:#f3efe3; color:#1f1a14;">Reach out to Kerry
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
+      </section>
+
+      <section data-tend="" style="margin: 22px 18px 0; padding: 18px 18px 8px; background: #f5f1e8; border: 1px solid #eae3d3; border-radius: 18px;">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #8a7b68; padding: 0 2px 4px;">Things to tend to</div>
+        <div data-tend-rows="" style="display: flex; flex-direction: column;">
+          <a href="./Gateway_Bench Care.dc.html" style="display: flex; align-items: center; gap: 13px; padding: 14px 2px; border-top: 1px solid #e5ddcb; font-size: 17px; font-weight: 700; color: #1f1a14;" style-hover="color:#46852f;">
+            <span style="flex: none; width: 38px; height: 38px; border-radius: 50%; background: #fdfbf6; border: 1px solid #e5ddcb; display: flex; align-items: center; justify-content: center;">
+              <img src="./assets/bench-icon-sm.png" alt="" aria-hidden="true" style="width: 22px; height: auto; display: block;">
+            </span>
+            Bench Care
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#b0a291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-left: auto;"><path d="m9 6 6 6-6 6"></path></svg>
+          </a>
+          <a href="./Gateway_Little Yellow Journals.dc.html" style="display: flex; align-items: center; gap: 13px; padding: 14px 2px; border-top: 1px solid #e5ddcb; font-size: 17px; font-weight: 700; color: #1f1a14;" style-hover="color:#46852f;">
+            <span style="flex: none; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+              <img src="./assets/lyj-icon.png" alt="" aria-hidden="true" style="width: 34px; height: auto; display: block;">
+            </span>
+            Journals
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#b0a291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-left: auto;"><path d="m9 6 6 6-6 6"></path></svg>
+          </a>
+          <a href="#top" style="display: flex; align-items: center; gap: 13px; padding: 14px 2px; border-top: 1px solid #e5ddcb; font-size: 17px; font-weight: 700; color: #1f1a14;" style-hover="color:#46852f;">
+            <span style="flex: none; width: 38px; height: 38px; border-radius: 50%; background: #eef4e0; display: flex; align-items: center; justify-content: center;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 11h18"></path></svg>
+            </span>
+            Next Network Event
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#b0a291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-left: auto;"><path d="m9 6 6 6-6 6"></path></svg>
+          </a>
+        </div>
+      </section>
+
+      <section data-inspire="" style="padding: 26px 0 4px;">
+        <div data-inspire-head="" style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #8a7b68; padding: 0 22px 14px;">Get inspired</div>
+        <div data-inspire-stage="" onScroll="{{ onScroll }}" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0; padding: 0 18px 2px; gap: 12px;">
+          <a href="#top" style="flex: 0 0 100%; scroll-snap-align: center; position: relative; border-radius: 16px; overflow: hidden;">
+            <image-slot id="inspire-firesoul" shape="rounded" radius="16" fit="cover" src="./assets/w/firesoul-portrait-orange.jpg" style="width: 100%; height: 280px;" placeholder="Firesoul feature photo"></image-slot>
+            <span style="position: absolute; left: 0; right: 0; bottom: 0; padding: 76px 18px 18px; background: linear-gradient(to top, rgba(31,26,20,0.86), rgba(31,26,20,0.4) 55%, rgba(31,26,20,0)); display: flex; flex-direction: column; gap: 7px;">
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a;">This month · Firesoul feature</span>
+              <span style="font-family: 'Lora', Georgia, serif; font-size: 21px; font-weight: 600; line-height: 1.25; color: #fff;">Todd Marcus brings live jazz to Sacred Places across Baltimore.</span>
+            </span>
+          </a>
+          <a href="#top" style="flex: 0 0 100%; scroll-snap-align: center; position: relative; border-radius: 16px; overflow: hidden;">
+            <image-slot id="inspire-grant" shape="rounded" radius="16" fit="cover" src="./assets/sm/bench-girl-balloon.jpg" style="width: 100%; height: 280px;" placeholder="Grant feature photo"></image-slot>
+            <span style="position: absolute; left: 0; right: 0; bottom: 0; padding: 76px 18px 18px; background: linear-gradient(to top, rgba(31,26,20,0.86), rgba(31,26,20,0.4) 55%, rgba(31,26,20,0)); display: flex; flex-direction: column; gap: 7px;">
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a;">This month · Grant feature</span>
+              <span style="font-family: 'Lora', Georgia, serif; font-size: 21px; font-weight: 600; line-height: 1.25; color: #fff;">An Enrichment Grant funded a spring block party at Kirby Lane Park.</span>
+            </span>
+          </a>
+          <a href="#top" style="flex: 0 0 100%; scroll-snap-align: center; position: relative; border-radius: 16px; overflow: hidden;">
+            <image-slot id="inspire-journal" shape="rounded" radius="16" fit="cover" src="./assets/sm/journal-keep-swimming.jpg" style="width: 100%; height: 280px;" placeholder="Journal entry photo"></image-slot>
+            <span style="position: absolute; left: 0; right: 0; bottom: 0; padding: 76px 18px 18px; background: linear-gradient(to top, rgba(31,26,20,0.88), rgba(31,26,20,0.45) 55%, rgba(31,26,20,0)); display: flex; flex-direction: column; gap: 7px;">
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a;">This month · Journal entry</span>
+              <span style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 20px; font-weight: 500; line-height: 1.3; color: #fff;">"In the midst of pain, anger and frustration, this is an oasis of calm and beauty."</span>
+              <span style="font-size: 12px; font-weight: 700; color: rgba(253,251,246,0.85);">Western Correctional Institution</span>
+            </span>
+          </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 9px; padding: 14px 22px 0;">
+          <button onClick="{{ goTo0 }}" aria-label="Firesoul feature" style="width: 9px; height: 9px; padding: 0; border: none; border-radius: 50%; cursor: pointer; background: {{ dot0 }};"></button>
+          <button onClick="{{ goTo1 }}" aria-label="Grant feature" style="width: 9px; height: 9px; padding: 0; border: none; border-radius: 50%; cursor: pointer; background: {{ dot1 }};"></button>
+          <button onClick="{{ goTo2 }}" aria-label="Journal entry" style="width: 9px; height: 9px; padding: 0; border: none; border-radius: 50%; cursor: pointer; background: {{ dot2 }};"></button>
+        </div>
+      </section>
+
+      <sc-if value="{{ isTiles }}" hint-placeholder-val="{{ false }}">
+        <section data-portals="" style="padding: 26px 18px 8px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; padding: 0 4px 14px;">
+            <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68;">Explore</span>
+          </div>
+          <div data-tiles="" style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+            <sc-for list="{{ portals }}" as="p" hint-placeholder-count="8">
+              <a href="{{ p.href }}" style="display: flex; flex-direction: column; background: #fdfbf6; border: 1px solid #e7dfcd; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(31,26,20,0.05); transition: box-shadow 280ms cubic-bezier(0.22,1,0.36,1), border-color 280ms cubic-bezier(0.22,1,0.36,1);" style-hover="box-shadow:0 10px 24px rgba(31,26,20,0.12); border-color:#d8cdb6;">
+                <div style="width: 100%; height: 132px; background-color: #ede5dd; background-image: {{ p.photoCss }}; background-size: cover; background-position: center;"></div>
+                <div style="padding: 15px 17px 18px; display: flex; flex-direction: column; gap: 7px;">
+                  <div style="font-size: 18px; font-weight: 800; line-height: 1.25; color: #1f1a14;">{{ p.title }}</div>
+                  <div style="font-size: 14px; line-height: 1.5; color: #6b6053; max-width: 42ch;">{{ p.blurb }}</div>
+                </div>
+              </a>
+            </sc-for>
+          </div>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+        <section style="padding: 24px 22px 8px;">
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68; padding-bottom: 6px;">Explore</div>
+          <div style="display: flex; flex-direction: column;">
+            <sc-for list="{{ portals }}" as="p" hint-placeholder-count="8">
+              <a href="{{ p.href }}" style="display: flex; align-items: flex-start; gap: 14px; padding: 18px 4px; border-bottom: 1px solid #eae3d3; transition: background 200ms ease;" style-hover="background:#f7f3ea;">
+                <div style="width: 56px; height: 56px; border-radius: 12px; flex: none; background-color: #ede5dd; background-image: {{ p.photoCss }}; background-size: cover; background-position: center;"></div>
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                  <div style="font-size: 18px; font-weight: 800; line-height: 1.25; color: #1f1a14;">{{ p.title }}</div>
+                  <div style="font-size: 14px; line-height: 1.5; color: #6b6053;">{{ p.blurb }}</div>
+                </div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b0a291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin: 4px 0 0 auto;"><path d="m9 6 6 6-6 6"></path></svg>
+              </a>
+            </sc-for>
+          </div>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ isFeatured }}" hint-placeholder-val="{{ true }}">
+        <section data-portals="" style="padding: 26px 18px 8px;">
+          <a data-featured="" href="{{ featured.href }}" style="position: relative; display: block; border-radius: 20px; overflow: hidden; min-height: 220px; box-shadow: 0 8px 22px rgba(31,26,20,0.14);">
+            <div style="position: absolute; inset: 0; background-color: #ede5dd; background-image: {{ featuredPhotoCss }}; background-size: cover; background-position: center;"></div>
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(31,26,20,0.8) 0%, rgba(31,26,20,0.45) 45%, rgba(31,26,20,0.05) 100%);"></div>
+            <div style="position: relative; padding: 130px 20px 22px; display: flex; flex-direction: column; gap: 7px;">
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a;">Start here</span>
+              <span style="font-family: 'Lora', Georgia, serif; font-size: 27px; font-weight: 600; line-height: 1.15; color: #fff;">{{ featured.title }}</span>
+              <span style="font-size: 14px; line-height: 1.5; color: rgba(253,251,246,0.95); max-width: 42ch;">{{ featured.blurb }}</span>
+            </div>
+          </a>
+          <div style="margin-top: 16px; padding: 18px 18px 16px; background: #f5f1e8; border: 1px solid #eae3d3; border-radius: 18px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M20 15.5A2.5 2.5 0 0 1 17.5 18H8l-4 3V6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5z"></path></svg>
+              <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68;">Firesoul Forum</span>
+            </div>
+            <a href="./Gateway_Firesoul Forum.dc.html" style="display: flex; flex-direction: column; gap: 5px; margin-top: 12px; padding: 14px 16px; background: #fdfbf6; border: 1px solid #e2dac8; border-radius: 14px;" style-hover="background:#fffdf7;">
+              <span style="display: flex; align-items: center; gap: 7px;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 17v4"></path><path d="M9 3h6l-1 6 3 3v2H7v-2l3-3z"></path></svg>
+                <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #57a143;">Pinned · Nature Sacred</span>
+              </span>
+              <span style="font-size: 17px; font-weight: 800; line-height: 1.3; color: #1f1a14;">Spring Flash Funding opens Monday</span>
+              <span style="font-size: 15px; line-height: 1.5; color: #6b6053;">Small, fast grants for spring programming. Applications stay open for two weeks.</span>
+            </a>
+            <a href="./Gateway_Firesoul Forum.dc.html" style="display: flex; gap: 12px; margin-top: 14px; padding: 0 2px;">
+              <span style="flex: none; width: 38px; height: 38px; border-radius: 50%; background: #eef4e0; color: #57a143; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800;">RB</span>
+              <span style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                <span style="font-size: 12px; font-weight: 700; color: #9d877a;">Renee Bowman · Kirby Lane Park · 2 days ago</span>
+                <span style="font-size: 16px; font-weight: 700; line-height: 1.35; color: #1f1a14;">Has anyone hosted a seed swap at their Sacred Place?</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #6b6053;">Looking for advice on timing and what to have on hand before we try one in May.</span>
+              </span>
+            </a>
+            <a href="./Gateway_Firesoul Forum.dc.html" style="display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; font-size: 15px; font-weight: 700; color: #57a143;">Go to the Forum
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </a>
+          </div>
+          <div data-rest="" style="display: flex; flex-direction: column; margin-top: 20px;">
+            <sc-for list="{{ rest }}" as="p" hint-placeholder-count="7">
+              <a href="{{ p.href }}" style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 4px; border-top: 1px solid #eae3d3; transition: background 200ms ease;" style-hover="background:#f7f3ea;">
+                <div style="width: 58px; height: 58px; border-radius: 12px; flex: none; background-color: #ede5dd; background-image: {{ p.photoCss }}; background-size: cover; background-position: center;"></div>
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                  <div style="font-size: 18px; font-weight: 800; line-height: 1.25; color: #1f1a14;">{{ p.title }}</div>
+                  <div style="font-size: 14px; line-height: 1.5; color: #6b6053; max-width: 52ch;">{{ p.blurb }}</div>
+                </div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b0a291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin: 5px 0 0 auto;"><path d="m9 6 6 6-6 6"></path></svg>
+              </a>
+            </sc-for>
+          </div>
+        </section>
+      </sc-if>
+
+      <sc-if value="{{ showEvents }}" hint-placeholder-val="{{ true }}">
+        <section style="margin: 28px 18px 0; padding: 20px 18px 22px; background: #f5f1e8; border: 1px solid #eae3d3; border-radius: 18px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 11h18"></path></svg>
+            <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68;">What's happening</span>
+          </div>
+          <div style="display: flex; flex-direction: column; margin-top: 6px;">
+            <a href="#top" style="display: flex; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid #e5ddcb;" style-hover="color:#46852f;">
+              <span style="flex: none; width: 46px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #9d877a;">May 14</span>
+              <span style="font-size: 16px; font-weight: 700; color: #1f1a14;">Firesoul Network Gathering — Baltimore</span>
+            </a>
+            <a href="#top" style="display: flex; align-items: baseline; gap: 12px; padding: 14px 0;" style-hover="color:#46852f;">
+              <span style="flex: none; width: 46px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #9d877a;">Weekly</span>
+              <span style="font-size: 16px; font-weight: 700; color: #1f1a14;">Wellness Wednesdays — 12:30pm, online</span>
+            </a>
+          </div>
+          <a href="#top" style="display: inline-flex; align-items: center; gap: 7px; margin-top: 8px; font-size: 15px; font-weight: 700; color: #57a143;">Network Events<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+        </section>
+      </sc-if>
+
+      <footer style="padding: 34px 22px 10px; text-align: center;">
+        <a href="./final_Homepage.dc.html" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #8a7b68;" style-hover="color:#57a143;">naturesacred.org<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></a>
+      </footer>
+    </div>
+
+    <nav data-tabs="" style="position: relative; z-index: 10; flex: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 8px 6px 10px; background: rgba(253,251,246,0.96); backdrop-filter: blur(10px); border-top: 1px solid #e7dfcd;">
+      <a href="#top" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"></path><path d="M6 10v10h12V10"></path></svg>
+        <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.03em;">Gateway</span>
+      </a>
+      <a href="#top" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19a4 4 0 0 0-8 0"></path><circle cx="12" cy="10" r="3.2"></circle><path d="M4.5 19a3.5 3.5 0 0 1 2.5-3.4M19.5 19a3.5 3.5 0 0 0-2.5-3.4"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Community</span>
+      </a>
+      <a href="#top" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"></path><path d="M4 18.5V5.5"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Resources</span>
+      </a>
+      <a href="#top" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.6"></circle><path d="M5 20c0-3.4 3.1-5.5 7-5.5s7 2.1 7 5.5"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Profile</span>
+      </a>
+    </nav>
+
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; inset: 0; z-index: 30; display: flex; flex-direction: column; background: #fdfbf6; overflow-y: auto;">
+        <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid #e7dfcd;">
+          <button onClick="{{ toggleMenu }}" aria-label="Close menu" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: transparent; border: none; cursor: pointer; flex: none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f1a14" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+          </button>
+          <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #8a7b68;">Gateway menu</span>
+        </div>
+        <nav style="display: flex; flex-direction: column; padding: 10px 10px 28px;">
+          <sc-for list="{{ portals }}" as="p" hint-placeholder-count="8">
+            <a href="{{ p.href }}" style="display: flex; align-items: center; padding: 15px 14px; border-radius: 12px; font-size: 19px; font-weight: 700; color: #1f1a14;" style-hover="background:#f3efe3;">{{ p.title }}</a>
+          </sc-for>
+          <div style="height: 1px; background: #e7dfcd; margin: 12px 14px;"></div>
+          <a href="#top" style="display: flex; align-items: center; padding: 13px 14px; font-size: 16px; font-weight: 600; color: #4a4137;" style-hover="color:#57a143;">My Firesoul Profile</a>
+          <a href="#top" style="display: flex; align-items: center; padding: 13px 14px; font-size: 16px; font-weight: 600; color: #4a4137;" style-hover="color:#57a143;">Notifications</a>
+          <a href="#top" style="display: flex; align-items: center; padding: 13px 14px; font-size: 16px; font-weight: 600; color: #4a4137;" style-hover="color:#57a143;">Sign out</a>
+          <a href="./final_Homepage.dc.html" style="display: flex; align-items: center; gap: 9px; padding: 13px 14px; font-size: 15px; font-weight: 600; color: #57a143;">naturesacred.org<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></a>
+        </nav>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:932},&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Featured&quot;,&quot;Tiles&quot;,&quot;List&quot;],&quot;default&quot;:&quot;Featured&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Home layout&quot;},&quot;firesoulName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Angela Walseng&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showEvents&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const ALL_PORTALS = [
+  { key: 'community', title: 'Firesoul Community', blurb: 'Find Firesouls in the Directory, join conversations, and explore Network events.', photo: './assets/sm/support-gathering.jpg', href: './Gateway_Firesoul Community.dc.html' },
+  { key: 'bench', title: 'Bench Care', blurb: 'Bench care guidance and maintenance support.', photo: './assets/sm/bench-hero.jpg', href: './Gateway_Bench Care.dc.html' },
+  { key: 'journals', title: 'Little Yellow Journals', blurb: 'Resources to unlock the power of the journals & request more.', photo: './assets/sm/journal-open-entry.jpg', href: './Gateway_Little Yellow Journals.dc.html' },
+  { key: 'care', title: 'Sacred Place Care Resources', blurb: 'Funding resources, programming inspo, and more to help your Sacred Place thrive.', photo: './assets/sm/labyrinth.jpg', href: './Gateway_Sacred Place Care Resources.dc.html' },
+  { key: 'profile', title: 'Your Profile', blurb: 'View and update your Firesoul profile and Network information.', photo: './assets/sm/firesoul-street.jpg', href: './Gateway_Firesoul Profile.dc.html' },
+  { key: 'place', title: 'Your Sacred Place Profile', blurb: 'View your Sacred Place and share updates, photos, or changes.', photo: './assets/sm/plaza-bench.jpg', href: './Gateway_My Sacred Place.dc.html' },
+];
+
+class Component extends DCLogic {
+  state = { menuOpen: false, slide: 0 };
+  stage() { return document.querySelector('[data-inspire-stage]'); }
+  goTo(i) {
+    const el = this.stage();
+    const card = el && el.children[i];
+    if (el && card) el.scrollTo({ left: card.offsetLeft - el.offsetLeft, behavior: 'smooth' });
+    this.setState({ slide: i });
+  }
+  handleScroll = () => {
+    const el = this.stage();
+    if (!el || !el.firstElementChild) return;
+    const i = Math.round(el.scrollLeft / (el.firstElementChild.offsetWidth + 12));
+    if (i !== this.state.slide) this.setState({ slide: i });
+  };
+  renderVals() {
+    const name = (this.props.firesoulName ?? 'Angela Walseng').trim();
+    const tier = this.props.accessTier ?? 'Baltimore Firesoul';
+    const layout = this.props.layout ?? 'Featured';
+    const h = new Date().getHours();
+    const part = h < 12 ? 'morning' : h < 17 ? 'afternoon' : 'evening';
+    const initials = name.split(/\s+/).filter(Boolean).map(w => w[0].toUpperCase()).slice(0, 2).join('') || 'AW';
+    const portals = ALL_PORTALS.map(p => Object.assign({}, p, { photoCss: 'url(' + p.photo + ')' }));
+    const placeLabel = tier === 'In-Development'
+      ? 'Sacred Place in development'
+      : (this.props.placeName ?? 'Kirby Lane Park') + ' \u00b7 Open';
+    return {
+      greeting: 'Good ' + part + ',',
+      firstName: name.split(/\s+/)[0] || 'Angela',
+      initials: initials.length === 1 ? initials + 'W' : initials,
+      placeLabel,
+      portals,
+      featured: portals[0] || {},
+      featuredPhotoCss: 'url(' + ((portals[0] || {}).photo || '') + ')',
+      rest: portals.slice(1),
+      isTiles: layout === 'Tiles',
+      isList: layout === 'List',
+      isFeatured: layout === 'Featured',
+      showEvents: this.props.showEvents ?? true,
+      onScroll: this.handleScroll,
+      dot0: this.state.slide === 0 ? '#57a143' : '#d8cdb6',
+      dot1: this.state.slide === 1 ? '#57a143' : '#d8cdb6',
+      dot2: this.state.slide === 2 ? '#57a143' : '#d8cdb6',
+      goTo0: () => this.goTo(0),
+      goTo1: () => this.goTo(1),
+      goTo2: () => this.goTo(2),
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

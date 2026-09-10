@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#57a143"></rect><path d="M50 72 C50 72 30 58 30 42 C30 32 39 28 50 40 C61 28 70 32 70 42 C70 58 50 72 50 72Z" fill="#fdfbf6"></path><rect x="34" y="76" width="32" height="5" rx="2.5" fill="#fdfbf6"></rect><rect x="46" y="77.5" width="8" height="2" rx="1" fill="#f5d06a"></rect></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..900;1,400..800&amp;family=Lora:ital,wght@0,400..600;1,400..600&amp;family=Caveat:wght@400;600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #f5f1e8; color: #1f1a14; font-family: 'Nunito', ui-sans-serif, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #57a143; text-decoration: none; transition: color 160ms cubic-bezier(0.22,1,0.36,1); }
+  a:hover { color: #46852f; }
+  ::selection { background: #afd274; color: #1f1a14; }
+  @keyframes ns-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ns-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes ns-arrow-up { 0%, 6% { transform: translateY(7px); opacity: 0.7; } 22%, 44% { transform: translateY(-7px); opacity: 1; } 60%, 100% { transform: translateY(7px); opacity: 0.7; } }
+  @keyframes ns-arrow-down { 0%, 50% { transform: translateY(-7px); opacity: 0.7; } 66%, 88% { transform: translateY(7px); opacity: 1; } 100% { transform: translateY(-7px); opacity: 0.7; } }
+  @keyframes ns-bird-hop {
+    0%, 14% { transform: translate(0, 0); }
+    19% { transform: translate(8%, -26%); }
+    25%, 33% { transform: translate(17%, 0); }
+    38% { transform: translate(25%, -26%); }
+    44%, 68% { transform: translate(34%, 0); }
+    73% { transform: translate(25%, -22%); }
+    79%, 86% { transform: translate(17%, 0); }
+    91% { transform: translate(8%, -22%); }
+    97%, 100% { transform: translate(0, 0); }
+  }
+  @keyframes ns-tail-wag { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(11deg); } }
+  @media (prefers-reduced-motion: reduce) { [data-arrow], [data-bird], [data-tail] { animation: none !important; } }
+  @media (max-width: 980px) {
+    [data-two] { grid-template-columns: 1fr !important; }
+    [data-two] > * { grid-column: 1 / -1 !important; }
+    [data-sidenav] { position: static !important; }
+    [data-thumb] { margin-left: 0 !important; max-width: 190px !important; }
+  }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; overflow-x: clip;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(245,241,232,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #e7e0d2;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 24px;">
+      <a href="./final_Homepage.dc.html" style="display: flex; align-items: center; height: 48px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred—30 years" style="height: 48px; width: auto; display: block;">
+      </a>
+      <a href="./final_Donate.dc.html" style="margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; background: #ff4800; color: #fff; font-size: 14px; font-weight: 700; letter-spacing: 0.01em; box-shadow: 0 4px 14px rgba(255,72,0,0.28); transition: transform 200ms cubic-bezier(0.22,1,0.36,1), background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#e64000; transform:translateY(-1px);"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex: none;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Donate</a>
+      <button onClick="{{ openMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; gap: 6px; background: transparent; border: none; cursor: pointer; padding: 8px;">
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- COVER -->
+  <section style="max-width: 1360px; margin: 0 auto; padding: clamp(28px, 3.4vw, 44px) 32px 0;">
+    <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; padding-bottom: 12px; border-bottom: 1px solid #d8cebb; font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #9d877a; animation: ns-fade 600ms cubic-bezier(0.22,1,0.36,1) both;">
+      <span style="color: #77441d;">Report</span>
+      <span>October 2019</span>
+      <span style="margin-left: auto;">Nature Sacred · Dr. Eugenia C. South · Pennsylvania Horticultural Society</span>
+    </div>
+    <div data-two="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 3.5vw, 52px); margin-top: clamp(30px, 4vw, 52px); align-items: end;">
+      <div style="grid-column: 1 / span 7;">
+        <h1 style="font-family: 'Lora', Georgia, serif; font-size: clamp(40px, 6.4vw, 86px); font-weight: 600; line-height: 1.02; letter-spacing: -0.022em; margin: 0; color: #1f1a14; max-width: 15ch; text-wrap: balance; animation: ns-fade-up 680ms cubic-bezier(0.22,1,0.36,1) both;">The Healing Power of Nature</h1>
+        <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(18px, 2vw, 26px); line-height: 1.45; color: #77441d; margin: clamp(16px, 2vw, 24px) 0 0; max-width: 26ch; animation: ns-fade-up 680ms cubic-bezier(0.22,1,0.36,1) 120ms both;">How green space is improving health and wellbeing in cities.</p>
+    <div style="margin-top: clamp(22px, 2.6vw, 32px); display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px;">
+      <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #9d877a;">Share</span>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
+        <a href="{{ shareFacebook }}" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook" style="display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px; border: 1px solid #e7e0d2; background: #fdfbf6; color: #77441d; transition: background 200ms cubic-bezier(0.22,1,0.36,1), color 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#57a143; border-color:#57a143; color:#ffffff;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3-.04-1.3-.13-2.47-.13-2.45 0-4.13 1.5-4.13 4.24V9.9H7.4V13h2.7v8h3.4z"></path></svg>
+        </a>
+        <a href="{{ shareLinkedIn }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn" title="Share on LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px; border: 1px solid #e7e0d2; background: #fdfbf6; color: #77441d; transition: background 200ms cubic-bezier(0.22,1,0.36,1), color 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#57a143; border-color:#57a143; color:#ffffff;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5.5a1.94 1.94 0 11-3.88 0 1.94 1.94 0 013.88 0zM3.3 20.5h3.4V9.2H3.3v11.3zM9.2 9.2h3.26v1.55h.05c.45-.86 1.57-1.77 3.23-1.77 3.45 0 4.09 2.27 4.09 5.22v6.3h-3.4v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.68H9.2V9.2z"></path></svg>
+        </a>
+        <a href="{{ shareEmail }}" aria-label="Share by email" title="Share by email" style="display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px; border: 1px solid #e7e0d2; background: #fdfbf6; color: #77441d; transition: background 200ms cubic-bezier(0.22,1,0.36,1), color 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#57a143; border-color:#57a143; color:#ffffff;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.5 7.5l8.5 6 8.5-6"></path></svg>
+        </a>
+        <button onClick="{{ copyLink }}" style="display: inline-flex; align-items: center; gap: 9px; height: 42px; padding: 0 18px; border-radius: 999px; border: 1px solid #e7e0d2; background: #fdfbf6; cursor: pointer; white-space: nowrap; flex: none; font-family: inherit; font-size: 13.5px; font-weight: 700; color: #77441d; transition: background 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#f5f1e8; border-color:#d8cebb;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 14.5l5-5"></path><path d="M12.5 7.5l1.6-1.6a3.6 3.6 0 015.1 5.1L17.6 12.5"></path><path d="M11.5 16.5l-1.6 1.6a3.6 3.6 0 01-5.1-5.1L6.4 11.5"></path></svg>
+          {{ copyLabel }}
+        </button>
+      </div>
+    </div>
+      </div>
+      <div style="grid-column: 9 / span 4;">
+        <a href="./uploads/FT1901_Nature_Sacred_Report_lowres_reference-1.pdf" target="_blank" rel="noopener" data-thumb="" style="display: block; max-width: 260px; margin-left: auto;">
+          <div style="border-radius: 3px; overflow: hidden; border: 1px solid #ddd3c1; box-shadow: 0 14px 34px rgba(31,26,20,0.16); transition: transform 280ms cubic-bezier(0.22,1,0.36,1), box-shadow 280ms cubic-bezier(0.22,1,0.36,1);" style-hover="transform:translateY(-3px); box-shadow:0 20px 44px rgba(31,26,20,0.22);">
+            <img src="./assets/report/cover.png" alt="Cover of The Healing Power of Nature, October 2019" style="display: block; width: 100%; height: auto;">
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 12px; font-weight: 700; color: #57a143;">Read the original PDF <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></div>
+        </a>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0; margin-top: clamp(34px, 4.4vw, 60px); border-top: 1px solid #d8cebb; border-bottom: 1px solid #d8cebb;">
+      <div style="padding: 22px 24px 22px 0; border-right: 1px solid #e7e0d2;">
+        <div data-count="" style="font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.6vw, 44px); font-weight: 600; line-height: 1; color: #57a143;">80%</div>
+        <div style="font-size: 13px; line-height: 1.5; color: #6b5e51; margin-top: 10px; max-width: 22ch;">of Americans live in metropolitan areas</div>
+      </div>
+      <div style="padding: 22px 24px; border-right: 1px solid #e7e0d2;">
+        <div data-count="" style="font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.6vw, 44px); font-weight: 600; line-height: 1; color: #57a143;">36</div>
+        <div style="font-size: 13px; line-height: 1.5; color: #6b5e51; margin-top: 10px; max-width: 22ch;">sources compiled here</div>
+      </div>
+      <div style="padding: 22px 24px; border-right: 1px solid #e7e0d2;">
+        <div data-count="" style="font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.6vw, 44px); font-weight: 600; line-height: 1; color: #57a143;">20-30</div>
+        <div style="font-size: 13px; line-height: 1.5; color: #6b5e51; margin-top: 10px; max-width: 22ch;">minutes of exposure for measurable benefit</div>
+      </div>
+      <div style="padding: 22px 0 22px 24px;">
+        <div data-count="" style="font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.6vw, 44px); font-weight: 600; line-height: 1; color: #57a143;">$26</div>
+        <div style="font-size: 13px; line-height: 1.5; color: #6b5e51; margin-top: 10px; max-width: 22ch;">returned to taxpayers per dollar spent on greening</div>
+      </div>
+    </div>
+    <div style="margin-top: clamp(34px, 4.4vw, 60px); height: clamp(260px, 34vw, 460px); border-radius: 4px; overflow: hidden;">
+      <image-slot id="hpn-hero" shape="rect" fit="cover" src="./assets/report/bench-garden.png" style="width:100%; height:100%;" placeholder="Drop the report cover photo — a pocket park or greened lot in use"></image-slot>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section id="snapshot" data-reveal="" style="scroll-margin-top: 96px; background: #fdfbf6; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2; margin-top: clamp(56px, 7vw, 96px); padding: clamp(40px, 5.4vw, 76px) 0;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 0 32px;">
+      <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 28px;">
+        <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #9d877a;">What's inside</span>
+        <span style="font-family: 'Lora', Georgia, serif; font-size: clamp(17px, 1.7vw, 21px); line-height: 1.45; color: #77441d;">The five-minute version. Each finding links to the section it came from.</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); gap: 1px; margin-top: clamp(28px, 3.4vw, 44px); background: #e7e0d2; border: 1px solid #e7e0d2; border-radius: 16px; overflow: hidden;">
+        <sc-for list="{{ snapshot }}" as="s" hint-placeholder-count="6">
+          <a href="{{ s.href }}" style="display: flex; flex-direction: column; gap: 14px; background: #fdfbf6; padding: clamp(22px, 2.6vw, 30px); color: #1f1a14; transition: background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#f5f1e8;">
+            <span style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a;">{{ s.topic }}</span>
+            <span data-count="" style="font-size: clamp(32px, 3.6vw, 46px); font-weight: 800; line-height: 1; letter-spacing: -0.035em; color: #57a143;">{{ s.stat }}</span>
+            <span style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.6; color: #3a3128; text-wrap: pretty;">{{ s.line }}</span>
+            <span style="margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; color: #57a143;">{{ s.cta }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <div data-two="" style="max-width: 1360px; margin: clamp(56px, 7vw, 96px) auto 0; padding: 0 32px; display: grid; grid-template-columns: 216px minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: start;">
+
+    <!-- SIDE NAV -->
+    <nav data-sidenav="" style="position: sticky; top: 96px;">
+      <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a; padding-bottom: 12px; border-bottom: 1px solid #e7e0d2;">Contents</div>
+      <div style="display: flex; flex-direction: column; margin-top: 12px;">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="11">
+          <a href="{{ s.href }}" data-navlink="{{ s.id }}" style="display: flex; gap: 10px; font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.4; color: #6b5e51; padding: 9px 0 9px 12px; border-left: 2px solid #e7e0d2;" style-hover="color:#1f1a14;"><span style="flex: none; font-family: 'Nunito', sans-serif; font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; color: #b9a894; padding-top: 3px;">{{ s.num }}</span><span>{{ s.label }}</span></a>
+        </sc-for>
+      </div>
+    </nav>
+
+    <div style="min-width: 0;">
+
+      <!-- LETTER -->
+      <section id="letter" data-reveal="" style="scroll-margin-top: 96px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">Dear Reader</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">The impact of urban nature</span>
+        </div>
+        <div style="max-width: 68ch; margin-top: clamp(24px, 3vw, 36px); font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18.5px); line-height: 1.75; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;"><span style="float: left; font-family: 'Lora', Georgia, serif; font-size: 62px; line-height: 0.82; font-weight: 600; color: #77441d; margin: 4px 12px 0 0;">M</span>s. Johnson, as I will call her, was a 38-year old woman who came to the emergency department with chest pain. My team and I conducted a thorough workup to look for a heart attack, a blood clot in her lungs, or any other life-threatening illness. With negative results in hand, I sat down to talk with Ms. Johnson about her symptoms and make sure we hadn't missed anything. She shared that she was under a lot of stress, feeling the weight of significant family responsibility and few resources. While I could not provide immediate relief for her situation, I did advise her to speak with her doctor about talking to a psychologist. I also asked her if she ever spent time outside in nature. She said no, that she never felt she had time to visit the park near her house. I shared with her what I have learned through my research—about nature's power to heal—and encouraged her to give nature a try.</p>
+          <p style="margin: 20px 0 0; text-wrap: pretty;">I will never know what happened to Ms. Johnson—did she go outside? Did it help? In my work as an emergency medicine doctor, I care for many people suffering the downstream effects of poverty, discrimination, and the resultant life stress. I have seen first-hand the relationship between one's neighborhood environment and their health. This has been the motivation for my research—understanding how we can modify the neighborhood environment to promote health and how I came to be a believer in nature.</p>
+          <p style="margin: 20px 0 0; text-wrap: pretty;">Admittedly, I was at first a skeptic. Parks, trees, trails, green schoolyards—nice-to-have amenities but not fundamental to the health of a community. Science—including my own—slowly shifted my thinking. In some ways, the nature-health connection is as old as time; it is only recently in human evolution that we live apart from nature in our built up cities. Researchers are now catching up, pushing the envelope beyond mere associations to showing actual causality between nature and health. This report highlights what we know about nature and health in urban areas, and aims to push nature to the center of our conversation about what it means to create healthy, thriving cities.</p>
+        </div>
+        <div style="margin-top: clamp(24px, 3vw, 34px); padding-top: 20px; border-top: 1px solid #e7e0d2; max-width: 68ch; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+          <div style="flex: none; width: 92px; height: 110px; border-radius: 12px; overflow: hidden; border: 1px solid #e7e0d2;">
+            <image-slot id="hpn-south" shape="rect" fit="cover" src="./assets/report/south-portrait.png" style="width:100%; height:100%;" placeholder="Drop Dr. South's portrait"></image-slot>
+          </div>
+          <div>
+            <div style="font-family: 'Caveat', cursive; font-size: 30px; color: #77441d;">Sincerely yours,</div>
+            <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.01em; color: #1f1a14; margin-top: 6px;">Eugenia C. South, MD, MS</div>
+            <div style="font-size: 14px; line-height: 1.6; color: #6b5e51; margin-top: 4px;">Assistant Professor of Emergency Medicine, Perelman School of Medicine at the University of Pennsylvania</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT IS NATURE -->
+      <section id="nature" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">Nature's healing power</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">01</span>
+        </div>
+        <h2 style="font-family: 'Lora', Georgia, serif; font-size: clamp(28px, 3.6vw, 46px); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin: clamp(20px, 2.4vw, 30px) 0 0; color: #1f1a14; max-width: 20ch; text-wrap: balance;">What is nature?</h2>
+        <div style="max-width: 68ch; margin-top: 22px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">Think fast: You are standing in nature. What do you see? An expansive wilderness; a national park; an undisturbed forest? Surveys have shown that when most of us think of nature, spaces filled with green that help us unwind and disconnect—we envision something removed. Something grand of scale. A remote destination.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">We don't necessarily think of a singular carpet of grass rooted and flourishing where an abandoned building once stood; a clutch of trees; or a pocket park tucked within a bustling city neighborhood. Broadening how we define nature—especially in the urban context—may be vital to fully experiencing its benefits in our everyday lives.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Recent discoveries have in fact shown us that nature's power to heal—both our physical and mental health, and the health of our communities—can happen in a neighborhood park; a community garden; even that aforementioned square of grass that occupies the footprint of an abandoned city lot. This is good news for the 80 percent of Americans living in metropolitan areas, those whose daily lives will bring them into contact with these modest versions of nature far more than the wild.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">It's this more small-scale—and thus oftentimes attainable—version of nature that we will be focusing on in this report. Think trees, pocket parks, greened vacant lots, community gardens, trails, and green school yards.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: clamp(22px, 2.6vw, 30px);">
+          <sc-for list="{{ natureKinds }}" as="k" hint-placeholder-count="6">
+            <span style="display: inline-flex; align-items: center; padding: 9px 16px; border-radius: 999px; background: #fdfbf6; border: 1px solid #e7e0d2; font-size: 14px; font-weight: 700; color: #3a3128;">{{ k }}</span>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- THE CONNECTION -->
+      <section id="connection" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">The nature-health connection</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">02</span>
+        </div>
+        <h2 style="font-family: 'Lora', Georgia, serif; font-size: clamp(28px, 3.6vw, 46px); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin: clamp(20px, 2.4vw, 30px) 0 0; color: #1f1a14; max-width: 20ch; text-wrap: balance;">What we know</h2>
+        <div style="max-width: 68ch; margin-top: 22px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">An increasing number of diverse research disciplines are now immersed in understanding the nature-health connection: social scientists to epidemiologists, neuroscientists to physicians. As a result, the growing body of scientific evidence is gradually nudging nature into the realm of public health and traditional medicine as a tool healthcare providers can use to promote healthy living. This is evidenced through the development of therapeutic gardens in hospital settings and physician-administered nature prescription programs. A decided shift is afoot.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">This report, a collaboration between Nature Sacred, a non-profit dedicated to supporting and growing the number of small, accessible urban green spaces, Dr. Eugenia South, a physician-scientist with expertise in the health benefits of nature, and the Pennsylvania Horticultural Society, compiles some of the most recent evidence underscoring the health benefits of nature. While not an exhaustive review of the full body of existing literature, we highlight high-impact studies across a range of outcomes. We present the research in such a way that time-crunched urban planners, administrators and decision-makers, healthcare providers and public health officials, and community foundations can gain a quick briefing, absorbing key facts that help strengthen and inform decisions around the development of green infrastructure in cities and communities, and suggest ways to connect people with nearby nature.</p>
+        </div>
+      </section>
+
+      <!-- MENTAL HEALTH -->
+      <section id="mental" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">General mental health</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">03</span>
+        </div>
+        <div style="max-width: 68ch; margin-top: clamp(20px, 2.4vw, 30px); font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">Roughly 80 percent of the US population lives in urban areas. And those who live in these more densely populated and oftentimes congested environments are at a higher risk of experiencing mental health issues. Researchers have found, though, that within these urban areas, residents who have more green space near their homes report significantly lower symptoms of depression, stress and anxiety. This is the case even when controlling for a number of other factors that could have influenced their results; think education level, household income, and neighborhood-level socioeconomic factors. It appears that nature is not just a marker for a well-off neighborhood; rather there is something about green space itself that makes us healthier.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Likewise, a study in Denmark evaluated the amount of nature near the childhood homes of more than 900,000 adults. Compared to those who grew up with high levels of nearby nature, those who grew up with less green space were at a higher risk of developing psychiatric disorders—including mood disorders, substance abuse, and schizophrenia—as adults. This held true within rural areas, suburban areas, and of course, urban areas.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">While individual treatments—like therapy and medications—will always remain a cornerstone of addressing mental illness, the authors of both studies suggested greening as a low-cost means to help address mental health on a population level.</p>
+        </div>
+
+        <h3 style="font-family: 'Lora', Georgia, serif; font-size: clamp(21px, 2.4vw, 29px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: clamp(40px, 5vw, 64px) 0 0; color: #1f1a14;">Depression</h3>
+        <div style="max-width: 68ch; margin-top: 18px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">More than 16 million Americans experience an episode of clinical depression each year; many more have feelings of depression that don't meet the clinical definition. And a large percentage of these go untreated, especially people from low-resourced neighborhoods.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">In Philadelphia, PA, Dr. South and her colleagues conducted a first-of-its-kind study to see if planting new micro-green spaces in previously urban vacant lots could impact health. This study, a randomized controlled trial—the highest level of scientific evidence—found that people living near these new green spaces felt less depressed and had overall improvements in their mental health; people who lived near areas that did not get new green space had no improvements in their mental health. These effects were the strongest for people living in neighborhoods below the poverty line.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">A United Kingdom-based study of over 7,500 pregnant women found that those who had the most green space near their homes were 18-23 percent less likely to experience depressive symptoms, compared to those who lived in areas with the least amount of green. Similarly, scientists in Australia demonstrated that people who visited a park for 30 minutes or more had significantly fewer cases of depression. Research from cities around the world is pointing to nature as an antidote to the mental strain of urban living.</p>
+        </div>
+
+        <h3 style="font-family: 'Lora', Georgia, serif; font-size: clamp(21px, 2.4vw, 29px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: clamp(40px, 5vw, 64px) 0 0; color: #1f1a14;">Stress</h3>
+        <div style="max-width: 68ch; margin-top: 18px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">While stress is a natural part of the human existence, too much stress can lead to a litany of negative consequences—from lower productivity at work to negative social interactions to physical problems like asthma exacerbations, ulcers, and even heart disease. A 2011 study by the American Psychological Association found that most Americans are suffering from moderate to high stress.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">When under stress, our bodies release hormones like adrenaline, causing our hearts to beat faster, our breathing to become more rapid. This is good if we are in danger or need to focus on a high-intensity task, but becomes harmful when occurring day in and day out. But just as doctors identify a healthy diet and physical activity as a means to combat stress, nature, too, is being added to the list. Stress reduction, in fact, is one of the key mechanisms through which nature is thought to impact health.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">A study in Philadelphia, PA, by Dr. South showed that simply walking past newly-greened vacant lots significantly decreased heart rate, a marker of acute stress. Heart rate did not change in a control group when walking past non-greened areas. Multiple studies have drawn similar conclusions—spending time in or walking through green space reduces heart rate, blood pressure, and other physiologic markers of stress.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Researchers in Oakland, CA, have also found that weekly physician-prescribed group park visits increased resilience and reduced stress among low-income parents and families. Parents also reported decreased feelings of loneliness. Authors pointed to the need among pediatricians for community resources, like nature exposure, to help address stress in children.</p>
+        </div>
+
+        <h3 style="font-family: 'Lora', Georgia, serif; font-size: clamp(21px, 2.4vw, 29px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: clamp(40px, 5vw, 64px) 0 0; color: #1f1a14;">Mental fatigue</h3>
+        <div style="max-width: 68ch; margin-top: 18px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">"Mental fatigue," that state of exhaustion caused by prolonged periods of focused cognitive activity, is a side effect of modern society. This tiredness of the brain, as it's sometimes called, can manifest in a number of ways—for example, difficulty concentrating and managing our moods, and even leading to angry outbursts or violent behavior.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">The latter was investigated in a study of public housing buildings in Chicago, IL. Researchers found that people with more small-scale nature in their immediate living environment reported lower levels of mental fatigue and fewer episodes of aggressive behavior compared to residents in less verdant surroundings.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Rumination—a pattern of harmful thinking in which the mind gets stuck in a loop of negative, self-related thoughts that can be difficult to break—can lead to depression and other mental illness. Taking a walk in nature, but not in a built environment, has been shown to help reduce this type of negative thinking. Brain scans of study participants who walked in nature showed reduced blood flow to the part of the brain that controls negative emotions. Walking in nature literally changes your brain.</p>
+        </div>
+
+        <h3 style="font-family: 'Lora', Georgia, serif; font-size: clamp(21px, 2.4vw, 29px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: clamp(40px, 5vw, 64px) 0 0; color: #1f1a14;">Burnout &amp; wellness</h3>
+        <div style="max-width: 68ch; margin-top: 18px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">Burnout, characterized by symptoms of emotional exhaustion, depersonalization, and loss of personal efficacy, has skyrocketed among healthcare providers—namely nurses and doctors. The negative consequences are far-reaching—impacting personal wellbeing and relationships, quality of patient care, and costs to the health system. Some employers are exploring innovative ways to leverage nature to mitigate burnout and enhance wellness. In Portland, OR, a hospital created a micro-green space at the threshold of an intensive care unit, encouraging staff to use the space during their workday. A study that looked at symptoms of burnout in nurses who took their breaks outdoors versus indoors found that the former had fewer symptoms of emotional exhaustion and depersonalization.</p>
+        </div>
+        <figure data-reveal="" style="margin: clamp(32px, 4vw, 52px) 0 0; padding: clamp(24px, 3vw, 40px); background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 16px; display: flex; flex-direction: column; gap: clamp(18px, 2vw, 26px);">
+          <img src="./assets/report/ill-hospital.png" alt="Illustration: a small green space with trees and a bench at the foot of a hospital building" style="display: block; width: 100%; max-width: 620px; height: auto; margin: 0 auto;">
+          <figcaption style="border-top: 1px solid #e0d8c8; padding-top: 16px; font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.6; color: #6b5e51; max-width: 56ch;">A micro-green space at the threshold of an intensive care unit, for staff to use during the workday.</figcaption>
+        </figure>
+        <figure style="margin: clamp(28px, 3.4vw, 40px) 0 0; display: flex; flex-direction: column; gap: 12px;">
+          <div style="border-radius: 16px; overflow: hidden; height: clamp(240px, 30vw, 380px); background: #f5f1e8; border: 1px solid #e7e0d2;">
+            <image-slot id="hpn-legacy" shape="rect" fit="cover" src="./assets/report/legacy-emanuel.png" style="width:100%; height:100%;" placeholder="Drop the photo of staff on break in the garden at Legacy Emanuel"></image-slot>
+          </div>
+          <figcaption style="font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.5; color: #6b5e51; max-width: 60ch;">Staff enjoying a break in their outdoor garden space, a Sacred Place, at Legacy Emanuel Medical Center in Portland, OR.</figcaption>
+        </figure>
+
+        <div style="margin-top: clamp(34px, 4vw, 48px);">
+          <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a; padding-bottom: 12px;">The evidence — tap a finding for the study behind it</div>
+          <sc-for list="{{ evidenceMental }}" as="r" hint-placeholder-count="4">
+            <div style="border-top: 1px solid #e7e0d2;">
+              <button onClick="{{ r.toggle }}" style="width: 100%; display: flex; align-items: baseline; gap: clamp(16px, 2.4vw, 32px); background: transparent; border: none; padding: 20px 0; cursor: pointer; text-align: left; font-family: inherit;">
+                <span data-count="" style="flex: none; min-width: 132px; font-size: clamp(26px, 3vw, 38px); font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: #57a143;">{{ r.stat }}</span>
+                <span style="flex: 1; font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.4vw, 17px); line-height: 1.6; color: #3a3128;">{{ r.label }}</span>
+                <span style="flex: none; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9d877a;">{{ r.toggleLabel }}</span>
+              </button>
+              <sc-if value="{{ r.open }}" hint-placeholder-val="{{ false }}">
+                <div style="padding: 0 0 24px; display: flex; flex-direction: column; gap: 10px; max-width: 68ch; animation: ns-fade 240ms cubic-bezier(0.22,1,0.36,1) both;">
+                  <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3a3128; text-wrap: pretty;">{{ r.detail }}</p>
+                  <p style="margin: 0; font-family: 'Lora', Georgia, serif; font-size: 14px; line-height: 1.55; color: #6b5e51;">{{ r.source }}</p>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- PHYSICAL HEALTH -->
+      <section id="physical" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">Physical health</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">04</span>
+        </div>
+        <h3 style="font-family: 'Lora', Georgia, serif; font-size: clamp(21px, 2.4vw, 29px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: clamp(20px, 2.4vw, 30px) 0 0; color: #1f1a14;">Cardiovascular health</h3>
+        <div style="max-width: 68ch; margin-top: 18px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">Cardiovascular disease is the leading cause of death in the US and affects nearly half of all adults. Very recent research is pointing to nature as a potential population-based approach to reducing heart disease. Researchers in Miami, FL, investigated the relationship between greenness on the block people live and four types of cardiovascular disease (heart attacks, coronary heart disease, heart failure, and irregular heartbeat). People living on blocks with higher levels of greenness had significantly lower levels of all four types of heart disease. This study demonstrated the immediacy of nature in the place people often spend the most amount of time—their home.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">In Toronto, CA, researchers quantified the cardiovascular health benefit of living on a street with high-density tree canopy. In short, people who live on a street with 11 or more trees had significantly lower cardio-metabolic disease—including diabetes, hypertension, and heart attacks. The researchers report the effect is equivalent to an annual income increase of $20,000 or moving to a neighborhood with $20,000 higher median income. A study underway in Louisville, KY, is evaluating the impact of planting mature trees on the future prevention of heart disease. This randomized controlled trial—that highest level of scientific inquiry—will provide us with the most robust evidence of trees on health to date.</p>
+        </div>
+        <figure data-reveal="" style="margin: clamp(32px, 4vw, 52px) 0 0; padding: clamp(24px, 3vw, 40px); background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 16px; display: flex; flex-direction: column; gap: clamp(18px, 2vw, 26px);">
+          <div style="position: relative; width: 100%; max-width: 720px; margin: 0 auto; aspect-ratio: 684 / 262;">
+            <img src="./assets/report/fig-heart-disease-noarrows.png" alt="Illustration: blocks with less greenery show higher levels of heart disease; greener blocks show lower levels" style="display: block; width: 100%; height: 100%;">
+            <svg viewBox="0 0 684 262" fill="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible;">
+              <g data-arrow="" stroke="#6cc2ca" stroke-width="9" stroke-linecap="round" style="animation: ns-arrow-up 5200ms cubic-bezier(0.22,1,0.36,1) infinite;">
+                <path d="M51 143 V33"></path>
+                <path d="M15 85 L51 33 L87 85"></path>
+              </g>
+              <g data-arrow="" stroke="#6cc2ca" stroke-width="9" stroke-linecap="round" style="animation: ns-arrow-down 5200ms cubic-bezier(0.22,1,0.36,1) infinite;">
+                <path d="M613 37 V147"></path>
+                <path d="M577 95 L613 147 L650 95"></path>
+              </g>
+            </svg>
+          </div>
+          <figcaption style="border-top: 1px solid #e0d8c8; padding-top: 16px; font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.6; color: #6b5e51; max-width: 56ch;">From the report: greenness on the block where people live tracks with all four types of heart disease studied.</figcaption>
+        </figure>
+        <h3 style="font-family: 'Lora', Georgia, serif; font-size: clamp(21px, 2.4vw, 29px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: clamp(40px, 5vw, 64px) 0 0; color: #1f1a14;">Obstetrical outcomes</h3>
+        <div style="max-width: 68ch; margin-top: 18px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">While many of the benefits we've referenced so far apply directly to children, the fact is the benefits of nature exposure can begin well before a child takes its first breath.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Birth weight is an important early indicator of infant health. The harmful repercussions of low birth weight are broad, ranging from infant mortality to adult mental and physical illness. While there are many factors that affect birth weight, researchers have found that expectant mothers who live in areas with more tree canopy experience fewer "small for gestational age" births than those who live in more tree-barren environments.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Other studies too have explored the relationship between maternal exposure to nature and birth weight. A review article found that residential greenness within a 100-meter buffer was associated with higher birth weights. The authors also noted that the impact was more prevalent among the mothers who were less educated, suggesting again that nature may play a role in buffering the ill health effects of life-stress.</p>
+        </div>
+        <figure data-reveal="" style="margin: clamp(32px, 4vw, 52px) 0 0; padding: clamp(24px, 3vw, 40px); background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 16px; display: flex; flex-direction: column; gap: clamp(18px, 2vw, 26px);">
+          <div style="position: relative; width: 100%; max-width: 720px; margin: 0 auto; aspect-ratio: 764 / 248;">
+            <img src="./assets/report/fig-100-meters-nobird.png" alt="Illustration: green space within 100 meters results in higher birth weights" style="display: block; width: 100%; height: 100%;">
+            <img data-bird="" src="./assets/report/bird-sprite.png" alt="" aria-hidden="true" style="position: absolute; left: 54.45%; top: 44.35%; width: 4.71%; height: auto; animation: ns-bird-hop 5000ms cubic-bezier(0.33,0,0.67,1) infinite;">
+          </div>
+          <figcaption style="border-top: 1px solid #e0d8c8; padding-top: 16px; font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.6; color: #6b5e51; max-width: 56ch;">Residential greenness within a 100-meter buffer was associated with higher birth weights.</figcaption>
+          <img src="./assets/report/fig-birth-weight.png" alt="Illustration of parents, children and families walking" style="display: block; width: 100%; max-width: 720px; height: auto; margin: clamp(6px, 1vw, 14px) auto 0;">
+          <figcaption style="border-top: 1px solid #e0d8c8; padding-top: 16px; font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.6; color: #6b5e51; max-width: 56ch;">Effects of birth weight can last a lifetime.</figcaption>
+        </figure>
+        <div style="margin-top: clamp(34px, 4vw, 48px);">
+          <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a; padding-bottom: 12px;">The evidence — tap a finding for the study behind it</div>
+          <sc-for list="{{ evidencePhysical }}" as="r" hint-placeholder-count="3">
+            <div style="border-top: 1px solid #e7e0d2;">
+              <button onClick="{{ r.toggle }}" style="width: 100%; display: flex; align-items: baseline; gap: clamp(16px, 2.4vw, 32px); background: transparent; border: none; padding: 20px 0; cursor: pointer; text-align: left; font-family: inherit;">
+                <span data-count="" style="flex: none; min-width: 132px; font-size: clamp(26px, 3vw, 38px); font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: #57a143;">{{ r.stat }}</span>
+                <span style="flex: 1; font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.4vw, 17px); line-height: 1.6; color: #3a3128;">{{ r.label }}</span>
+                <span style="flex: none; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9d877a;">{{ r.toggleLabel }}</span>
+              </button>
+              <sc-if value="{{ r.open }}" hint-placeholder-val="{{ false }}">
+                <div style="padding: 0 0 24px; display: flex; flex-direction: column; gap: 10px; max-width: 68ch; animation: ns-fade 240ms cubic-bezier(0.22,1,0.36,1) both;">
+                  <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3a3128; text-wrap: pretty;">{{ r.detail }}</p>
+                  <p style="margin: 0; font-family: 'Lora', Georgia, serif; font-size: 14px; line-height: 1.55; color: #6b5e51;">{{ r.source }}</p>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- COMMUNITY HEALTH -->
+      <section id="community" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">Community health</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">05</span>
+        </div>
+        <h3 style="font-family: 'Lora', Georgia, serif; font-size: clamp(21px, 2.4vw, 29px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: clamp(20px, 2.4vw, 30px) 0 0; color: #1f1a14;">Social cohesion</h3>
+        <div style="max-width: 68ch; margin-top: 18px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">When we talk about community health, we commonly are referring to the health of a set of individuals grouped collectively based on shared geography. In recent years, there's been much talk of the growing fragmentation of society—the erosion of community connectedness, of social cohesion—and the subsequent negative impact on health.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">In fact, greater social cohesion—which has been defined as the existence of positive social relationships and a sense of belonging in one's neighborhood—is considered by many a critical component to a community's ability to achieve maximal health.</p>
+          <p style="margin: 18px 0 0; font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(18px, 1.8vw, 22px); line-height: 1.5; color: #77441d;">So where does nature enter the picture?</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">One means to foster social cohesion within a community is via shared spaces. Social scientists have studied the relationship between the presence of green space in particular and the amount of social contact among community residents. What we've learned is that less green space in people's living environment coincides with feelings of loneliness and a perceived shortage of social support. More green space has been linked to a greater sense of belonging and cooperation between neighborhoods. In fact, in the previously mentioned study of greening in Philadelphia, people living near newly-greened spaces reported going outside to socialize more with neighbors.</p>
+        </div>
+        <h3 style="font-family: 'Lora', Georgia, serif; font-size: clamp(21px, 2.4vw, 29px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin: clamp(40px, 5vw, 64px) 0 0; color: #1f1a14;">Crime &amp; perceptions of safety</h3>
+        <div style="max-width: 68ch; margin-top: 18px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">The health of a community and its members is impacted not only by sickness and disease, but also by crime.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">In the study referenced earlier in the report—involving the greening of vacant urban lots in Philadelphia—police-reported crime was analyzed to determine the impact on gun violence. Violent crime dropped in the vicinity of the treated lots up to 29 percent in the poorest neighborhoods—while residents living in proximity to these lots reported feeling much safer.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Vacant lot greening is a relatively low-cost intervention—with cities spending approximately $1.75 per square foot to green and an even lower cost to maintain. A separate cost evaluation of the greening intervention found that for every dollar spent on greening, the return on investment to the taxpayer and to society for the prevention of firearm violence was $26 and $333 respectively.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Other research has indicated a link between low tree canopy and increased crime. Social scientists studied a vanishing tree canopy in Cincinnati, OH—the result of an infestation of invasive tree pests—and observed an association with increased theft, breaking and entering, property crime incidents and elevated numbers of simple assaults, felony assaults, and violent crimes after trees were destroyed.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">And in yet another study alluding to the role nature may play in helping tamp gun violence, Dr. South was part of a team of fellow researchers who documented an association between tree canopy and lower levels of adolescent gun assault in Philadelphia, PA.</p>
+        </div>
+        <figure data-reveal="" style="margin: clamp(32px, 4vw, 52px) 0 0; padding: clamp(24px, 3vw, 40px); background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 16px; display: flex; flex-direction: column; gap: clamp(18px, 2vw, 26px);">
+          <img src="./assets/report/fig-tree-canopy-full.png" alt="Illustration: tree canopies may lower levels of gun assault by urban youth" style="display: block; width: 100%; max-width: 760px; height: auto; margin: 0 auto;">
+          <figcaption style="border-top: 1px solid #e0d8c8; padding-top: 16px; font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.6; color: #6b5e51; max-width: 56ch;">Tree canopy tracked with lower levels of adolescent gun assault in Philadelphia.</figcaption>
+          <img src="./assets/report/ill-violence.png" alt="Illustration: a park beside a row of houses, shaded from red to blue as violence falls" style="display: block; width: 100%; max-width: 760px; height: auto; margin: clamp(6px, 1vw, 14px) auto 0;">
+          <figcaption style="border-top: 1px solid #e0d8c8; padding-top: 16px; font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.6; color: #6b5e51; max-width: 56ch;">Violent crime dropped up to 29 percent near greened vacant lots in the poorest neighborhoods.</figcaption>
+        </figure>
+        <div style="margin-top: clamp(34px, 4vw, 48px);">
+          <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a; padding-bottom: 12px;">The evidence — tap a finding for the study behind it</div>
+          <sc-for list="{{ evidenceCommunity }}" as="r" hint-placeholder-count="4">
+            <div style="border-top: 1px solid #e7e0d2;">
+              <button onClick="{{ r.toggle }}" style="width: 100%; display: flex; align-items: baseline; gap: clamp(16px, 2.4vw, 32px); background: transparent; border: none; padding: 20px 0; cursor: pointer; text-align: left; font-family: inherit;">
+                <span data-count="" style="flex: none; min-width: 132px; font-size: clamp(26px, 3vw, 38px); font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: #57a143;">{{ r.stat }}</span>
+                <span style="flex: 1; font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.4vw, 17px); line-height: 1.6; color: #3a3128;">{{ r.label }}</span>
+                <span style="flex: none; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9d877a;">{{ r.toggleLabel }}</span>
+              </button>
+              <sc-if value="{{ r.open }}" hint-placeholder-val="{{ false }}">
+                <div style="padding: 0 0 24px; display: flex; flex-direction: column; gap: 10px; max-width: 68ch; animation: ns-fade 240ms cubic-bezier(0.22,1,0.36,1) both;">
+                  <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3a3128; text-wrap: pretty;">{{ r.detail }}</p>
+                  <p style="margin: 0; font-family: 'Lora', Georgia, serif; font-size: 14px; line-height: 1.55; color: #6b5e51;">{{ r.source }}</p>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- INEQUITY -->
+      <section id="inequity" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">Inequity in access to green space</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">06</span>
+        </div>
+        <div style="max-width: 68ch; margin-top: clamp(20px, 2.4vw, 30px); font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">While nature is essential to every community, access is not equal. And oftentimes, the neighborhoods that arguably need nature most—those grappling with the realities of entrenched poverty and legacies of segregation—are the ones with less access to parks and tree canopy. The implications are far-reaching, including on air quality and climate; a recent analysis showed that summer temperatures could vary by as much as 20 degrees across various parts of the same city, depending on how many trees were in a neighborhood.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Important to note is that "access" to green spaces doesn't always equate to the presence of green space, particularly in high-crime neighborhoods. A team of researchers studying nationwide disparities in access to parks and green spaces looked at how social access barriers—issues like safety, traffic, and walkability—could often influence actual use of the spaces.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">And still, other studies have indicated that income-related inequality in health may be less pronounced among populations exposed to greener environments.</p>
+        </div>
+        <div style="margin-top: clamp(28px, 3.4vw, 40px); background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 16px; padding: clamp(22px, 2.8vw, 34px); display: flex; align-items: center; gap: clamp(20px, 3vw, 40px); flex-wrap: wrap;">
+          <div data-count="" style="font-size: clamp(40px, 5.2vw, 64px); font-weight: 800; line-height: 1; letter-spacing: -0.035em; color: #77441d;">20°</div>
+          <p style="margin: 0; font-size: clamp(16px, 1.5vw, 18px); line-height: 1.6; color: #3a3128; max-width: 40ch; font-weight: 600;">of variation in summer temperature across parts of the same city, depending on how many trees are in a neighborhood.</p>
+        </div>
+      </section>
+
+      <!-- DOSE -->
+      <section id="dose" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">Dose</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">07</span>
+        </div>
+        <h2 style="font-family: 'Lora', Georgia, serif; font-size: clamp(28px, 3.6vw, 46px); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin: clamp(20px, 2.4vw, 30px) 0 0; color: #1f1a14; max-width: 22ch; text-wrap: balance;">How much nature, and how often?</h2>
+        <div style="max-width: 68ch; margin-top: 20px; font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">With our deepening understanding of nature's therapeutic value, researchers across the globe are digging deeper to put a finer point on the question: How often and for how long does one need to spend time in nature to reap the health benefits? The short reply is that we don't yet have a certain answer and need more research before definitive guidelines are established. This said, several recent studies are suggesting an early answer.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Two separate papers published within the past year both suggest roughly the same amount of time per visit—just 20-30 minutes of exposure—for measurable benefits to manifest. One of these studies found that 30 or more minutes spent in an outdoor green space could reduce the population prevalence of depression and high blood pressure by up to 7 percent and 9 percent respectively.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">The second, a small US-based study involving urban dwellers, reported that people who spent just 20 minutes in an outdoor place where they felt connected to nature experienced a drop in stress hormones.</p>
+          <p style="margin: 18px 0 0; text-wrap: pretty;">Another study looked at the cumulative time spent in nature per week and found that 120 minutes a week was a threshold to convey health and wellbeing benefits. This could be over one visit or multiple visits.</p>
+        </div>
+        <figure data-reveal="" style="margin: clamp(32px, 4vw, 52px) 0 0; padding: clamp(24px, 3vw, 40px); background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 16px; display: flex; flex-direction: column; gap: clamp(18px, 2vw, 26px);">
+          <img src="./assets/report/fig-20-30-minutes.png" alt="Illustration: 20-30 minutes of exposure to reap benefits" style="display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto;">
+          <figcaption style="border-top: 1px solid #e0d8c8; padding-top: 16px; font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.6; color: #6b5e51; max-width: 56ch;">Two papers converge on the same figure: 20–30 minutes per visit.</figcaption>
+        </figure>
+        <div style="margin-top: clamp(34px, 4vw, 48px);">
+          <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a; padding-bottom: 12px;">The evidence — tap a finding for the study behind it</div>
+          <sc-for list="{{ evidenceDose }}" as="r" hint-placeholder-count="3">
+            <div style="border-top: 1px solid #e7e0d2;">
+              <button onClick="{{ r.toggle }}" style="width: 100%; display: flex; align-items: baseline; gap: clamp(16px, 2.4vw, 32px); background: transparent; border: none; padding: 20px 0; cursor: pointer; text-align: left; font-family: inherit;">
+                <span data-count="" style="flex: none; min-width: 132px; font-size: clamp(26px, 3vw, 38px); font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: #57a143;">{{ r.stat }}</span>
+                <span style="flex: 1; font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.4vw, 17px); line-height: 1.6; color: #3a3128;">{{ r.label }}</span>
+                <span style="flex: none; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9d877a;">{{ r.toggleLabel }}</span>
+              </button>
+              <sc-if value="{{ r.open }}" hint-placeholder-val="{{ false }}">
+                <div style="padding: 0 0 24px; display: flex; flex-direction: column; gap: 10px; max-width: 68ch; animation: ns-fade 240ms cubic-bezier(0.22,1,0.36,1) both;">
+                  <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3a3128; text-wrap: pretty;">{{ r.detail }}</p>
+                  <p style="margin: 0; font-family: 'Lora', Georgia, serif; font-size: 14px; line-height: 1.55; color: #6b5e51;">{{ r.source }}</p>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- FORWARD -->
+      <section id="forward" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">Where do we go from here?</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">08</span>
+        </div>
+        <div style="max-width: 68ch; margin-top: clamp(20px, 2.4vw, 30px); font-family: 'Lora', Georgia, serif; font-size: clamp(16.5px, 1.5vw, 18px); line-height: 1.8; color: #3a3128;">
+          <p style="margin: 0; text-wrap: pretty;">While physicians and researchers continue the quest to more deeply understand questions of dose and mechanisms, ample evidence already indicates that nature is essential to our wellbeing. By building safe and accessible green space into our neighborhoods, we have the potential to significantly improve the lives of people and communities. But we need to act.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: clamp(18px, 2.2vw, 28px); margin-top: clamp(28px, 3.4vw, 40px);">
+          <sc-for list="{{ actors }}" as="a" hint-placeholder-count="4">
+            <div style="background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 16px; padding: clamp(20px, 2.2vw, 26px); box-shadow: 0 1px 2px rgba(31,26,20,0.05);">
+              <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #57a143;">{{ a.who }}</div>
+              <p style="margin: 12px 0 0; font-size: 15.5px; line-height: 1.65; color: #3a3128; text-wrap: pretty;">{{ a.what }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- PROGRAMS -->
+      <section id="programs" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">Innovative programs</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">09</span>
+        </div>
+        <figure data-reveal="" style="margin: clamp(32px, 4vw, 52px) 0 0; padding: clamp(24px, 3vw, 40px); background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 16px; display: flex; flex-direction: column; gap: clamp(18px, 2vw, 26px);">
+          <img src="./assets/report/ill-prescription.png" alt="Illustration: a family in a park beside a prescription slip" style="display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto;">
+          <figcaption style="border-top: 1px solid #e0d8c8; padding-top: 16px; font-family: 'Lora', Georgia, serif; font-size: 14.5px; line-height: 1.6; color: #6b5e51; max-width: 56ch;">Park prescriptions: clinicians writing time outdoors into a patient’s care plan.</figcaption>
+        </figure>
+        <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.2vw, 26px); margin-top: clamp(24px, 3vw, 36px);">
+          <sc-for list="{{ programs }}" as="p" hint-placeholder-count="4">
+            <div style="background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 16px; padding: clamp(22px, 2.8vw, 34px);">
+              <h3 style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; margin: 0; color: #1f1a14; max-width: 30ch;">{{ p.name }}</h3>
+              <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 16px; max-width: 72ch;">
+                <div>
+                  <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a;">What is it?</div>
+                  <p style="margin: 7px 0 0; font-size: 15.5px; line-height: 1.7; color: #3a3128; text-wrap: pretty;">{{ p.what }}</p>
+                </div>
+                <div>
+                  <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a;">How does it work?</div>
+                  <p style="margin: 7px 0 0; font-size: 15.5px; line-height: 1.7; color: #3a3128; text-wrap: pretty;">{{ p.how }}</p>
+                </div>
+              </div>
+              <a href="{{ p.href }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-size: 13.5px; font-weight: 700; color: #57a143;" style-hover="color:#46852f;">{{ p.hrefLabel }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- REFERENCES -->
+      <sc-if value="{{ showReferences }}" hint-placeholder-val="{{ true }}">
+      <section id="references" data-reveal="" style="scroll-margin-top: 96px; margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 3px double #b9a894; padding-top: 13px;">
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #77441d;">References</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 26px; line-height: 1; color: #c2b6a4;">36 sources</span>
+        </div>
+        <ol style="list-style: none; counter-reset: ref; padding: 0; margin: clamp(22px, 2.6vw, 32px) 0 0; display: flex; flex-direction: column; gap: 14px;">
+          <sc-for list="{{ references }}" as="ref" hint-placeholder-count="36">
+            <li style="display: flex; gap: 16px; align-items: baseline;">
+              <span style="flex: none; width: 26px; font-size: 12px; font-weight: 800; color: #9d877a; text-align: right;">{{ ref.n }}</span>
+              <span style="font-size: 14px; line-height: 1.6; color: #5a4d3f; max-width: 76ch;">{{ ref.text }}</span>
+            </li>
+          </sc-for>
+        </ol>
+      </section>
+      </sc-if>
+
+      <!-- ABOUT + CTA -->
+      <section data-reveal="" style="margin-top: clamp(72px, 9vw, 128px);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(24px, 3vw, 44px);">
+          <div>
+            <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a;">About</div>
+            <h3 style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 0; color: #1f1a14;">Nature Sacred</h3>
+            <p style="margin: 12px 0 0; font-size: 15.5px; line-height: 1.7; color: #3a3128; text-wrap: pretty;">Nature Sacred exists to inspire, inform and guide communities in the creation of public green spaces—called Sacred Places—designed to improve mental health, unify communities and engender peace. For over 25 years, Nature Sacred has partnered with over 130 communities across the country to infuse nearby nature into places where healing is often needed most: distressed urban neighborhoods, schools, hospitals, prisons and more. Through a collaborative, community-led process and an evidence-based design model, each Sacred Place is bonded together by a common goal: to reconnect people with nature in ways that foster mindful reflection, restore mental health and strengthen communities. As each community imagines its own space, the design becomes a unique reflection of the community's culture, story and place—making it inherently sacred to them.</p>
+          </div>
+          <div>
+            <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #9d877a;">About</div>
+            <h3 style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 0; color: #1f1a14;">Pennsylvania Horticultural Society</h3>
+            <p style="margin: 12px 0 0; font-size: 15.5px; line-height: 1.7; color: #3a3128; text-wrap: pretty;">The Pennsylvania Horticultural Society, an internationally recognized nonprofit organization founded in 1827, plays an essential role in the vitality of the Philadelphia region by creating healthier living environments, increasing access to fresh food, growing economic opportunity, and building deeper social connections between people. PHS delivers this impact through: comprehensive greening and engagement initiatives in more than 250 neighborhoods; an expansive network of public gardens and landscapes; year-round learning experiences; and the nation's signature gardening event, the Philadelphia Flower Show.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- CLOSING CTA -->
+  <section data-reveal="" style="max-width: 1360px; margin: clamp(88px, 11vw, 160px) auto 0; padding: 0 32px;">
+    <h2 style="font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 4.4vw, 56px); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; color: #1f1a14; margin: 0; max-width: 20ch; text-wrap: balance;">Talk with us about nature in your city.</h2>
+    <p style="font-size: clamp(16px, 1.5vw, 18px); line-height: 1.7; color: #3a3128; margin: 18px 0 0; max-width: 52ch; text-wrap: pretty;">We work with cities, health systems, funders and community groups putting this evidence to use. Tell us what you're planning.</p>
+    <div style="margin-top: clamp(24px, 3vw, 36px); display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+      <a href="#" style="background: #57a143; color: #fff; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700;" style-hover="background:#46852f;">Contact Nature Sacred</a>
+      <a href="./final_Why Sacred Places.dc.html" style="background: transparent; color: #1f1a14; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700; border: 1px solid #1f1a14;" style-hover="background:#1f1a14; color:#fdfbf6;">Why Sacred Places?</a>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <div style="overflow-x: clip;">
+  <footer style="position: relative; z-index: 10; width: 132%; margin-left: -16%; background: #926948; margin-top: clamp(140px, 16vw, 210px); padding: clamp(24px, 3vw, 40px) 32px 44px;">
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; bottom: 100%; width: 100%; height: min(9vw, 104px); display: block;"><path d="M0,260 L0,168 C0,84 176,30 468,14 C560,9 640,7 720,7 C800,7 880,9 972,14 C1264,30 1440,84 1440,168 L1440,260 Z" fill="#926948"></path></svg>
+    <div style="max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 40px 48px;">
+      <div style="grid-column: span 1; min-width: 240px;">
+        <img src="./assets/logo-30-wordmark-white-sm.png" alt="Nature Sacred" style="height: 48px; width: auto;">
+        <p style="font-size: 14px; color: rgba(253,251,246,0.9); line-height: 1.7; margin: 18px 0 0; max-width: 30ch;">105 Annapolis Street, Suite D<br>Annapolis, MD 21401<br>410.268.1376</p>
+        <p style="font-size: 12px; color: #fdfbf6; margin: 16px 0 0; line-height: 1.5;">A 501(c)(3) private operating foundation. Formerly the TKF Foundation.</p>
+      </div>
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+        <div>
+          <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a; font-weight: 800; margin-bottom: 16px;">{{ col.title }}</div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ col.items }}" as="item" hint-placeholder-count="4">
+              <li><a href="#" style="font-size: 14px; color: #fdfbf6;" style-hover="color:#ffffff;">{{ item }}</a></li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+    <div style="max-width: 760px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid rgba(253,251,246,0.2); display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: #fdfbf6;">© 1996–2026 Nature Sacred. All rights reserved.</span>
+      <span style="font-size: 12px; color: #fdfbf6;">Privacy · Terms · Contact</span>
+    </div>
+  </footer>
+  </div>
+
+  <!-- MENU -->
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 100; background: #fdfbf6; overflow-y: auto; animation: ns-fade 240ms cubic-bezier(0.22,1,0.36,1) both;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; gap: 24px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred" style="height: 46px; width: auto;">
+        <button onClick="{{ closeMenu }}" aria-label="Close menu" style="margin-left: auto; display: flex; align-items: center; gap: 10px; background: transparent; border: 1px solid #e7e0d2; border-radius: 999px; padding: 9px 16px; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1f1a14;" style-hover="background:#efe9dc;">
+          <span style="position: relative; width: 16px; height: 16px; display: inline-block;">
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(45deg);"></span>
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(-45deg);"></span>
+          </span>
+          Close
+        </button>
+      </div>
+      <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(24px, 5vw, 64px) 32px 80px;">
+        <nav style="display: flex; flex-direction: column; gap: clamp(6px, 1vw, 12px);">
+          <sc-for list="{{ menu }}" as="group" hint-placeholder-count="6">
+            <a href="{{ group.href }}" style="font-size: clamp(30px, 5vw, 54px); font-weight: 700; letter-spacing: -0.02em; color: #1f1a14; line-height: 1.12;" style-hover="color:#57a143;">{{ group.title }}</a>
+          </sc-for>
+        </nav>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showReferences&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page behavior&quot;},&quot;animateNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page behavior&quot;}}">
+const SNAPSHOT = [
+  { topic: 'Mental health', stat: '18-23%', line: 'Pregnant women with the most green space near home were less likely to experience depressive symptoms than those with the least.', href: '#mental', cta: 'General mental health' },
+  { topic: 'Physical health', stat: '11 trees', line: 'People living on a street with 11 or more trees had significantly lower cardio-metabolic disease.', href: '#physical', cta: 'Physical health' },
+  { topic: 'Community health', stat: 'Up to 29%', line: 'Violent crime dropped in the vicinity of greened vacant lots in the poorest Philadelphia neighborhoods.', href: '#community', cta: 'Community health' },
+  { topic: 'Access', stat: '20°', line: 'Summer temperatures could vary by as much as this across parts of the same city, depending on how many trees were in a neighborhood.', href: '#inequity', cta: 'Inequity in access' },
+  { topic: 'Dose', stat: '20-30 min', line: 'Two separate papers suggest roughly the same amount of time per visit for measurable benefits.', href: '#dose', cta: 'How much nature?' },
+  { topic: 'Return', stat: '$26', line: 'Returned to taxpayers for every dollar spent on greening, through prevented firearm violence.', href: '#community', cta: 'Community health' },
+];
+
+const SECTIONS = [
+  { id: 'snapshot', label: "What's inside" },
+  { id: 'letter', label: 'Dear Reader' },
+  { id: 'nature', label: 'What is nature?' },
+  { id: 'connection', label: 'The nature-health connection' },
+  { id: 'mental', label: 'General mental health' },
+  { id: 'physical', label: 'Physical health' },
+  { id: 'community', label: 'Community health' },
+  { id: 'inequity', label: 'Inequity in access' },
+  { id: 'dose', label: 'How much nature?' },
+  { id: 'forward', label: 'Where do we go from here?' },
+  { id: 'programs', label: 'Innovative programs' },
+  { id: 'references', label: 'References' },
+];
+
+// Headline stat first, the study behind it on click.
+const EVIDENCE = {
+  mental: [
+    { stat: '900,000', label: 'adults in Denmark: those who grew up with less nearby nature had a higher risk of psychiatric disorders as adults', detail: 'A Danish study evaluated the amount of nature near the childhood homes of more than 900,000 adults. Compared with those who grew up with high levels of nearby nature, those with less green space were at higher risk of developing mood disorders, substance abuse and schizophrenia — in rural, suburban and urban areas alike.', source: 'Engemann, Kristine, et al. PNAS, vol. 116, no. 11, 2019, pp. 5188–5193. Reference 5.' },
+    { stat: '18-23%', label: 'less likely to experience depressive symptoms, among pregnant women with the most green space near home', detail: 'A United Kingdom-based study of over 7,500 pregnant women found that those with the most green space near their homes were 18–23 percent less likely to experience depressive symptoms than those living in areas with the least amount of green.', source: 'McEachan, R R C, et al. Journal of Epidemiology and Community Health, vol. 70, no. 3, 2015, pp. 253–259. Reference 7.' },
+    { stat: '30 min', label: 'or more spent in a park was linked to significantly fewer cases of depression', detail: 'Scientists in Australia demonstrated that people who visited a park for 30 minutes or more had significantly fewer cases of depression.', source: 'Shanahan, Danielle F., et al. Scientific Reports, vol. 6, no. 1, 2016. Reference 8.' },
+    { stat: 'RCT', label: 'greening vacant lots in Philadelphia improved mental health — the highest level of scientific evidence', detail: 'Dr. South and colleagues ran a randomized controlled trial planting new micro-green spaces in previously vacant urban lots. People living near the new green spaces felt less depressed and had overall improvements in mental health; those near untreated lots had none. Effects were strongest below the poverty line.', source: 'South, Eugenia C., et al. JAMA Network Open, vol. 1, no. 3, 2018. Reference 6.' },
+  ],
+  physical: [
+    { stat: '11', label: 'or more trees on your street: significantly lower cardio-metabolic disease', detail: 'In Toronto, researchers quantified the cardiovascular benefit of living on a street with high-density tree canopy. People on streets with 11 or more trees had significantly lower cardio-metabolic disease, including diabetes, hypertension and heart attacks — an effect the researchers report is equivalent to an annual income increase of $20,000.', source: 'Kardan, Omid, et al. Scientific Reports, vol. 5, no. 1, 2015. Reference 21.' },
+    { stat: '4 of 4', label: 'types of heart disease were lower on blocks with higher greenness in Miami', detail: 'Researchers in Miami investigated greenness on the block where people live against four types of cardiovascular disease — heart attacks, coronary heart disease, heart failure and irregular heartbeat. People on blocks with higher greenness had significantly lower levels of all four.', source: 'Wang K, Lombard J, Rundek T, et al. J Am Heart Assoc. 2019 Mar 19;8(6):e010258. Reference 20.' },
+    { stat: '100 m', label: 'of residential greenness around the home was associated with higher birth weights', detail: 'A review article found that residential greenness within a 100-meter buffer was associated with higher birth weights, with a more prevalent impact among mothers who were less educated — suggesting nature may buffer the ill health effects of life stress.', source: 'Dzhambov, A. M., Dimitrova, D. D., & Dimitrakova, E. D. Urban Forestry & Urban Greening, 13(4), 2014, 621–629. Reference 24.' },
+  ],
+  community: [
+    { stat: '29%', label: 'drop in violent crime near greened vacant lots in the poorest neighborhoods', detail: 'Police-reported crime around the greening of vacant urban lots in Philadelphia was analyzed for impact on gun violence. Violent crime dropped in the vicinity of the treated lots by up to 29 percent in the poorest neighborhoods, and nearby residents reported feeling much safer.', source: 'Branas, Charles C., et al. PNAS, vol. 115, no. 12, 2018, pp. 2946–2951. Reference 27.' },
+    { stat: '$1.75', label: 'per square foot: the approximate cost for a city to green a vacant lot', detail: 'Vacant lot greening is a relatively low-cost intervention, with cities spending approximately $1.75 per square foot to green and an even lower cost to maintain.', source: 'Branas, Charles C., et al. American Journal of Public Health, vol. 106, no. 12, 2016, pp. 2158–2164. Reference 28.' },
+    { stat: '$26 / $333', label: 'returned to taxpayers and to society for every dollar spent on greening, through prevented firearm violence', detail: 'A cost evaluation of the greening intervention found that for every dollar spent, the return on investment to the taxpayer was $26 and to society $333, for the prevention of firearm violence.', source: 'Branas, Charles C., et al. American Journal of Public Health, vol. 106, no. 12, 2016, pp. 2158–2164. Reference 28.' },
+    { stat: 'Canopy', label: 'loss in Cincinnati tracked with increased theft, property crime and assaults', detail: 'Social scientists studied a vanishing tree canopy in Cincinnati, OH — the result of an infestation of invasive tree pests — and observed an association with increased theft, breaking and entering, property crime incidents, and elevated numbers of simple assaults, felony assaults and violent crimes after trees were destroyed.', source: 'Kondo, Michelle C., et al. Landscape and Urban Planning, vol. 157, 2017, pp. 193–199. Reference 29.' },
+  ],
+  dose: [
+    { stat: '20-30', label: 'minutes of exposure per visit for measurable benefits to manifest', detail: 'Two separate papers published within a year of the report both suggest roughly the same amount of time per visit — just 20–30 minutes of exposure — for measurable benefits to manifest.', source: 'Shanahan, Danielle F., et al. Scientific Reports, vol. 6, no. 1, 2016; Hunter, Marycarol R., et al. Frontiers in Psychology, vol. 10, 2019. References 31 and 32.' },
+    { stat: '7% / 9%', label: 'possible reduction in population prevalence of depression and high blood pressure, at 30+ minutes', detail: 'One study found that 30 or more minutes spent in an outdoor green space could reduce the population prevalence of depression and high blood pressure by up to 7 percent and 9 percent respectively.', source: 'Shanahan, Danielle F., et al. Scientific Reports, vol. 6, no. 1, 2016. Reference 31.' },
+    { stat: '120', label: 'minutes a week was the threshold for health and wellbeing benefits — over one visit or several', detail: 'Another study looked at cumulative time spent in nature per week and found that 120 minutes a week was a threshold to convey health and wellbeing benefits. This could be over one visit or multiple visits.', source: 'White, Mathew P., et al. Scientific Reports, vol. 9, no. 1, 2019. Reference 33.' },
+  ],
+};
+
+const ACTORS = [
+  { who: 'Community members', what: 'Can identify areas—like a vacant lot—that can be transformed with nature, drawing their neighbors into a planning process and beginning the initiative to add a green space near their homes. A number of resources exist for how to get started, including many at naturesacred.org.' },
+  { who: 'City governments', what: 'Can act in multiple ways: by supporting lot conversion programs; by making investments in community green spaces; driving a cross-sector collaboration involving city public health officials, parks and recreation departments, universities, community groups, and private entities.' },
+  { who: 'Health systems', what: 'Can make targeted investments into green space around hospitals to improve the health of those they serve.' },
+  { who: 'Researchers', what: 'Can continue to grow the evidence base needed to prove nature is a health investment worthy of our time and resources.' },
+];
+
+const PROGRAMS = [
+  {
+    name: "The Pennsylvania Horticultural Society's Philadelphia LandCare Program",
+    what: "A Philadelphia-based program that has gained national recognition for its strategic approach to neighborhood redevelopment by taking aim at the city's many vacant lots—and converting them to clean, green spaces with productive use.",
+    how: 'The PHS LandCare Program encompasses installation and maintenance, and has revitalized more than 12,000 parcels covering 16 million square feet of vacant land in Philadelphia neighborhoods. These parcels are strategically chosen for their public safety issues; proximity to walking routes to schools, parks, recreation centers, and commercial corridors; and lack of open space and green amenities. Eighteen community organizations and 15 local for-profit landscaping companies collaborate with the program, hiring local residents and volunteers to perform the landscape maintenance work in the neighborhoods where they live.',
+    href: 'https://phsonline.org/programs/landcare-program', hrefLabel: 'phsonline.org',
+  },
+  {
+    name: 'Nature Sacred Network',
+    what: 'A living network of healing green spaces, occurring primarily in urban settings, designed to improve mental health, unify communities, and engender peace.',
+    how: 'Members of the network collaborate and share ideas to help their Sacred Places thrive—from problem solving and solution sharing to ideating ways to keep the community connected, involved—in the space.',
+    href: 'https://naturesacred.org', hrefLabel: 'naturesacred.org',
+  },
+  {
+    name: 'Nature in Cities 10-Minute Walk Challenge',
+    what: 'A campaign—spearheaded by the Trust for Public Lands, the National Recreation and Park Association and Urban Land Institute—that has as its goal to see that every person in every city in America has a great park within a 10-minute walk by 2050.',
+    how: 'By urging mayors to sign on to the challenge, to publicly commit to achieving the 10-minute-walk standard for every resident in their cities. The campaign is targeting change in three primary areas: planning, funding, and policies. Examples include city bond measures; zoning changes intended to encourage park development; park master plans focused on access and quality; and the expansion of "joint use" agreements that open school playgrounds, tracks, and gyms for public use after hours.',
+    href: 'https://10minutewalk.org', hrefLabel: '10minutewalk.org',
+  },
+  {
+    name: 'Park Rx America',
+    what: 'A non-profit organization that is working to decrease the burden of chronic disease, increase health and happiness, and foster environmental stewardship by prescribing nature, like other Park Rx movement initiatives, during the routine delivery of healthcare by a diverse group of healthcare professionals.',
+    how: 'Park Rx America has created a growing database of close to 10,000 parks and green spaces that physicians can prescribe, integrating a searchable park formula with Electronic Health Records, making it easier for healthcare providers to find suitable parks for their patients. Other resources, including research on the specific health benefits of nature, are also provided to physicians.',
+    href: 'https://parkrxamerica.org', hrefLabel: 'parkrxamerica.org',
+  },
+];
+
+const REFERENCES = [
+  'Measuring America: Our Changing Landscape, US Census Bureau, Dec. 8, 2016.',
+  'Beyer KM, Kaltenbach A, Szabo A, Bogar S, Nieto FJ, Malecki KM. Exposure to neighborhood green space and mental health: evidence from the survey of the health of Wisconsin. Int. J. Environ. Res. Public Health 2014, 11(3), 3453-3472.',
+  'Vries, Sjerp De, et al. "Streetscape Greenery and Health: Stress, Social Cohesion and Physical Activity as Mediators." Social Science & Medicine, vol. 94, 2013, pp. 26–33.',
+  'Hartig, Terry, et al. Annual Review of Public Health 2014 35:1, 207-228.',
+  'Engemann, Kristine, et al. "Residential Green Space in Childhood Is Associated with Lower Risk of Psychiatric Disorders from Adolescence into Adulthood." PNAS, vol. 116, no. 11, 2019, pp. 5188–5193.',
+  'South, Eugenia C., et al. "Effect of Greening Vacant Land on Mental Health of Community-Dwelling Adults." JAMA Network Open, vol. 1, no. 3, 2018.',
+  'McEachan, R R C, et al. "The Association between Green Space and Depressive Symptoms in Pregnant Women: Moderating Roles of Socioeconomic Status and Physical Activity." Journal of Epidemiology and Community Health, vol. 70, no. 3, 2015, pp. 253–259.',
+  'Shanahan, Danielle F., et al. "Health Benefits from Nature Experiences Depend on Dose." Scientific Reports, vol. 6, no. 1, 2016.',
+  'Clay, R. A. (2011, January). Stressed in America. Monitor on Psychology, 42(1).',
+  'South, Eugenia C., et al. "Neighborhood Blight, Stress, and Health: A Walking Trial of Urban Greening and Ambulatory Heart Rate." American Journal of Public Health, vol. 105, no. 5, 2015, pp. 909–913.',
+  'Kondo, Michelle C., et al. "Does Spending Time Outdoors Reduce Stress? A Review of Real-Time Stress Response to Outdoor Environments." Health & Place, vol. 51, 2018, pp. 136–150.',
+  'Razani N, Morshed S, Kohn MA, Wells NM, Thompson D, Alqassari M, Agodi A, Rutherford GW. Effect of park prescriptions with and without group visits to parks on stress reduction in low-income parents: SHINE randomized trial. PLoS One. 2018 Feb 15;13(2):e0192921.',
+  'Marcora, Samuele M., et al. "Mental Fatigue Impairs Physical Performance in Humans." Journal of Applied Physiology, vol. 106, no. 3, 2009, pp. 857–864.',
+  'Kuo, Frances E., and William C. Sullivan. "Aggression and Violence in the Inner City." Environment and Behavior, vol. 33, no. 4, 2001, pp. 543–571.',
+  'Bratman, Gregory N., et al. "Nature Experience Reduces Rumination and Subgenual Prefrontal Cortex Activation." PNAS, vol. 112, no. 28, 2015, pp. 8567–8572.',
+  'Han, Shasha, et al. "Estimating the Attributable Cost of Physician Burnout in the United States." Annals of Internal Medicine, vol. 170, no. 11, 2019, p. 784.',
+  'American Medical Association. Your Family Feels the Fallout of Physician Burnout Too, 2018 Aug.',
+  'Cordoza M, Ulrich RS, Manulik BJ, Gardiner SK, Fitzpatrick PS, Hazen TM, Mirka A, Perkins RS. Impact of Nurses Taking Daily Work Breaks in a Hospital Garden on Burnout. Am J Crit Care. 2018 Nov;27(6):508-512.',
+  'Benjamin, Emelia J., et al. "Heart Disease and Stroke Statistics—2019 Update: A Report From the American Heart Association." Circulation, vol. 139, no. 10, 2019.',
+  'Wang K, Lombard J, Rundek T, Dong C, Gutierrez CM, Byrne MM, Toro M, Nardi MI, Kardys J, Yi L, Szapocznik J, Brown SC. Relationship of Neighborhood Greenness to Heart Disease in 249,405 US Medicare Beneficiaries. J Am Heart Assoc. 2019 Mar 19;8(6):e010258.',
+  'Kardan, Omid, et al. "Neighborhood Green space and Health in a Large Urban Center." Scientific Reports, vol. 5, no. 1, 2015.',
+  'Green Heart Louisville, louisville.edu/greenheart.',
+  'Donovan, G. H., Michael, Y. L., Butry, D. T., Sullivan, A. D., & Chase, J. M. (2011). Urban trees and the risk of poor birth outcomes. Health & Place, 17(1), 390-393.',
+  'Dzhambov, A. M., Dimitrova, D. D., & Dimitrakova, E. D. (2014). Association between residential greenness and birth weight: Systematic review and meta-analysis. Urban Forestry & Urban Greening, 13(4), 621-629.',
+  'Bruhn, John. Group Effect. Springer, 2014.',
+  'Maas J, van Dillen SME, Verheij RA, Groenewegen PP. Social contacts as a possible mechanism behind the relation between green space and health. Health Place. 2009 Jun;15(2):586-595.',
+  'Branas, Charles C., et al. "Citywide Cluster Randomized Trial to Restore Blighted Vacant Land and Its Effects on Violence, Crime, and Fear." PNAS, vol. 115, no. 12, 2018, pp. 2946–2951.',
+  'Branas, Charles C., et al. "Urban Blight Remediation as a Cost-Beneficial Solution to Firearm Violence." American Journal of Public Health, vol. 106, no. 12, 2016, pp. 2158–2164.',
+  'Kondo, Michelle C., et al. "The Association between Urban Trees and Crime: Evidence from the Spread of the Emerald Ash Borer in Cincinnati." Landscape and Urban Planning, vol. 157, 2017, pp. 193–199.',
+  'Garvin EC, Cannuscio CC, Branas CC. Greening vacant lots to reduce violent crime: a randomised controlled trial. Inj Prev. 2013 Jun;19(3):198-203.',
+  'Shanahan, Danielle F., et al. "Health Benefits from Nature Experiences Depend on Dose." Scientific Reports, vol. 6, no. 1, 2016.',
+  'Hunter, Marycarol R., et al. "Urban Nature Experiences Reduce Stress in the Context of Daily Life Based on Salivary Biomarkers." Frontiers in Psychology, vol. 10, 2019.',
+  'White, Mathew P., et al. "Spending at Least 120 Minutes a Week in Nature Is Associated with Good Health and Wellbeing." Scientific Reports, vol. 9, no. 1, 2019.',
+  'Popovich, Nadja, and Christopher Flavelle. "Summer in the City Is Hot, but Some Neighborhoods Suffer More." The New York Times, 9 Aug. 2019.',
+  'Wen, Ming, Xingyou Zhang, Carmen Harris, James Holt, Janet Croft. "Spatial Disparities in the Distribution of Parks and Green Spaces in the USA." Annals of Behavioral Medicine, vol. 45, no. S1, 2013, pp. 18–27.',
+  'Mitchell, Richard, and Frank Popham. "Effect of Exposure to Natural Environment on Health Inequalities: an Observational Population Study." The Lancet, vol. 372, no. 9650, 2008, pp. 1655–1660.',
+];
+
+class Component extends DCLogic {
+  state = { menuOpen: false, open: {}, copied: false };
+
+  shareUrl() {
+    return (typeof location !== 'undefined' && location.href) ? location.href.split('#')[0] : 'https://naturesacred.org/report';
+  }
+
+  copyLink() {
+    const url = this.shareUrl();
+    const done = () => { this.setState({ copied: true }); clearTimeout(this._ct); this._ct = setTimeout(() => this.setState({ copied: false }), 2200); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, () => {});
+    else done();
+  }
+
+  rows(group) {
+    return EVIDENCE[group].map((r, i) => {
+      const key = group + i;
+      const open = !!this.state.open[key];
+      return {
+        ...r, key, open,
+        toggleLabel: open ? 'Close' : 'The study',
+        toggle: () => this.setState(s => ({ open: { ...s.open, [key]: !s.open[key] } })),
+      };
+    });
+  }
+
+  componentDidMount() {
+    this.forceUpdate();
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false }); };
+    document.addEventListener('keydown', this._onKey);
+    this._onScroll = () => this.syncNav();
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this.setupReveal();
+    this.setupCounters();
+    this.syncNav();
+  }
+  componentDidUpdate() { this.setupReveal(); this.setupCounters(); this.syncNav(); }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this._onKey);
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+    if (this._countIo) this._countIo.disconnect();
+  }
+
+  // side-nav highlight follows the section nearest the top of the viewport
+  syncNav() {
+    const links = document.querySelectorAll('[data-navlink]');
+    if (!links.length) return;
+    let activeId = null;
+    SECTIONS.forEach(s => {
+      const el = document.getElementById(s.id);
+      if (el && el.getBoundingClientRect().top <= 140) activeId = s.id;
+    });
+    if (!activeId) activeId = SECTIONS[0].id;
+    links.forEach(a => {
+      const on = a.getAttribute('data-navlink') === activeId;
+      a.style.color = on ? '#1f1a14' : '#6b5e51';
+      a.style.fontWeight = on ? '800' : '600';
+      a.style.borderLeftColor = on ? '#57a143' : '#e7e0d2';
+    });
+  }
+
+  setupReveal() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+    if (!this._io) {
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (!en.isIntersecting) return;
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'none';
+          this._io.unobserve(en.target);
+        });
+      }, { threshold: 0.04, rootMargin: '0px 0px -4% 0px' });
+    }
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      if (el._nsObserved) return;
+      el._nsObserved = true;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)';
+      this._io.observe(el);
+    });
+  }
+
+  // every number inside a [data-count] element counts up from zero when it scrolls in;
+  // non-numeric characters (%, $, /, m, RCT) are left exactly as authored
+  setupCounters() {
+    if (this.props.animateNumbers === false) return;
+    if (!('IntersectionObserver' in window)) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    if (!this._countIo) {
+      this._countIo = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (!en.isIntersecting) return;
+          this._countIo.unobserve(en.target);
+          this.runCount(en.target);
+        });
+      }, { threshold: 0.6 });
+    }
+    document.querySelectorAll('[data-count]').forEach(el => {
+      if (el._nsCounted) return;
+      el._nsCounted = true;
+      this._countIo.observe(el);
+    });
+  }
+
+  runCount(el) {
+    const text = el.textContent;
+    const nums = text.match(/[\d,.]*\d/g);
+    if (!nums) return;
+    const targets = nums.map(n => ({ raw: n, val: parseFloat(n.replace(/,/g, '')), grouped: n.indexOf(',') !== -1, decimals: (n.split('.')[1] || '').length }));
+    const start = performance.now();
+    const dur = 900;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - t, 3);
+      let i = 0;
+      el.textContent = text.replace(/[\d,.]*\d/g, () => {
+        const target = targets[i++];
+        const v = target.val * eased;
+        const shown = target.decimals ? v.toFixed(target.decimals) : Math.round(v);
+        return target.grouped ? Number(shown).toLocaleString('en-US') : String(shown);
+      });
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = text;
+    };
+    requestAnimationFrame(tick);
+  }
+
+  renderVals() {
+    const u = encodeURIComponent(this.shareUrl());
+    const t = encodeURIComponent('The Healing Power of Nature — Nature Sacred');
+    return {
+      shareFacebook: 'https://www.facebook.com/sharer/sharer.php?u=' + u,
+      shareLinkedIn: 'https://www.linkedin.com/sharing/share-offsite/?url=' + u,
+      shareEmail: 'mailto:?subject=' + t + '&body=' + u,
+      copyLink: () => this.copyLink(),
+      copyLabel: this.state.copied ? 'Link copied' : 'Copy link',
+      menuOpen: this.state.menuOpen,
+      openMenu: () => { this.setState({ menuOpen: true }); document.body.style.overflow = 'hidden'; },
+      closeMenu: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ menuOpen: false }); document.body.style.overflow = ''; },
+      sections: SECTIONS.map((s, i) => ({ ...s, href: '#' + s.id, num: String(i + 1).padStart(2, '0') })),
+      snapshot: SNAPSHOT,
+      natureKinds: ['Trees', 'Pocket parks', 'Greened vacant lots', 'Community gardens', 'Trails', 'Green school yards'],
+      evidenceMental: this.rows('mental'),
+      evidencePhysical: this.rows('physical'),
+      evidenceCommunity: this.rows('community'),
+      evidenceDose: this.rows('dose'),
+      actors: ACTORS,
+      programs: PROGRAMS,
+      showReferences: this.props.showReferences ?? true,
+      references: REFERENCES.map((text, i) => ({ n: i + 1, text })),
+      footerCols: [
+        { title: 'The Network', items: ['Our Sacred Places', 'The Firesoul Network', 'Our Design Process', 'Our Bench & Journal'] },
+        { title: 'Impact & Learning', items: ['Little Yellow Journal', 'Research & Resources', 'News & Stories', 'Why Sacred Places?'] },
+        { title: 'Join the Movement', items: ['Create a Sacred Place', 'Design with Us', 'Volunteer', 'Donate'] },
+      ],
+      menu: [
+        { title: 'Why Sacred Places?', href: './final_Why Sacred Places.dc.html' },
+        { title: 'The Network', href: './final_The Network.dc.html' },
+        { title: 'Sacred Places', href: './Sacred Places Directory.dc.html' },
+        { title: 'Join the Movement', href: './final_Join the Movement.dc.html' },
+        { title: 'About', href: './final_About.dc.html' },
+        { title: 'Donate', href: './final_Donate.dc.html' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

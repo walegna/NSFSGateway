@@ -1,0 +1,8 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Working files
+scraps/
+.bundles/
+.thumbnail

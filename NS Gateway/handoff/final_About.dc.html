@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#57a143"></rect><path d="M50 74 C50 74 30 60 30 44 C30 34 39 30 50 42 C61 30 70 34 70 44 C70 60 50 74 50 74Z" fill="#fdfbf6"></path><path d="M50 74 L50 38" stroke="#57a143" stroke-width="3" fill="none"></path></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..900;1,400..800&amp;family=Lora:ital,wght@0,400..600;1,400..600&amp;family=Caveat:wght@400;600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  input::placeholder { color: rgba(253,251,246,0.65); }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #fdfbf6; color: #1f1a14; font-family: 'Nunito', ui-sans-serif, sans-serif; -webkit-font-smoothing: antialiased; cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='%2357a143' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4C10 4 5 9 5 15a5 5 0 0 0 5 5c6 0 11-6 11-16z' fill='%2357a143' stroke='none'/%3E%3Cpath d='M9 19c1.6-5 4.6-8 9-10' stroke='%23fdfbf6' stroke-width='1.1' opacity='.85'/%3E%3C/svg%3E") 5 4, auto; }
+  a, button, [onClick], .ns-cta, .ns-approach { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='%2357a143' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4C10 4 5 9 5 15a5 5 0 0 0 5 5c6 0 11-6 11-16z' fill='%2357a143' stroke='none'/%3E%3Cpath d='M9 19c1.6-5 4.6-8 9-10' stroke='%23fdfbf6' stroke-width='1.1' opacity='.85'/%3E%3C/svg%3E") 5 4, pointer; }
+  a { color: #57a143; text-decoration: none; transition: color 160ms cubic-bezier(0.22,1,0.36,1); }
+  a:hover { color: #46852f; }
+  ::selection { background: #afd274; color: #1f1a14; }
+  @keyframes ns-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ns-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes ns-fade-sketch { from { opacity: 0; } to { opacity: 0.85; } }
+  @media (max-width: 820px) {
+    [data-menu-sketch] { width: 168px !important; right: 6px !important; top: auto !important; bottom: 10px !important; opacity: 0.5 !important; }
+  }
+  @keyframes ns-menu-panel { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  image-slot { --is-empty-bg: #ede5dd; }
+  @keyframes ns-tl-a { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ns-tl-b { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(253,251,246,0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #e7e0d2;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 24px;">
+      <a href="Nature Sacred Homepage.dc.html" style="display: flex; align-items: center; height: 48px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred—30 years" style="height: 48px; width: auto; display: block;">
+      </a>
+      <a href="./final_Donate.dc.html" style="margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; background: #ff4800; color: #fff; font-size: 14px; font-weight: 700; letter-spacing: 0.01em; box-shadow: 0 4px 14px rgba(255,72,0,0.28); transition: transform 200ms cubic-bezier(0.22,1,0.36,1), box-shadow 200ms cubic-bezier(0.22,1,0.36,1), background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#e64000; transform:translateY(-1px); box-shadow:0 6px 18px rgba(255,72,0,0.34);"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex: none;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Donate</a>
+      <button onClick="{{ openMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; gap: 6px; background: transparent; border: none; cursor: pointer; padding: 8px;">
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="max-width: 1360px; margin: 0 auto; padding: clamp(72px, 10vw, 148px) 32px clamp(28px, 4vw, 48px);">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #c2b6a4; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">About</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 14px; color: #9d877a;">Nature Sacred · 1996–2026</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(24px, 4vw, 48px); align-items: end;">
+      <h1 style="grid-column: 1 / span 7; font-size: clamp(44px, 8vw, 112px); font-weight: 800; line-height: 0.96; letter-spacing: -0.035em; color: #1f1a14; margin: 0; text-wrap: balance; animation: ns-fade-up 680ms cubic-bezier(0.22,1,0.36,1) both;">Who is Nature Sacred?</h1>
+      <p style="grid-column: 8 / span 5; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.7; color: #3a3128; margin: 0; animation: ns-fade-up 680ms cubic-bezier(0.22,1,0.36,1) 120ms both;">Nature Sacred is a nonprofit that partners with communities to create Sacred Places: small, intentional spaces for healing, reflection, and connection. Creating them is only the beginning. The deeper, longer work is what follows—nurturing each place, and the network of community stewards who keep it alive, for as long as it stands. For decades, we've done both.</p>
+    </div>
+  </section>
+
+  <!-- HERO PHOTO (full-bleed) -->
+  <div style="width: 100%; margin-top: clamp(20px, 3vw, 36px); height: clamp(420px, 68vh, 760px); overflow: hidden; position: relative;">
+    <image-slot id="about-hero-sunset" shape="rect" fit="cover" src="./assets/sm/bench-sunset-pond.jpg" style="position:absolute; bottom:0; left:0; width:100%; aspect-ratio:4 / 3; height:auto;" placeholder="Drop a community greenspace photo"></image-slot>
+  </div>
+
+  <!-- 01 · WE BELIEVE -->
+  <section style="max-width: 1360px; margin: clamp(72px, 10vw, 140px) auto 0; padding: 0 32px;">
+    <div data-reveal="" style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #c2b6a4; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">We believe</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">01 / 04</span>
+    </div>
+    <p data-reveal="" style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(26px, 4vw, 56px); font-weight: 500; line-height: 1.2; letter-spacing: -0.015em; color: #1f1a14; margin: clamp(28px, 4vw, 52px) 0 0; max-width: 22ch;">Access to nature is a right—as essential as air to breathe and water to drink.</p>
+    <div data-reveal="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(36px, 5vw, 64px);">
+      <p style="grid-column: 1 / span 6; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 0;">It's through nature, and the act of reconnecting with it, that we can build healthier, safer, more inclusive communities. Big city parks are glorious. But we advocate for something closer to home: greenspaces people can walk to, tucked within the communities they serve. Modest, meaningful, and welcoming.</p>
+      <p style="grid-column: 7 / span 6; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 0;">And we believe change happens from within. The collective power of a community is a kind of electricity that people can plug into and stay plugged into. Never top-down. Always open, peer-driven, and participatory. This isn't a platitude for us. It's our every day.</p>
+    </div>
+  </section>
+
+  <!-- 02 · MISSION & VISION -->
+  <section style="max-width: 1360px; margin: clamp(80px, 11vw, 150px) auto 0; padding: 0 32px;">
+    <div data-reveal="" style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #c2b6a4; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">Mission &amp; Vision</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">02 / 04</span>
+    </div>
+    <div data-reveal="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(32px, 5vw, 72px); margin-top: clamp(32px, 4vw, 56px);">
+      <div style="grid-column: 1 / span 6;">
+        <h2 style="font-size: clamp(24px, 2.8vw, 36px); font-weight: 800; letter-spacing: -0.02em; margin: 0; color: #57a143;">Our mission.</h2>
+        <p style="font-size: clamp(17px, 1.7vw, 21px); line-height: 1.6; color: #1f1a14; margin: 18px 0 0;">To provide the opportunity for a deeper human experience by inspiring and supporting the creation of public greenspaces that offer a temporary place of sanctuary, encourage reflection, provide solace, and engender peace and well-being.</p>
+      </div>
+      <div style="grid-column: 7 / span 6;">
+        <h2 style="font-size: clamp(24px, 2.8vw, 36px); font-weight: 800; letter-spacing: -0.02em; margin: 0; color: #57a143;">Our vision.</h2>
+        <p style="font-size: clamp(17px, 1.7vw, 21px); line-height: 1.6; color: #1f1a14; margin: 18px 0 0;">A time when every urban community in the U.S. will provide people with opportunities for intimate, intentional daily doses of nearby urban nature—through the creation of a system of nature spaces.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 03 · OUR STORY -->
+  <section style="max-width: 1360px; margin: clamp(80px, 11vw, 150px) auto 0; padding: 0 32px;">
+    <div data-reveal="" style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #c2b6a4; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">HOW IT ALL STARTED</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">03 / 04</span>
+    </div>
+    <div data-reveal="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(28px, 4vw, 52px); align-items: center;">
+      <div style="grid-column: 1 / span 6; border-radius: 4px; overflow: hidden; aspect-ratio: 4 / 3;">
+        <image-slot id="story-photo" shape="rect" fit="cover" src="./assets/sm/labyrinth.jpg" placeholder="Drop a photo"></image-slot>
+      </div>
+      <div style="grid-column: 8 / span 5;">
+        <h2 style="font-size: clamp(28px, 3.6vw, 48px); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin: 0; color: #1f1a14; text-wrap: balance;">It began with a small London garden.</h2>
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 20px 0 0;">Nature Sacred began in 1996 when Tom and Kitty Stoner set out to make the impact of nearby nature real for everyone. They'd been inspired by a small London garden called Mount Street Gardens. What started as a foundation became a movement, carried by the communities who made it theirs.</p>
+        <a href="#" style="display: inline-block; margin-top: 22px; font-size: 15px; font-weight: 700; color: #57a143;" style-hover="color:#46852f;">From our Co-founders →</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 04 · TIMELINE -->
+  <section style="max-width: 1360px; margin: clamp(80px, 11vw, 150px) auto 0; padding: 0 32px;">
+    <div data-reveal="" style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #c2b6a4; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">OUR HISTORY</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">04 / 04</span>
+    </div>
+
+    <h2 data-reveal="" style="font-size: clamp(28px, 3.6vw, 48px); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin: clamp(26px, 3.5vw, 44px) 0 0; color: #1f1a14; max-width: 20ch; text-wrap: balance;">A quiet, steady thirty years.</h2>
+
+    <div data-reveal="" style="margin-top: clamp(28px, 4vw, 48px); position: relative;">
+      <div style="position: absolute; left: 0; right: 0; top: 12px; height: 1.5px; background: #e0d7c6;"></div>
+      <div style="{{ progressStyle }}"></div>
+      <div style="position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 4px;">
+        <sc-for list="{{ years }}" as="y" hint-placeholder-count="10">
+          <button onClick="{{ y.select }}" aria-label="{{ y.label }}" style="background: transparent; border: none; padding: 4px 0 10px; margin: 0; flex: 1 1 0; min-width: 0; min-height: 56px; display: flex; flex-direction: column; align-items: center; gap: 12px; font-family: inherit; cursor: pointer;" style-hover="opacity:0.72;">
+            <span style="{{ y.dotStyle }}"></span>
+            <span style="{{ y.labelStyle }}">{{ y.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div data-reveal="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(36px, 5vw, 64px); align-items: start;">
+      <div style="grid-column: 1 / span 6; position: relative; aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden; background: #ede5dd;">
+        <div style="{{ frameStyles.y1996 }}"><image-slot id="tl-1996" shape="rect" fit="cover" src="./assets/sm/bench-hero.jpg" placeholder="Co-founders at Mount Street Gardens, or Inspiration Point" style="position: absolute; inset: 0;"></image-slot></div>
+        <div style="{{ frameStyles.y2008 }}"><image-slot id="tl-2008" shape="rect" fit="contain" src="./assets/sm/open-spaces-sacred-places-cover.jpg" placeholder="Open Spaces, Sacred Places" style="position: absolute; inset: 0;"></image-slot></div>
+        <div style="{{ frameStyles.y2012 }}"><image-slot id="tl-2012" shape="rect" fit="cover" src="./assets/sm/hospital-yoga.jpg" placeholder="An awards-program research site" style="position: absolute; inset: 0;"></image-slot></div>
+        <div style="{{ frameStyles.y2018 }}"><image-slot id="tl-2018" shape="rect" fit="cover" src="./assets/sm/firesoul-street.jpg" placeholder="A Firesoul in their Sacred Place" style="position: absolute; inset: 0;"></image-slot></div>
+        <div style="{{ frameStyles.y2019 }}"><image-slot id="tl-2019" shape="rect" fit="cover" src="./assets/sm/journals-clothesline.jpg" placeholder="Journals, research, or the 100th place" style="position: absolute; inset: 0;"></image-slot></div>
+        <div style="{{ frameStyles.y2020 }}"><image-slot id="tl-2020" shape="rect" fit="cover" src="./assets/sm/thanksgiving-place.jpg" placeholder="Nature Sacred logo debut" style="position: absolute; inset: 0;"></image-slot></div>
+        <div style="{{ frameStyles.y2022 }}"><image-slot id="tl-2022" shape="rect" fit="cover" src="./assets/sm/benchtalk-book-crop.jpg" placeholder="BenchTalk" style="position: absolute; inset: 0;"></image-slot></div>
+        <div style="{{ frameStyles.y2023 }}"><image-slot id="tl-2023" shape="rect" fit="cover" src="./assets/sm/support-gathering.jpg" placeholder="Pascal Mittermaier, Board Chair" style="position: absolute; inset: 0;"></image-slot></div>
+        <div style="{{ frameStyles.y2025 }}"><image-slot id="tl-2025" shape="rect" fit="cover" src="./assets/sm/labyrinth.jpg" placeholder="Mount Street Gardens, or Light the Labyrinth" style="position: absolute; inset: 0;"></image-slot></div>
+        <div style="{{ frameStyles.y2026 }}"><image-slot id="tl-2026" shape="rect" fit="cover" src="./assets/sm/family-journal-tour.jpg" placeholder="Finding A Better Way" style="position: absolute; inset: 0;"></image-slot></div>
+      </div>
+
+      <div style="grid-column: 8 / span 5; align-self: stretch; display: flex; flex-direction: column;">
+        <div style="{{ panelStyle }}">
+          <div style="font-size: clamp(56px, 9vw, 112px); font-weight: 800; line-height: 0.9; letter-spacing: -0.04em; color: #57a143;">{{ activeLabel }}</div>
+          <ul style="list-style: none; padding: 0; margin: clamp(20px, 3vw, 32px) 0 0; display: flex; flex-direction: column; gap: 18px;">
+            <sc-for list="{{ activeItems }}" as="it" hint-placeholder-count="3">
+              <li style="display: flex; gap: 14px; align-items: flex-start; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.6; color: #3a3128;">
+                <span aria-hidden="true" style="flex: none; margin-top: 9px; width: 7px; height: 7px; border-radius: 50%; background: #afd274;"></span>
+                <span>{{ it.a }}<sc-if value="{{ it.tm }}" hint-placeholder-val="{{ false }}"><sup style="font-size: 0.55em; font-weight: 700; vertical-align: super; line-height: 0; margin-left: 1px;">™</sup></sc-if>{{ it.b }}</span>
+              </li>
+            </sc-for>
+          </ul>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: clamp(28px, 4vw, 40px);">
+          <button onClick="{{ prev }}" aria-label="Previous milestone" style="width: 46px; height: 46px; border-radius: 999px; border: 1px solid #c2b6a4; background: transparent; color: #1f1a14; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center; font-family: inherit;" style-hover="background:#f5f1e8;">←</button>
+          <button onClick="{{ next }}" aria-label="Next milestone" style="width: 46px; height: 46px; border-radius: 999px; border: 1px solid #c2b6a4; background: transparent; color: #1f1a14; font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center; font-family: inherit;" style-hover="background:#f5f1e8;">→</button>
+          <span style="margin-left: 8px; font-family: 'Lora', Georgia, serif; font-size: 14px; color: #9d877a;">{{ counter }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE -->
+  <section style="max-width: 1360px; margin: clamp(80px, 11vw, 150px) auto 0; padding: 0 32px;">
+    <div data-reveal="" style="border-top: 1.5px solid #c2b6a4; padding-top: 14px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #1f1a14;">Explore</span>
+    </div>
+    <div data-reveal="" style="margin-top: clamp(20px, 3vw, 36px);">
+      <sc-for list="{{ exploreLinks }}" as="l" hint-placeholder-count="4">
+        <a href="#" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: clamp(18px, 2.4vw, 28px) 0; border-bottom: 1px solid #e7e0d2; text-decoration: none;" style-hover="opacity:0.7;">
+          <span style="font-size: clamp(20px, 2.6vw, 34px); font-weight: 800; letter-spacing: -0.025em; color: #1f1a14;">{{ l }}</span>
+          <span aria-hidden="true" style="flex: none; color: #57a143; font-size: clamp(24px, 3vw, 38px); line-height: 1;">→</span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section data-reveal="" style="max-width: 1360px; margin: clamp(80px, 11vw, 150px) auto 0; padding: 0 32px;">
+    <h2 style="font-size: clamp(38px, 7vw, 104px); font-weight: 800; line-height: 0.98; letter-spacing: -0.035em; color: #1f1a14; margin: 0; max-width: 15ch; text-wrap: balance;">A collective living legacy of connection and care.</h2>
+    <div style="margin-top: clamp(32px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+      <a href="Nature Sacred Homepage.dc.html#closing" style="background: #ff4800; color: #fff; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700;" style-hover="background:#e64000;">Join the Movement</a>
+      <a href="#" style="background: transparent; color: #1f1a14; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700; border: 1px solid #1f1a14; display: inline-flex; align-items: center; gap: 8px;" style-hover="background:#1f1a14; color:#fdfbf6;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Donate</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div style="overflow-x: clip;">
+  <footer style="position: relative; z-index: 10; width: 132%; margin-left: -16%; background: #926948; margin-top: clamp(150px, 17vw, 220px); padding: clamp(24px, 3vw, 40px) 32px 44px;">
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; bottom: 100%; width: 100%; height: min(9vw, 104px); display: block;"><path d="M0,260 L0,168 C0,84 176,30 468,14 C560,9 640,7 720,7 C800,7 880,9 972,14 C1264,30 1440,84 1440,168 L1440,260 Z" fill="#926948"></path></svg>
+    <div style="max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 40px 48px;">
+      <div style="grid-column: span 1; min-width: 240px;">
+        <img src="./assets/logo-30-wordmark-white-sm.png" alt="Nature Sacred" style="height: 48px; width: auto;">
+        <p style="font-size: 14px; color: rgba(253,251,246,0.9); line-height: 1.7; margin: 18px 0 0; max-width: 30ch;">105 Annapolis Street, Suite D<br>Annapolis, MD 21401<br>410.268.1376</p>
+        <p style="font-size: 12px; color: rgba(253,251,246,0.62); margin: 16px 0 0; line-height: 1.5;">A 501(c)(3) private operating foundation. Formerly the TKF Foundation.</p>
+      </div>
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+        <div>
+          <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a; font-weight: 800; margin-bottom: 16px;">{{ col.title }}</div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ col.items }}" as="item" hint-placeholder-count="4">
+              <li><a href="#" style="font-size: 14px; color: rgba(253,251,246,0.88);" style-hover="color:#ffffff;">{{ item }}</a></li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+    <div style="max-width: 620px; margin: 48px auto 0; padding-top: 40px; border-top: 1px solid rgba(253,251,246,0.2); text-align: center;">
+      <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a; font-weight: 800;">Stay connected</div>
+      <h3 style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 700; color: #fdfbf6; margin: 12px 0 0; line-height: 1.2;">Updates, inspiration, and news from Nature Sacred.</h3>
+      <form onSubmit="{{ onSubscribe }}" style="margin: 22px auto 0; max-width: 460px; display: flex; gap: 10px;">
+        <input type="email" required="" placeholder="Your email address" style="flex: 1 1 auto; min-width: 0; padding: 13px 18px; border-radius: 999px; border: 1px solid rgba(253,251,246,0.35); background: rgba(253,251,246,0.08); color: #fdfbf6; font-family: inherit; font-size: 15px;">
+        <button type="submit" class="ns-cta" style="flex: none; padding: 0 26px; height: 48px; border: none; border-radius: 999px; background: #57a143; color: #fff; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer;" style-hover="background:#46852f;">Sign up</button>
+      </form>
+    </div>
+    <div style="max-width: 760px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid rgba(253,251,246,0.2); display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: rgba(253,251,246,0.62);">© 1996–2026 Nature Sacred. All rights reserved.</span>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" aria-label="Instagram" style="display: flex; color: rgba(253,251,246,0.82);" style-hover="color:#f5d06a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+        <a href="#" aria-label="Facebook" style="display: flex; color: rgba(253,251,246,0.82);" style-hover="color:#f5d06a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"></path></svg></a>
+        <a href="#" aria-label="LinkedIn" style="display: flex; color: rgba(253,251,246,0.82);" style-hover="color:#f5d06a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5A1.94 1.94 0 1 1 3.06 5a1.94 1.94 0 0 1 3.88 0zM3.4 8.5h3.1V21H3.4zM9.2 8.5h2.97v1.7h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.32c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21H9.2z"></path></svg></a>
+      </div>
+      <span style="font-size: 12px; color: rgba(253,251,246,0.62);">Privacy · Terms · Contact</span>
+    </div>
+  </footer>
+  </div>
+
+  <!-- FULL-SCREEN MENU OVERLAY -->
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 100; background: #fdfbf6; overflow-y: auto; animation: ns-fade 240ms cubic-bezier(0.22,1,0.36,1) both;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; gap: 24px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred" style="height: 46px; width: auto;">
+        <button onClick="{{ closeMenu }}" aria-label="Close menu" style="margin-left: auto; display: flex; align-items: center; gap: 10px; background: transparent; border: 1px solid #e7e0d2; border-radius: 999px; padding: 9px 16px; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1f1a14;" style-hover="background:#f5f1e8;">
+          <span style="position: relative; width: 16px; height: 16px; display: inline-block;">
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(45deg);"></span>
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(-45deg);"></span>
+          </span>
+          Close
+        </button>
+      </div>
+      <img data-menu-sketch="" src="./assets/journal-butterfly.png" alt="" aria-hidden="true" style="position: absolute; right: clamp(40px, 13vw, 260px); top: clamp(90px, 14vh, 170px); width: clamp(270px, 39vw, 510px); height: auto; opacity: 0.85; mix-blend-mode: multiply; pointer-events: none; animation: ns-fade-sketch 900ms cubic-bezier(0.22,1,0.36,1) 200ms both;">
+      <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(24px, 5vw, 64px) 32px 80px; animation: ns-menu-panel 360ms cubic-bezier(0.22,1,0.36,1) both;">
+        <nav style="display: flex; flex-direction: column; gap: clamp(6px, 1vw, 12px);">
+          <sc-for list="{{ menu }}" as="group" hint-placeholder-count="4">
+            <a href="{{ group.href }}" style="font-size: clamp(30px, 5vw, 54px); font-weight: 800; letter-spacing: -0.025em; color: #1f1a14; line-height: 1.12;" style-hover="color:#57a143;">{{ group.title }}</a>
+          </sc-for>
+        </nav>
+        <div style="margin-top: clamp(44px, 7vw, 80px); padding-top: 28px; border-top: 1px solid #e7e0d2; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center;">
+          <sc-for list="{{ menuMinor }}" as="u" hint-placeholder-count="4">
+            <a href="#" onClick="{{ closeMenu }}" style="font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #6b5e51;" style-hover="color:#57a143;">{{ u }}</a>
+          </sc-for>
+          <a href="Donate.dc.html" style="margin-left: auto; display: inline-flex; align-items: center; gap: 8px; background: #ff4800; color: #fff; padding: 11px 24px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;" style-hover="background:#e64000;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Donate</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:720},&quot;timelineAutoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Timeline&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, tl: 0 };
+
+  static TL = [
+    { label: '1996', items: [
+      { a: 'TKF Foundation founded by Kitty and Tom Stoner, as a private grant-giving foundation' },
+      { a: 'First Sacred Place grand opening: Inspiration Point at the Chesapeake Bay Foundation headquarters, Annapolis, MD' },
+    ] },
+    { label: '2008', items: [{ a: 'Open Spaces, Sacred Places published' }] },
+    { label: '2012', items: [{ a: 'Launched the Nature Sacred National Awards Program' }] },
+    { label: '2018', items: [{ a: 'Firesoul', tm: true, b: ' Network founded' }] },
+    { label: '2019', items: [
+      { a: '30+ articles published, funded by TKF' },
+      { a: '100 Sacred Places open' },
+    ] },
+    { label: '2020', items: [
+      { a: 'Officially rebranded to Nature Sacred, and shifted to an operating foundation' },
+      { a: 'Formed an independent Board' },
+      { a: 'Launched first strategic plan as an operating foundation' },
+    ] },
+    { label: '2022', items: [
+      { a: 'Celebrated 25 years' },
+      { a: 'BenchTalk published' },
+    ] },
+    { label: '2023', items: [{ a: 'Pascal Mittermaier named Board Chair' }] },
+    { label: '2025', items: [
+      { a: "Successful completion of Nature Sacred's strategic plan" },
+      { a: '200 Sacred Places open or in development' },
+      { a: 'A Sacred Place opened at Mount Street Gardens in London—the place that inspired the co-founders—honoring 30 years of impact' },
+    ] },
+    { label: '2026', items: [{ a: 'Launched Finding A Better Way: Accelerating Belonging Through Nature, our next strategic plan' }] },
+  ];
+
+    componentDidMount() {
+    this._reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._parallax = () => {
+      this._raf = null;
+      if (this._reduce) return;
+      const vh = window.innerHeight;
+      document.querySelectorAll('[data-parallax]').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        const amp = parseFloat(el.getAttribute('data-parallax')) || 24;
+        const progress = (vh - r.top) / (vh + r.height);
+        const shift = (Math.max(0, Math.min(1, progress)) - 0.5) * 2 * amp;
+        el.style.transform = 'translate3d(0,' + shift.toFixed(1) + 'px,0)';
+      });
+    };
+    this._reqParallax = () => { if (!this._raf) this._raf = requestAnimationFrame(this._parallax); };
+    window.addEventListener('scroll', this._reqParallax, { passive: true });
+    window.addEventListener('resize', this._reqParallax);
+    this._parallax();
+
+    if (this.props.timelineAutoplay) {
+      this._tlTimer = setInterval(() => {
+        if (this._userMoved) { clearInterval(this._tlTimer); return; }
+        this.setState(st => ({ tl: (st.tl + 1) % Component.TL.length }));
+      }, 5200);
+    }
+
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false }); };
+    document.addEventListener('keydown', this._onKey);
+
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && 'IntersectionObserver' in window) {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      els.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(22px)';
+        el.style.transition = 'opacity 720ms cubic-bezier(0.22,1,0.36,1), transform 720ms cubic-bezier(0.22,1,0.36,1)';
+      });
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            en.target.style.opacity = '1';
+            en.target.style.transform = 'none';
+            this._io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(el => this._io.observe(el));
+    }
+  }
+    componentWillUnmount() {
+    window.removeEventListener('scroll', this._reqParallax);
+    window.removeEventListener('resize', this._reqParallax);
+    if (this._raf) cancelAnimationFrame(this._raf);
+
+    if (this._tlTimer) clearInterval(this._tlTimer);
+    document.removeEventListener('keydown', this._onKey);
+    if (this._io) this._io.disconnect();
+  }
+
+  goTL(i) {
+    const n = Component.TL.length;
+    this._userMoved = true;
+    this.setState({ tl: (i + n) % n });
+  }
+
+  timelineVals() {
+    const TL = Component.TL, n = TL.length, i = this.state.tl;
+    const active = TL[i];
+    const frameStyles = {};
+    TL.forEach((y, k) => {
+      frameStyles['y' + y.label] = 'position:absolute; inset:0; opacity:' + (k === i ? 1 : 0) +
+        '; transition: opacity 520ms cubic-bezier(0.22,1,0.36,1); pointer-events:' + (k === i ? 'auto' : 'none') + ';';
+    });
+    const pct = n > 1 ? (i / (n - 1)) * 100 : 0;
+    return {
+      years: TL.map((y, k) => ({
+        label: y.label,
+        select: () => this.goTL(k),
+        dotStyle: 'display:block; border-radius:50%; transition: all 280ms cubic-bezier(0.22,1,0.36,1); width:' +
+          (k === i ? '17px' : '11px') + '; height:' + (k === i ? '17px' : '11px') +
+          '; background:' + (k === i ? '#57a143' : (k < i ? '#afd274' : '#fdfbf6')) +
+          '; border:1.5px solid ' + (k <= i ? '#57a143' : '#c2b6a4') + '; box-shadow:' + (k === i ? '0 0 0 6px rgba(87,161,67,0.12)' : 'none') + ';',
+        labelStyle: 'font-family: \'Lora\', Georgia, serif; font-size:' + (k === i ? '16px' : '13px') +
+          '; font-weight:' + (k === i ? '600' : '400') + '; letter-spacing:0.02em; transition: all 280ms cubic-bezier(0.22,1,0.36,1); color:' +
+          (k === i ? '#1f1a14' : '#9d877a') + ';',
+      })),
+      progressStyle: 'position:absolute; left:0; top:12px; height:1.5px; background:#57a143; width:' + pct.toFixed(2) +
+        '%; transition: width 520ms cubic-bezier(0.22,1,0.36,1);',
+      frameStyles,
+      activeLabel: active.label,
+      activeItems: active.items.map(it => ({ a: it.a, tm: !!it.tm, b: it.b || '' })),
+      panelStyle: 'animation: ' + (i % 2 ? 'ns-tl-b' : 'ns-tl-a') + ' 520ms cubic-bezier(0.22,1,0.36,1) both;',
+      counter: (i + 1) + ' of ' + n,
+      prev: () => this.goTL(i - 1),
+      next: () => this.goTL(i + 1),
+    };
+  }
+
+  renderVals() {
+    return {
+      menuOpen: this.state.menuOpen,
+      openMenu: () => { this.setState({ menuOpen: true }); if (typeof document !== 'undefined') document.body.style.overflow = 'hidden'; },
+      closeMenu: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ menuOpen: false }); if (typeof document !== 'undefined') document.body.style.overflow = ''; },
+      onSubscribe: (e) => { e.preventDefault(); },
+
+      ...this.timelineVals(),
+
+      exploreLinks: ['Our team', '2025 Gratitude Report', 'Invite us to speak'],
+
+      footerCols: [
+        { title: 'The Network', items: ['Our Sacred Places', 'The Firesoul Network', 'Our Design Process', 'Our Bench & Journal'] },
+        { title: 'Impact & Learning', items: ['Little Yellow Journal', 'Research & Resources', 'News & Stories', 'Why Sacred Places?'] },
+        { title: 'Join the Movement', items: ['Create a Sacred Place', 'Design with Us', 'Bring Your Service', 'Volunteer', 'Donate'] },
+        { title: 'About', items: ['Our History', 'Our Team', '2025 Gratitude Report', 'Invite Us to Speak'] },
+      ],
+
+      menu: [
+        { title: 'Why Sacred Places?', href: 'Why Sacred Places.dc.html' },
+        { title: 'The Network', href: 'The Network.dc.html' },
+        { title: 'Impact & Learning', href: 'Impact and Learning.dc.html' },
+        { title: 'Join the Movement', href: 'Join the Movement.dc.html' },
+        { title: 'About', href: 'About.dc.html' },
+        { title: 'Donate', href: 'Donate.dc.html' },
+      ],
+
+      menuMinor: ['About', 'The Gateway Dashboard', 'Subscribe', 'For Firesouls (login)'],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..900;1,400..800&amp;family=Lora:ital,wght@0,400..600;1,400..600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ece7db; color: #1f1a14; font-family: 'Nunito', ui-sans-serif, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #57a143; text-decoration: none; }
+  a:hover { color: #46852f; }
+  ::selection { background: #afd274; color: #1f1a14; }
+  image-slot { --is-empty-bg: #ede5dd; }
+  @media (min-width: 760px) {
+    [data-shell] { padding: 26px 0 34px; }
+    [data-app] { border-radius: 30px; box-shadow: 0 24px 60px rgba(31,26,20,0.16); border: 1px solid #ded6c6; height: calc(100svh - 60px) !important; }
+  }
+  @media (min-width: 1180px) {
+    [data-app] { max-width: 1060px; }
+    [data-tabs] { display: none !important; }
+    [data-pad] { padding-left: 40px !important; padding-right: 40px !important; }
+    [data-two] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 22px !important; }
+  }
+</style>
+</helmet>
+
+<div data-shell="" style="min-height: 100svh; background: #ece7db;">
+  <div data-app="" style="position: relative; overflow: hidden; max-width: 480px; margin: 0 auto; height: 100svh; background: #fdfbf6; display: flex; flex-direction: column;">
+
+    <header style="position: relative; z-index: 10; flex: none; display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: rgba(253,251,246,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #e7dfcd;">
+      <a href="./Gateway_Firesoul Directory.dc.html" aria-label="Back to Firesoul Directory" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: none; color: #1f1a14;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"></path></svg>
+      </a>
+      <span style="font-size: 16px; font-weight: 800; letter-spacing: -0.01em; color: #1f1a14; margin-right: auto;">Firesoul Profile</span>
+      <button aria-label="Share profile" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: transparent; border: none; cursor: pointer; flex: none;">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#3d352a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"></path><path d="m8 7 4-4 4 4"></path><path d="M5 14v5.5A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V14"></path></svg>
+      </button>
+    </header>
+
+    <div data-body="" id="top" style="flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 40px;">
+
+      <section data-pad="" style="padding: 26px 22px 24px; background: #f5f1e8; border-bottom: 1px solid #eae3d3;">
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <image-slot id="profile-headshot" shape="circle" fit="cover" src="./assets/sm/firesoul-street.jpg" style="flex: none; width: 96px; height: 96px;" placeholder="Headshot"></image-slot>
+          <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+            <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #57a143;">Firesoul</span>
+            <h1 style="font-size: 27px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; color: #1f1a14; margin: 0;">Todd Marcus</h1>
+            <span style="font-size: 15px; line-height: 1.45; color: #6b6053;">Baltimore, MD · Firesoul since 2019</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px;">
+          <span style="padding: 7px 14px; border-radius: 999px; background: #fdfbf6; border: 1px solid #e2dac8; font-size: 14px; font-weight: 700; color: #4a4137;">Programming</span>
+          <span style="padding: 7px 14px; border-radius: 999px; background: #fdfbf6; border: 1px solid #e2dac8; font-size: 14px; font-weight: 700; color: #4a4137;">Music &amp; the arts</span>
+          <span style="padding: 7px 14px; border-radius: 999px; background: #fdfbf6; border: 1px solid #e2dac8; font-size: 14px; font-weight: 700; color: #4a4137;">Faith communities</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px;">
+          <a href="mailto:todd@example.org" style="display: inline-flex; align-items: center; gap: 9px; padding: 12px 20px; border-radius: 999px; background: #57a143; color: #fdfbf6; font-size: 15px; font-weight: 700; box-shadow: 0 4px 14px rgba(87,161,67,0.28);" style-hover="background:#46852f; color:#fdfbf6;">Send a message
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </a>
+          <a href="#top" style="display: inline-flex; align-items: center; gap: 9px; padding: 12px 20px; border-radius: 999px; border: 1px solid #cfc3ab; font-size: 15px; font-weight: 700; color: #1f1a14;" style-hover="background:#f3efe3; color:#1f1a14;">View Sacred Place</a>
+        </div>
+      </section>
+
+      <section data-pad="" style="padding: 26px 22px 0;">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68;">About</div>
+        <p style="font-family: 'Lora', Georgia, serif; font-size: 17px; line-height: 1.65; color: #3d352a; margin: 12px 0 0; max-width: 62ch;">Todd is a jazz musician and community organizer in Sandtown-Winchester, where he helps run programming at Strength to Love II. He brings live music into the garden through the growing season and hosts a monthly listening night on the bench.</p>
+      </section>
+
+      <section data-pad="" style="padding: 28px 22px 0;">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68;">Sacred Place</div>
+        <a href="#top" style="display: flex; align-items: center; gap: 16px; margin-top: 12px; padding: 16px 4px; border-top: 1px solid #eae3d3; border-bottom: 1px solid #eae3d3;" style-hover="background:#f7f3ea;">
+          <image-slot id="profile-place" shape="rounded" radius="12" fit="cover" src="./assets/sm/support-gathering.jpg" style="flex: none; width: 84px; height: 84px;" placeholder="Place photo"></image-slot>
+          <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+            <span style="font-size: 20px; font-weight: 800; line-height: 1.2; color: #1f1a14;">Strength to Love II</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #6b6053;">Sandtown-Winchester, Baltimore</span>
+            <span style="font-size: 14px; color: #9d877a;">Open since 2016</span>
+          </span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b0a291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-left: auto;"><path d="m9 6 6 6-6 6"></path></svg>
+        </a>
+      </section>
+
+      <section data-pad="" style="padding: 28px 22px 0;">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68;">Happy to talk about</div>
+        <div style="display: flex; flex-direction: column; margin-top: 8px;">
+          <div style="display: flex; gap: 12px; padding: 13px 0; border-top: 1px solid #eae3d3;">
+            <span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #96c43d; margin-top: 9px;"></span>
+            <p style="font-size: 16px; line-height: 1.55; color: #3d352a; margin: 0;">Bringing live music and performance into a Sacred Place.</p>
+          </div>
+          <div style="display: flex; gap: 12px; padding: 13px 0; border-top: 1px solid #eae3d3;">
+            <span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #96c43d; margin-top: 9px;"></span>
+            <p style="font-size: 16px; line-height: 1.55; color: #3d352a; margin: 0;">Partnering with a church or congregation on stewardship.</p>
+          </div>
+          <div style="display: flex; gap: 12px; padding: 13px 0; border-top: 1px solid #eae3d3; border-bottom: 1px solid #eae3d3;">
+            <span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #96c43d; margin-top: 9px;"></span>
+            <p style="font-size: 16px; line-height: 1.55; color: #3d352a; margin: 0;">Keeping journals in circulation in a high-traffic space.</p>
+          </div>
+        </div>
+      </section>
+
+      <section data-pad="" style="padding: 28px 22px 0;">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68;">Recent in the Network</div>
+        <div data-two="" style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 14px;">
+          <div style="padding: 16px 18px 18px; background: #fdfbf6; border: 1px solid #e7dfcd; border-radius: 16px; box-shadow: 0 1px 3px rgba(31,26,20,0.05);">
+            <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #9d877a;">Grant · April</span>
+            <p style="font-size: 16px; line-height: 1.55; color: #3d352a; margin: 8px 0 0;">Received an Enrichment Grant for a summer concert series in the garden.</p>
+          </div>
+          <div style="padding: 16px 18px 18px; background: #fdfbf6; border: 1px solid #e7dfcd; border-radius: 16px; box-shadow: 0 1px 3px rgba(31,26,20,0.05);">
+            <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #9d877a;">Forum · March</span>
+            <p style="font-size: 16px; line-height: 1.55; color: #3d352a; margin: 8px 0 0;">Answered a question about tethering journals in busy spaces.</p>
+          </div>
+        </div>
+      </section>
+
+      <section data-pad="" style="padding: 30px 22px 10px;">
+        <a href="./Gateway_Firesoul Directory.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 16px 4px; border-top: 1px solid #eae3d3; font-size: 17px; font-weight: 700; color: #1f1a14;" style-hover="color:#46852f;">Back to the Directory
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#96c43d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: auto;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
+      </section>
+    </div>
+
+    <nav data-tabs="" style="position: relative; z-index: 10; flex: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 8px 6px 10px; background: rgba(253,251,246,0.96); backdrop-filter: blur(10px); border-top: 1px solid #e7dfcd;">
+      <a href="./Gateway_Home.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"></path><path d="M6 10v10h12V10"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Gateway</span>
+      </a>
+      <a href="./Gateway_Firesoul Community.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19a4 4 0 0 0-8 0"></path><circle cx="12" cy="10" r="3.2"></circle><path d="M4.5 19a3.5 3.5 0 0 1 2.5-3.4M19.5 19a3.5 3.5 0 0 0-2.5-3.4"></path></svg>
+        <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.03em;">Community</span>
+      </a>
+      <a href="./Gateway_Bench Care.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"></path><path d="M4 18.5V5.5"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Resources</span>
+      </a>
+      <a href="#top" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.6"></circle><path d="M5 20c0-3.4 3.1-5.5 7-5.5s7 2.1 7 5.5"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Profile</span>
+      </a>
+    </nav>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:932}}"></script>
+</body>
+</html>

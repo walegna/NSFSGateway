@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#57a143"></rect><path d="M50 74 C50 74 30 60 30 44 C30 34 39 30 50 42 C61 30 70 34 70 44 C70 60 50 74 50 74Z" fill="#fdfbf6"></path><path d="M50 74 L50 38" stroke="#57a143" stroke-width="3" fill="none"></path></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..900;1,400..800&amp;family=Lora:ital,wght@0,400..600;1,400..600&amp;family=Caveat:wght@400;600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  input::placeholder { color: rgba(253,251,246,0.65); }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #fdfbf6; color: #1f1a14; font-family: 'Nunito', ui-sans-serif, sans-serif; -webkit-font-smoothing: antialiased; cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='%2357a143' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4C10 4 5 9 5 15a5 5 0 0 0 5 5c6 0 11-6 11-16z' fill='%2357a143' stroke='none'/%3E%3Cpath d='M9 19c1.6-5 4.6-8 9-10' stroke='%23fdfbf6' stroke-width='1.1' opacity='.85'/%3E%3C/svg%3E") 5 4, auto; }
+  a, button, [onClick], .ns-cta, .ns-approach { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='%2357a143' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4C10 4 5 9 5 15a5 5 0 0 0 5 5c6 0 11-6 11-16z' fill='%2357a143' stroke='none'/%3E%3Cpath d='M9 19c1.6-5 4.6-8 9-10' stroke='%23fdfbf6' stroke-width='1.1' opacity='.85'/%3E%3C/svg%3E") 5 4, pointer; }
+  a { color: #57a143; text-decoration: none; transition: color 160ms cubic-bezier(0.22,1,0.36,1); }
+  a:hover { color: #46852f; }
+  ::selection { background: #afd274; color: #1f1a14; }
+  @media (max-width: 780px) {
+    [data-stack] { grid-template-columns: 1fr !important; }
+    [data-stack] > * { grid-column: auto !important; }
+  }
+  @keyframes ns-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ns-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes ns-fade-sketch { from { opacity: 0; } to { opacity: 0.85; } }
+  @media (max-width: 820px) {
+    [data-menu-sketch] { width: 168px !important; right: 6px !important; top: auto !important; bottom: 10px !important; opacity: 0.5 !important; }
+  }
+  @keyframes ns-menu-panel { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ns-breathe { 0%, 100% { transform: scale(1); } 42% { transform: scale(1.045); } 62% { transform: scale(1.03); } }
+  @media (prefers-reduced-motion: reduce) { .ns-breathe { animation: none !important; } }
+  image-slot { --is-empty-bg: #ede5dd; }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(253,251,246,0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #e7e0d2;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 24px;">
+      <a href="./final_Homepage.dc.html" style="display: flex; align-items: center; height: 48px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred—30 years" style="height: 48px; width: auto; display: block;">
+      </a>
+      <a href="./final_Donate.dc.html" style="margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; background: #ff4800; color: #fff; font-size: 14px; font-weight: 700; letter-spacing: 0.01em; box-shadow: 0 4px 14px rgba(255,72,0,0.28); transition: transform 200ms cubic-bezier(0.22,1,0.36,1), box-shadow 200ms cubic-bezier(0.22,1,0.36,1), background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#e64000; transform:translateY(-1px); box-shadow:0 6px 18px rgba(255,72,0,0.34);"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex: none;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Donate</a>
+      <button onClick="{{ openMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; gap: 6px; background: transparent; border: none; cursor: pointer; padding: 8px;">
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+        <span style="width: 30px; height: 2.5px; border-radius: 2px; background: #3a3128;"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- OPENING STATEMENT -->
+  <section style="max-width: 1360px; margin: 0 auto; padding: clamp(48px, 7vw, 96px) 32px 0;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 2px solid #1f1a14; padding-top: 12px;">
+      <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #1f1a14;">EVIDENCE</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">An evidence review · 1996–2026</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(28px, 4vw, 52px); align-items: start;">
+      <h1 style="grid-column: 1 / span 6; font-size: clamp(38px, 5.6vw, 82px); font-weight: 800; line-height: 0.98; letter-spacing: -0.035em; color: #1f1a14; margin: 0; max-width: 16ch; text-wrap: balance; animation: ns-fade-up 680ms cubic-bezier(0.22,1,0.36,1) both;">The case for nature, in one place.</h1>
+      <div style="grid-column: 8 / span 5; display: flex; flex-direction: column; gap: 18px; animation: ns-fade-up 680ms cubic-bezier(0.22,1,0.36,1) 120ms both;">
+        <p style="font-size: clamp(17px, 1.6vw, 21px); line-height: 1.65; color: #3a3128; margin: 0;">Nature's effect on our health and well-being is real, and measurable, which is exactly why equitable, nearby access matters. We gather that evidence, help advance it through research we have funded ourselves, and continue to place it in the hands of the people who need it: insight and data a community can use to protect the greenspace it has, and to make the case for what it doesn't yet have.</p>
+        
+      </div>
+    </div>
+    <div style="border-top: 1.5px solid #1f1a14; margin-top: clamp(40px, 5vw, 68px); padding-top: 16px;">
+      <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px;">
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #9d877a;">At a glance</div>
+        <div style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">Thirty years, two kinds of knowing</div>
+      </div>
+      <div data-stack="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(28px, 3.4vw, 52px); margin-top: clamp(20px, 2.4vw, 32px); align-items: start;">
+
+        <div style="grid-column: 1 / span 6;">
+          <div style="border-top: 1.5px solid #77441d; padding-top: 12px; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #77441d;">Learned in place</div>
+          <p style="font-size: clamp(15px, 1.4vw, 17px); line-height: 1.6; color: #3a3128; margin: 12px 0 0; max-width: 40ch;">What we've learned from designing, tending, and observing real greenspaces—and from the visitors who write in them.</p>
+          <dl style="margin: clamp(18px, 2.2vw, 26px) 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(16px, 2vw, 26px);">
+            <div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #e7e0d2; padding-top: 12px;">
+              <dd style="margin: 0; font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.2vw, 44px); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #1f1a14;">30</dd>
+              <dt style="font-size: 14px; line-height: 1.45; color: #6b5e51;">Years in the field</dt>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #e7e0d2; padding-top: 12px;">
+              <dd style="margin: 0; font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.2vw, 44px); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #1f1a14;">140+</dd>
+              <dt style="font-size: 14px; line-height: 1.45; color: #6b5e51;">Sacred Places created and observed</dt>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #e7e0d2; padding-top: 12px;">
+              <dd style="margin: 0; font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.2vw, 44px); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #1f1a14;">130+</dd>
+              <dt style="font-size: 14px; line-height: 1.45; color: #6b5e51;">Communities worked alongside</dt>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #e7e0d2; padding-top: 12px;">
+              <dd style="margin: 0; font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.2vw, 44px); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #77441d;">Thousands</dd>
+              <dt style="font-size: 14px; line-height: 1.45; color: #6b5e51;">Journal entries collected and curated</dt>
+            </div>
+          </dl>
+        </div>
+
+        <div style="grid-column: 8 / span 5;">
+          <div style="border-top: 1.5px solid #57a143; padding-top: 12px; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #57a143;">Built with science</div>
+          <p style="font-size: clamp(15px, 1.4vw, 17px); line-height: 1.6; color: #3a3128; margin: 12px 0 0; max-width: 40ch;">Over the same thirty years we've funded and hosted scholarly research, much of it conducted in Sacred Places themselves.</p>
+          <dl style="margin: clamp(18px, 2.2vw, 26px) 0 0; display: flex; flex-direction: column; gap: clamp(14px, 1.8vw, 20px);">
+            <div style="display: flex; align-items: baseline; gap: 16px; border-top: 1px solid #e7e0d2; padding-top: 12px;">
+              <dd style="margin: 0; flex: none; font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.2vw, 44px); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #57a143;">Hundreds</dd>
+              <dt style="font-size: 14px; line-height: 1.45; color: #6b5e51;">Peer-reviewed studies read and referenced</dt>
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 16px; border-top: 1px solid #e7e0d2; padding-top: 12px;">
+              <dd style="margin: 0; flex: none; font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.2vw, 44px); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #57a143;">200+</dd>
+              <dt style="font-size: 14px; line-height: 1.45; color: #6b5e51;">Studies funded, and cited in our own places</dt>
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 16px; border-top: 1px solid #e7e0d2; padding-top: 12px;">
+              <dd style="margin: 0; flex: none; font-family: 'Lora', Georgia, serif; font-size: clamp(30px, 3.2vw, 44px); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #57a143;">10+</dd>
+              <dt style="font-size: 14px; line-height: 1.45; color: #6b5e51;">Reports of our own, published free</dt>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <p style="font-size: 12px; line-height: 1.6; color: #9d877a; margin: clamp(22px, 2.4vw, 32px) 0 0; max-width: 74ch;">Drawn from published literature on nature contact and human health—see <a href="#" style="font-weight: 700;">Research &amp; resources</a> for the full bibliography.</p>
+    </div>
+  </section>
+
+  <!-- MASTHEAD -->
+  <section style="max-width: 1360px; margin: clamp(64px, 8vw, 116px) auto 0; padding: 0 32px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-top: 1.5px solid #1f1a14; padding-top: 12px;">
+      <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #1f1a14;">How we read the evidence</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">Four sources, one standard</span>
+    </div>
+
+    <div data-stack="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(28px, 4vw, 52px); align-items: start;">
+      <div style="grid-column: 1 / span 6;">
+        <h2 style="font-size: clamp(30px, 4.2vw, 60px); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; color: #1f1a14; margin: 0; max-width: 22ch; text-wrap: balance;">No single measure holds it. So we consider four at once.</h2>
+      </div>
+      <div style="grid-column: 8 / span 5; display: flex; flex-direction: column; gap: 16px;">
+        <p style="font-size: clamp(18px, 1.9vw, 24px); line-height: 1.5; color: #57a143; font-weight: 700; letter-spacing: -0.015em; margin: 0;">Why this matters: no one of these sources would be enough on its own. Held together, and to the same standard, they make a case that holds.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOUR SOURCES (bold field) -->
+  <section data-reveal="" style="width: 100%; background: #57a143; margin-top: clamp(40px, 5vw, 68px);">
+    <div style="max-width: 1360px; margin: 0 auto; padding: clamp(48px, 6vw, 88px) 32px;">
+      <div data-stack="" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2vw, 28px);">
+        <a href="#m-research" style="border-top: 1px solid rgba(253,251,246,0.4); padding-top: 18px; display: flex; flex-direction: column; color: inherit; transition: opacity 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="opacity:0.82;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="flex: none; width: 48px; height: 48px; border-radius: 999px; background: #fdfbf6; display: flex; align-items: center; justify-content: center;"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="15.9" y1="15.9" x2="21.5" y2="21.5"></line><path d="M7.3 13.7c0-3.5 2.9-6.4 6.4-6.4 0 3.5-2.9 6.4-6.4 6.4z"></path><line x1="7.3" y1="13.7" x2="13.7" y2="7.3"></line></svg></span>
+            <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #f5d06a;">i</span>
+          </div>
+          <div style="font-size: clamp(17px, 1.7vw, 22px); font-weight: 800; letter-spacing: -0.02em; color: #fdfbf6; margin-top: 14px; line-height: 1.2;">Peer-reviewed research.</div>
+          <p style="font-size: 15px; line-height: 1.6; color: rgba(253,251,246,0.9); margin: 10px 0 0;">Published science on nature and human health: brain imaging, cortisol testing, decades of studies.</p>
+          <span style="margin-top: auto; padding-top: 18px; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #f5d06a;">Sections 01 &amp; 02 ↓</span>
+        </a>
+        <a href="#m-journals" style="border-top: 1px solid rgba(253,251,246,0.4); padding-top: 18px; display: flex; flex-direction: column; color: inherit; transition: opacity 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="opacity:0.82;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="flex: none; width: 48px; height: 48px; border-radius: 999px; background: #fdfbf6; display: flex; align-items: center; justify-content: center;"><img src="./assets/lyj-icon.png" alt="" aria-hidden="true" style="display: block; width: 26px; height: auto;"></span>
+            <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #f5d06a;">ii</span>
+          </div>
+          <div style="font-size: clamp(17px, 1.7vw, 22px); font-weight: 800; letter-spacing: -0.02em; color: #fdfbf6; margin-top: 14px; line-height: 1.2;">The journals.</div>
+          <p style="font-size: 15px; line-height: 1.6; color: rgba(253,251,246,0.9); margin: 10px 0 0;">What visitors choose to write in the Little Yellow Journals—anonymous, and asked of no one.</p>
+          <span style="margin-top: auto; padding-top: 18px; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #f5d06a;">Section 03 ↓</span>
+        </a>
+        <a href="#m-cases" style="border-top: 1px solid rgba(253,251,246,0.4); padding-top: 18px; display: flex; flex-direction: column; color: inherit; transition: opacity 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="opacity:0.82;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="flex: none; width: 48px; height: 48px; border-radius: 999px; background: #ede5dd; display: flex; align-items: center; justify-content: center;"><img src="./assets/bench-icon-sm.png" alt="" aria-hidden="true" style="display: block; width: 34px; height: auto;"></span>
+            <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #f5d06a;">iii</span>
+          </div>
+          <div style="font-size: clamp(17px, 1.7vw, 22px); font-weight: 800; letter-spacing: -0.02em; color: #fdfbf6; margin-top: 14px; line-height: 1.2;">Real use cases.</div>
+          <p style="font-size: 15px; line-height: 1.6; color: rgba(253,251,246,0.9); margin: 10px 0 0;">What happens in hospitals, schools, prisons, and neighborhoods, in place.</p>
+          <span style="margin-top: auto; padding-top: 18px; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #f5d06a;">Section 04 ↓</span>
+        </a>
+        <a href="#m-network" style="border-top: 1px solid rgba(253,251,246,0.4); padding-top: 18px; display: flex; flex-direction: column; color: inherit; transition: opacity 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="opacity:0.82;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="flex: none; width: 48px; height: 48px; border-radius: 999px; background: #fdfbf6; display: flex; align-items: center; justify-content: center;"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.34 15.89A9.2 9.2 0 0 0 5.5 5.5A9.2 9.2 0 0 0 15.89 20.34"></path><path d="M14.55 22.19L15.89 20.34L13.62 20.19"></path><path d="M8.8 15.2c0-3.5 2.9-6.4 6.4-6.4 0 3.5-2.9 6.4-6.4 6.4z"></path><line x1="8.8" y1="15.2" x2="15.2" y2="8.8"></line></svg></span>
+            <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #f5d06a;">iv</span>
+          </div>
+          <div style="font-size: clamp(17px, 1.7vw, 22px); font-weight: 800; letter-spacing: -0.02em; color: #fdfbf6; margin-top: 14px; line-height: 1.2;">The Network reports back.</div>
+          <p style="font-size: 15px; line-height: 1.6; color: rgba(253,251,246,0.9); margin: 10px 0 0;">A standing feedback loop with our Firesouls<sup style="font-size: 0.55em; font-weight: 700; vertical-align: super; line-height: 0; margin-left: 1px;">™</sup>—what they observe on the ground, gathered continuously.</p>
+          <span style="margin-top: auto; padding-top: 18px; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #f5d06a;">Section 05 ↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 01—FINDINGS BOARD -->
+  <section id="m-research" style="max-width: 1360px; margin: clamp(72px, 9vw, 128px) auto 0; padding: 0 32px; scroll-margin-top: 90px;">
+    <div data-reveal="" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 3px solid #57a143; padding-top: 14px;">
+      <span style="display: flex; align-items: center; gap: 12px;">
+        <span style="flex: none; width: 40px; height: 40px; border-radius: 999px; background: rgba(87,161,67,0.14); display: flex; align-items: center; justify-content: center;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="15.9" y1="15.9" x2="21.5" y2="21.5"></line><path d="M7.3 13.7c0-3.5 2.9-6.4 6.4-6.4 0 3.5-2.9 6.4-6.4 6.4z"></path><line x1="7.3" y1="13.7" x2="13.7" y2="7.3"></line></svg></span>
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #1f1a14;">Measure i · The field, in brief</span>
+      </span>
+      <span style="display: flex; align-items: baseline; gap: 14px;"><span style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">Five findings · peer-reviewed</span><span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">01 / 07</span></span>
+    </div>
+      <div data-reveal="" data-stack="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); align-items: end; margin-top: clamp(28px, 3.5vw, 44px);">
+      <div style="grid-column: 1 / span 4;">
+        <div style="display: flex; align-items: baseline; gap: 12px; border-top: 1.5px solid #1f1a14; padding-top: 12px;">
+          <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #57a143;">Fig. 1</span>
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #9d877a;">Dose &amp; response</span>
+        </div>
+        <h2 style="font-size: clamp(26px, 2.9vw, 40px); font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; margin: 20px 0 0; color: #1f1a14; text-wrap: balance;">The first minutes do the most work</h2>
+        <p style="font-size: clamp(15px, 1.4vw, 18px); line-height: 1.7; color: #3a3128; margin: 16px 0 0;">—which is a core argument for nearby, everyday greenspace.<br><br>Early studies asked for hours in wilderness. Today, we know that as little as <strong style="font-weight: 800;">10 minutes</strong> in a place where you feel connected to nature produces measurable physiological changes including a drop in cortisol, and a drop in blood pressure. Longer is better still; the point is that you don't have to wait for longer to benefit.</p>
+        <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 13px; line-height: 1.6; color: #6b5e51; margin: 16px 0 0;">Synthesis of published dose–response findings on nature contact and stress biomarkers.</p>
+      </div>
+
+      <figure style="grid-column: 6 / span 7; margin: 0;">
+        <div style="background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 20px; padding: clamp(22px, 2.6vw, 36px);">
+          <svg viewBox="0 0 560 300" role="img" aria-label="Chart: measurable stress reduction rises steeply in the first 10 to 20 minutes of nature contact, then plateaus" style="display: block; width: 100%; height: auto;">
+            <g stroke="#ded5c4" stroke-width="1">
+              <line x1="70" y1="40" x2="530" y2="40"></line>
+              <line x1="70" y1="95" x2="530" y2="95"></line>
+              <line x1="70" y1="150" x2="530" y2="150"></line>
+              <line x1="70" y1="205" x2="530" y2="205"></line>
+            </g>
+            <line x1="70" y1="30" x2="70" y2="252" stroke="#1f1a14" stroke-width="1.5"></line>
+            <line x1="70" y1="252" x2="530" y2="252" stroke="#1f1a14" stroke-width="1.5"></line>
+            <rect data-chart-band="" x="139" y="30" width="70" height="222" fill="#96c43d" opacity="0.16"></rect>
+            <path data-chart-line="" d="M70,246 C104,214 122,150 139,120 C170,66 210,52 250,47 C330,40 440,30 530,22" fill="none" stroke="#57a143" stroke-width="3" stroke-linecap="round"></path>
+            <circle data-chart-dot="" cx="139" cy="120" r="6" fill="#fdfbf6" stroke="#57a143" stroke-width="3"></circle>
+            <circle data-chart-dot="" cx="209" cy="57" r="6" fill="#fdfbf6" stroke="#57a143" stroke-width="3"></circle>
+            <g font-family="Nunito, sans-serif" font-size="12" font-weight="700" fill="#6b5e51">
+              <text x="139" y="272" text-anchor="middle">10 min</text>
+              <text x="209" y="272" text-anchor="middle">20 min</text>
+              <text x="325" y="272" text-anchor="middle">45 min</text>
+              <text x="500" y="272" text-anchor="middle">2 hrs</text>
+            </g>
+            <g font-family="Nunito, sans-serif" font-size="10" font-weight="800" letter-spacing="1.6" fill="#9d877a">
+              <text x="70" y="292" text-anchor="start">TIME SPENT IN NATURE →</text>
+              <text transform="translate(26,252) rotate(-90)" x="0" y="0">MEASURABLE RESPONSE →</text>
+            </g>
+            <g font-family="Nunito, sans-serif" font-size="12" font-weight="800" fill="#3a3128">
+              <text data-chart-note="" x="222" y="112">You don't need long to feel it.</text>
+              <text data-chart-note="" x="528" y="14" text-anchor="end" fill="#6b5e51">And it keeps building.</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption style="display: flex; gap: 10px; align-items: baseline; margin-top: 14px; font-size: 13px; color: #6b5e51; line-height: 1.6;">
+          <span style="flex: none; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px; color: #57a143;">Fig. 1</span>
+          <span>Response against duration of nature contact. The first minutes do the most work—which is the argument for small, nearby, everyday greenspace—and the benefit keeps accruing the longer you stay.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div data-reveal="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(20px, 2.5vw, 32px); margin-top: clamp(28px, 3.5vw, 48px); align-items: start;">
+      <div style="grid-column: 1 / span 5;">
+        <h2 style="font-size: clamp(26px, 3vw, 42px); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin: 0; color: #1f1a14; text-wrap: balance;">Fast facts, for when you only have a minute.</h2>
+        <p style="font-size: clamp(15px, 1.4vw, 18px); line-height: 1.7; color: #3a3128; margin: 14px 0 0;">Quick, sourced, shareable—each finding cites the journal it came from.</p>
+      </div>
+    </div>
+
+    <div data-reveal="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 1.6vw, 20px); margin-top: clamp(20px, 2.5vw, 28px);">
+
+      <!-- F-01 hero stat—flips to citation -->
+      <article style="grid-column: span 4; position: relative; min-height: 380px; perspective: 1600px;">
+        <div role="button" tabIndex="0" aria-label="Finding 01—show citation" onClick="{{ flip1 }}" onKeyDown="{{ flip1Key }}" style="position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 520ms cubic-bezier(0.22,1,0.36,1); transform: {{ flip1t }};">
+          <div style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: #57a143; border-radius: 20px; padding: clamp(26px, 2.8vw, 38px); display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 1px solid rgba(253,251,246,0.32); padding-bottom: 10px;">
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #f5d06a;">Finding 01</span>
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(253,251,246,0.72);">Stress</span>
+            </div>
+            <div style="margin-top: auto; padding-top: 28px;">
+              <div style="display: flex; align-items: baseline; gap: 10px;">
+                <span style="font-family: 'Lora', Georgia, serif; font-size: clamp(72px, 9vw, 120px); font-weight: 600; line-height: 0.82; letter-spacing: -0.04em; color: #fdfbf6;">20</span>
+                <span style="font-size: clamp(16px, 1.6vw, 20px); font-weight: 800; color: #f5d06a; letter-spacing: 0.02em;">min / day</span>
+              </div>
+              <p style="font-size: clamp(17px, 1.7vw, 21px); line-height: 1.4; font-weight: 700; color: #fdfbf6; margin: 20px 0 0; max-width: 20ch;">in nature measurably reduces stress.</p>
+              <div style="display: flex; align-items: center; gap: 8px; margin: 16px 0 0;">
+                <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 13px; color: rgba(253,251,246,0.82); margin: 0;">Frontiers in Psychology</p>
+                <span style="margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #f5d06a;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.34 15.89A9.2 9.2 0 0 0 5.5 5.5A9.2 9.2 0 0 0 15.89 20.34"></path><path d="M14.55 22.19L15.89 20.34L13.62 20.19"></path></svg>Citation</span>
+              </div>
+            </div>
+          </div>
+          <div style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: rotateY(180deg); background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 20px; padding: clamp(26px, 2.8vw, 38px); display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 1px solid #e7e0d2; padding-bottom: 10px;">
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #57a143;">Finding 01</span>
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9d877a;">Citation</span>
+            </div>
+            <div style="margin: 22px 0 0; display: flex; flex-direction: column; gap: 8px;">
+              <p style="font-size: 13px; font-weight: 700; line-height: 1.45; color: #1f1a14; margin: 0;">Hunter, M. R., Gillespie, B. W., &amp; Chen, S. Y.-P.<span style="font-weight: 400; color: #6b5e51;"> (2019)</span></p>
+              <p style="font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.45vw, 17px); line-height: 1.45; color: #3a3128; margin: 0; text-wrap: pretty;">Urban nature experiences reduce stress in the context of daily life based on salivary biomarkers.</p>
+              <p style="font-size: 12.5px; line-height: 1.5; color: #6b5e51; margin: 0;"><em style="font-style: italic; color: #3a3128;">Frontiers in Psychology</em>, 10, 722</p>
+            </div>
+            <div style="margin-top: auto; padding-top: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+              <a href="https://doi.org/10.3389/fpsyg.2019.00722" target="_blank" rel="noopener" onClick="{{ stop }}" style="font-size: 13px; font-weight: 700; color: #57a143; border-bottom: 1px solid rgba(87,161,67,0.4);">doi: 10.3389/fpsyg.2019.00722</a>
+              <span style="margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #9d877a;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.34 15.89A9.2 9.2 0 0 0 5.5 5.5A9.2 9.2 0 0 0 15.89 20.34"></path><path d="M14.55 22.19L15.89 20.34L13.62 20.19"></path></svg>Back</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- F-02 photo tile -->
+      <article style="grid-column: span 4; border-radius: 20px; overflow: hidden; min-height: 380px; position: relative; background: #ede5dd;">
+        <image-slot id="il-fact-air" shape="rect" fit="cover" src="./assets/w/bench-hero.jpeg" style="position:absolute; inset:0; width:100%; height:100%;" placeholder="Tree canopy photo"></image-slot>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(31,26,20,0.85) 0%, rgba(31,26,20,0.34) 46%, rgba(31,26,20,0.22) 72%, rgba(31,26,20,0.62) 100%);"></div>
+        <div style="position: relative; height: 100%; display: flex; flex-direction: column; padding: clamp(24px, 2.6vw, 34px);">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 1px solid rgba(253,251,246,0.35); padding-bottom: 10px;">
+            <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #afd274;">Finding 02</span>
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(253,251,246,0.78);">Air quality</span>
+          </div>
+          <div style="margin-top: auto;">
+            <p style="font-size: clamp(20px, 2.1vw, 28px); line-height: 1.18; font-weight: 800; letter-spacing: -0.02em; color: #fdfbf6; margin: 0; text-wrap: balance;">Planting trees improves air quality.</p>
+            <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 13px; color: rgba(253,251,246,0.85); margin: 14px 0 0;">Urban Forestry &amp; Urban Greening</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- F-03 -->
+      <article style="grid-column: span 4; background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 20px; padding: clamp(26px, 2.8vw, 38px); min-height: 380px; display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 1px solid #e7e0d2; padding-bottom: 10px;">
+          <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #57a143;">Finding 03</span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9d877a;">Mental health</span>
+        </div>
+        <img src="./assets/illustrations/research-depression.png" alt="" aria-hidden="true" style="display: block; width: 100%; max-width: 260px; height: auto; margin: 22px 0 0;">
+        <div style="margin-top: auto; padding-top: 22px;">
+          <p style="font-size: clamp(20px, 2.1vw, 28px); line-height: 1.18; font-weight: 800; letter-spacing: -0.02em; color: #1f1a14; margin: 0; text-wrap: balance;">Time in nature lowers depressive feelings.</p>
+          <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 13px; color: #6b5e51; margin: 14px 0 0;">International Journal of Environmental Research and Public Health</p>
+        </div>
+      </article>
+
+      <!-- F-04 wide -->
+      <article style="grid-column: span 7; background: #77441d; border-radius: 20px; padding: clamp(26px, 2.8vw, 40px); min-height: 200px; display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 1px solid rgba(253,251,246,0.3); padding-bottom: 10px;">
+          <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #f5d06a;">Finding 04</span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(253,251,246,0.72);">Public safety</span>
+        </div>
+        <div style="margin-top: auto; padding-top: 26px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px;">
+          <p style="flex: 1 1 320px; font-size: clamp(24px, 2.8vw, 38px); line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; color: #fdfbf6; margin: 0; max-width: 20ch; text-wrap: balance;">Greening vacant lots reduces gun violence.</p>
+          <p style="flex: none; font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 13px; color: rgba(253,251,246,0.85); margin: 0;">American Journal of Epidemiology</p>
+        </div>
+      </article>
+
+      <!-- F-05 -->
+      <article style="grid-column: span 5; background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 20px; padding: clamp(26px, 2.8vw, 38px); min-height: 200px; display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 1px solid #ded5c4; padding-bottom: 10px;">
+          <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #57a143;">Finding 05</span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9d877a;">Social cohesion</span>
+        </div>
+        <div style="margin-top: auto; padding-top: 26px;">
+          <p style="font-size: clamp(20px, 2.1vw, 28px); line-height: 1.16; font-weight: 800; letter-spacing: -0.025em; color: #1f1a14; margin: 0; text-wrap: balance;">Small parks build stronger, more connected communities.</p>
+          <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 13px; color: #6b5e51; margin: 14px 0 0;">Social Science &amp; Medicine</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- 02—REPORTS -->
+  <section style="width: 100%; background: #f5f1e8; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2; margin-top: clamp(72px, 9vw, 128px); padding: clamp(56px, 7vw, 104px) 0;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 0 32px;">
+      <div data-reveal="" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 3px solid #57a143; padding-top: 14px;">
+        <span style="display: flex; align-items: center; gap: 12px;">
+          <span style="flex: none; width: 40px; height: 40px; border-radius: 999px; background: rgba(87,161,67,0.14); display: flex; align-items: center; justify-content: center;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="15.9" y1="15.9" x2="21.5" y2="21.5"></line><path d="M7.3 13.7c0-3.5 2.9-6.4 6.4-6.4 0 3.5-2.9 6.4-6.4 6.4z"></path><line x1="7.3" y1="13.7" x2="13.7" y2="7.3"></line></svg></span>
+          <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #1f1a14;">Measure i · Evidence-based reports</span>
+        </span>
+        <span style="display: flex; align-items: baseline; gap: 14px;"><span style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">Free · no paywall, no jargon</span><span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">02 / 07</span></span>
+      </div>
+      <div data-reveal="" style="display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; margin-top: clamp(24px, 3vw, 40px);">
+        <div style="max-width: 44ch;">
+          <h2 style="font-size: clamp(26px, 3.2vw, 44px); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin: 0; color: #1f1a14; max-width: 20ch; text-wrap: balance;">Evidence, put to work.</h2>
+          <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: #57a143; font-weight: 700; letter-spacing: -0.01em; margin: 14px 0 0;">Why this matters: the research, translated into something you can hand to a board, a council, or a funder.</p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button onClick="{{ railPrev }}" aria-label="Previous reports" style="width: 46px; height: 46px; border-radius: 999px; border: 1px solid #c2b6a4; background: #fdfbf6; color: #1f1a14; cursor: pointer; font-size: 18px; font-weight: 700; line-height: 1; transition: background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#ede5dd;">←</button>
+          <button onClick="{{ railNext }}" aria-label="More reports" style="width: 46px; height: 46px; border-radius: 999px; border: 1px solid #c2b6a4; background: #fdfbf6; color: #1f1a14; cursor: pointer; font-size: 18px; font-weight: 700; line-height: 1; transition: background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#ede5dd;">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="ns-report-rail" style="margin-top: clamp(28px, 3.5vw, 44px); overflow-x: auto; overflow-y: hidden; scroll-behavior: smooth; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
+      <div style="display: flex; gap: clamp(16px, 2vw, 24px); padding: 0 32px; width: max-content;">
+
+        <!-- Featured report -->
+        <article style="scroll-snap-align: start; flex: none; width: min(90vw, 880px); background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 20px; padding: clamp(28px, 3vw, 40px); display: flex; flex-direction: column;">
+          <div style="display: flex; gap: clamp(22px, 2.6vw, 34px); align-items: flex-start;">
+            <img src="./assets/reports/burnout-red-to-green-cover.png" alt="Cover of Take Burnout from Red to Green" style="display: block; flex: none; width: clamp(132px, 15vw, 176px); height: auto; border-radius: 8px; box-shadow: 0 10px 28px rgba(31,26,20,0.18);">
+            <div style="flex: 1 1 auto; min-width: 0;">
+              <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <span style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fdfbf6; background: #57a143; border-radius: 999px; padding: 5px 12px;">Featured</span>
+                <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9d877a;">Healthcare · Economic analysis</span>
+              </div>
+              <h3 style="font-size: clamp(24px, 2.6vw, 34px); font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; margin: 14px 0 0; color: #1f1a14; text-wrap: balance;">Take Burnout from Red to Green</h3>
+              <p style="font-size: clamp(15px, 1.45vw, 17px); line-height: 1.65; color: #3a3128; margin: 12px 0 0;">How hospitals can save millions a year by investing in therapeutic greenspace to combat healthcare-worker burnout—with a calculator that estimates your facility's own savings and ROI from reduced turnover.</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; background: #57a143; color: #fdfbf6; padding: 13px 24px; border-radius: 999px; font-size: 15px; font-weight: 700;" style-hover="background:#46852f;">Open the ROI calculator →</a>
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #1f1a14; padding: 13px 24px; border-radius: 999px; font-size: 15px; font-weight: 700; border: 1px solid #1f1a14;" style-hover="background:#1f1a14; color:#fdfbf6;">Read the report</a>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 2.4vw, 40px); margin-top: clamp(24px, 2.6vw, 34px); padding-top: 22px; border-top: 1px solid #e7e0d2;">
+            <div>
+              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #57a143;">What you'll learn</div>
+              <ul style="list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9px;">
+                <sc-for list="{{ burnoutLearn }}" as="l" hint-placeholder-count="4">
+                  <li style="display: grid; grid-template-columns: 14px 1fr; gap: 10px; font-size: 15px; line-height: 1.5; color: #3a3128;"><span style="color: #96c43d; font-weight: 800;">—</span><span>{{ l }}</span></li>
+                </sc-for>
+              </ul>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #77441d;">Who should read it</div>
+              <ul style="list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9px;">
+                <sc-for list="{{ burnoutWho }}" as="w" hint-placeholder-count="4">
+                  <li style="display: grid; grid-template-columns: 14px 1fr; gap: 10px; font-size: 15px; line-height: 1.5; color: #3a3128;"><span style="color: #c2b6a4; font-weight: 800;">—</span><span>{{ w }}</span></li>
+                </sc-for>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <sc-for list="{{ reports }}" as="r" hint-placeholder-count="4">
+          <article style="scroll-snap-align: start; flex: none; width: min(76vw, 340px); background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 20px; padding: clamp(24px, 2.6vw, 32px); display: flex; flex-direction: column; min-height: 340px;">
+            <div style="aspect-ratio: 79 / 102; border-radius: 8px; background: #ede5dd; border: 1px dashed #d8cfbe; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #b8ac9c;">Cover</span></div>
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9d877a; border-bottom: 1px solid #e7e0d2; padding-bottom: 12px;">{{ r.tag }}</div>
+            <h3 style="font-size: clamp(19px, 1.9vw, 24px); font-weight: 800; line-height: 1.18; letter-spacing: -0.02em; margin: 16px 0 0; color: #1f1a14; text-wrap: balance;">{{ r.title }}</h3>
+            <p style="font-size: 15px; line-height: 1.65; color: #3a3128; margin: 12px 0 0;">{{ r.blurb }}</p>
+            <div style="margin-top: auto; padding-top: 24px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+              <a href="#" style="font-size: 14px; font-weight: 700; color: #57a143;" style-hover="color:#46852f;">Read →</a>
+              <span style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">{{ r.year }}</span>
+            </div>
+          </article>
+        </sc-for>
+
+        <div style="flex: none; width: 8px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03—THE JOURNAL -->
+  <section id="m-journals" style="max-width: 1360px; margin: clamp(72px, 9vw, 128px) auto 0; padding: 0 32px; scroll-margin-top: 90px;">
+    <div data-reveal="" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 3px solid #f5d06a; padding-top: 14px;">
+      <span style="display: flex; align-items: center; gap: 12px;">
+        <span style="flex: none; width: 40px; height: 40px; border-radius: 999px; background: rgba(245,208,106,0.4); display: flex; align-items: center; justify-content: center;"><img src="./assets/lyj-icon.png" alt="" aria-hidden="true" style="display: block; width: 17px; height: auto;"></span>
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #1f1a14;">Measure ii · The Little Yellow Journal</span>
+      </span>
+      <span style="display: flex; align-items: baseline; gap: 14px;"><span style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">Primary source</span><span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">03 / 07</span></span>
+    </div>
+    <div data-reveal="" data-stack="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(28px, 3.5vw, 48px); align-items: center;">
+      <div style="grid-column: 1 / span 5;">
+        <h2 style="font-size: clamp(26px, 3.2vw, 44px); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin: 0; color: #1f1a14; text-wrap: balance;">Thirty years of unprompted testimony.</h2>
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: #57a143; font-weight: 700; letter-spacing: -0.01em; margin: 16px 0 0;">Why this matters: it's the evidence only we have.</p>
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 16px 0 0;">Beneath every Nature Sacred bench sits a blank, waterproof journal. No question is asked of visitors, and nothing is collected from them. What they write is anonymous and voluntary. Read across decades and hundreds of sites, it is remarkably consistent.</p>
+        <a href="#" style="display: inline-block; margin-top: 22px; font-size: 15px; font-weight: 700; color: #57a143; border-bottom: 1.5px solid rgba(87,161,67,0.45); padding-bottom: 2px;" style-hover="color:#46852f; border-bottom-color:#46852f;">Read the journals →</a>
+      </div>
+      <figure style="grid-column: 7 / span 6; margin: 0;">
+        <img src="./assets/journal-neveralone.png" alt="Journal entry in handwriting: I imagine the presence of every person who has opened these pages next to me. I feel less alone. I was never alone. You were never alone." style="display: block; width: 100%; max-width: 380px; height: auto; mix-blend-mode: multiply;">
+        <figcaption style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 24px; padding-top: 14px; border-top: 1px solid #e7e0d2; max-width: 380px;">
+          <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #9d877a;">A journal entry</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 14px; line-height: 1.5; color: #6b5e51;">Naval Cemetery Landscape, Brooklyn, NY</span>
+        </figcaption>
+      </figure>
+    </div>
+
+  </section>
+
+  <!-- 04—CASE STUDIES -->
+  <section id="m-cases" style="scroll-margin-top: 90px; width: 100%; background: #f5f1e8; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2; margin-top: clamp(72px, 9vw, 128px); padding: clamp(56px, 7vw, 104px) 0;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 0 32px;">
+      <div data-reveal="" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 3px solid #9d877a; padding-top: 14px;">
+        <span style="display: flex; align-items: center; gap: 12px;">
+          <span style="flex: none; width: 40px; height: 40px; border-radius: 999px; background: rgba(157,135,122,0.25); display: flex; align-items: center; justify-content: center;"><img src="./assets/bench-icon-sm.png" alt="" aria-hidden="true" style="display: block; width: 28px; height: auto;"></span>
+          <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #1f1a14;">Measure iii · Case studies</span>
+        </span>
+        <span style="display: flex; align-items: baseline; gap: 14px;"><span style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">Single places, read closely</span><span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">04 / 07</span></span>
+      </div>
+      <div data-reveal="" style="display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; margin-top: clamp(20px, 2.4vw, 28px);">
+        <div style="max-width: 44ch;">
+          <h2 style="font-size: clamp(26px, 3.2vw, 44px); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin: 0; color: #1f1a14; max-width: 20ch; text-wrap: balance;">Evidence, one place at a time.</h2>
+          <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: #57a143; font-weight: 700; letter-spacing: -0.01em; margin: 14px 0 0;">Why this matters: the evidence, lived out in a real place.</p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button onClick="{{ casePrev }}" aria-label="Previous case studies" style="width: 46px; height: 46px; border-radius: 999px; border: 1px solid #c2b6a4; background: #fdfbf6; color: #1f1a14; cursor: pointer; font-size: 18px; font-weight: 700; line-height: 1; transition: background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#ede5dd;">←</button>
+          <button onClick="{{ caseNext }}" aria-label="More case studies" style="width: 46px; height: 46px; border-radius: 999px; border: 1px solid #c2b6a4; background: #fdfbf6; color: #1f1a14; cursor: pointer; font-size: 18px; font-weight: 700; line-height: 1; transition: background 200ms cubic-bezier(0.22,1,0.36,1);" style-hover="background:#ede5dd;">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="ns-case-rail" style="margin-top: clamp(28px, 3.5vw, 44px); overflow-x: auto; overflow-y: hidden; scroll-behavior: smooth; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
+      <div style="display: flex; gap: clamp(16px, 2vw, 24px); padding: 0 32px; width: max-content;">
+
+        <a href="#" style="scroll-snap-align: start; flex: none; width: min(90vw, 880px); background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 20px; padding: clamp(28px, 3vw, 40px); display: flex; flex-direction: column; color: inherit; transition: box-shadow 280ms cubic-bezier(0.22,1,0.36,1);" style-hover="box-shadow:0 14px 34px rgba(31,26,20,0.12);">
+          <div style="display: flex; gap: clamp(22px, 2.6vw, 34px); align-items: flex-start;">
+            <div style="flex: none; width: clamp(150px, 18vw, 220px); aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; background: #ede5dd;">
+              <image-slot id="il-case" shape="rect" fit="cover" src="./assets/w/child-garden-tomato.jpeg" style="width:100%; height:100%;" placeholder="Drop the Wildcat Way charrette photo"></image-slot>
+            </div>
+            <div style="flex: 1 1 auto; min-width: 0;">
+              <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <span style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fdfbf6; background: #57a143; border-radius: 999px; padding: 5px 12px;">Featured</span>
+                <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9d877a;">Schools · Hyattsville, MD</span>
+              </div>
+              <h3 style="font-size: clamp(24px, 2.6vw, 34px); font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; margin: 14px 0 0; color: #1f1a14; text-wrap: balance;">Wildcat Way at César Chávez Elementary School</h3>
+              <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 16px; color: #6b5e51; margin: 8px 0 0;">Infusing the school day with nature.</p>
+              <p style="font-size: clamp(15px, 1.45vw, 17px); line-height: 1.65; color: #3a3128; margin: 12px 0 0;">A dual-language school needed calming spaces—somewhere new students could settle and every student could take a mindful break. Children aged 5 to 10 designed it themselves, in charrette. Their teachers built a curriculum around it that any school can download.</p>
+              <span style="display: inline-block; margin-top: 18px; font-size: 15px; font-weight: 700; color: #57a143;">Read the case study →</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: clamp(22px, 2.4vw, 30px); padding-top: 20px; border-top: 1px solid #e7e0d2;">
+            <sc-for list="{{ caseChips }}" as="c" hint-placeholder-count="4">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: #3a3128; background: #f5f1e8; border: 1px solid #e7e0d2; border-radius: 999px; padding: 7px 14px;">{{ c }}</span>
+            </sc-for>
+          </div>
+        </a>
+
+        <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
+          <a href="#" style="scroll-snap-align: start; flex: none; width: min(76vw, 340px); background: #fdfbf6; border: 1px solid #e7e0d2; border-radius: 20px; padding: clamp(24px, 2.6vw, 32px); display: flex; flex-direction: column; min-height: 340px; color: inherit; transition: box-shadow 280ms cubic-bezier(0.22,1,0.36,1);" style-hover="box-shadow:0 14px 34px rgba(31,26,20,0.12);">
+            <div style="aspect-ratio: 4 / 3; border-radius: 10px; background: #ede5dd; border: 1px dashed #d8cfbe; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #b8ac9c;">Photo</span></div>
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9d877a; border-bottom: 1px solid #e7e0d2; padding-bottom: 12px;">{{ c.tag }}</div>
+            <h3 style="font-size: clamp(19px, 1.9vw, 24px); font-weight: 800; line-height: 1.18; letter-spacing: -0.02em; margin: 16px 0 0; color: #1f1a14; text-wrap: balance;">{{ c.title }}</h3>
+            <p style="font-size: 15px; line-height: 1.65; color: #3a3128; margin: 12px 0 0;">{{ c.blurb }}</p>
+            <div style="margin-top: auto; padding-top: 24px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+              <span style="font-size: 14px; font-weight: 700; color: #57a143;">Read →</span>
+              <span style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">{{ c.year }}</span>
+            </div>
+          </a>
+        </sc-for>
+
+        <div style="flex: none; width: 8px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05—THE NETWORK REPORTS BACK -->
+  <section id="m-network" style="max-width: 1360px; margin: clamp(72px, 9vw, 128px) auto 0; padding: 0 32px; scroll-margin-top: 90px;">
+    <div data-reveal="" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 3px solid #78ccb8; padding-top: 14px;">
+      <span style="display: flex; align-items: center; gap: 12px;">
+        <span style="flex: none; width: 40px; height: 40px; border-radius: 999px; background: rgba(120,204,184,0.32); display: flex; align-items: center; justify-content: center;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1f1a14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.34 15.89A9.2 9.2 0 0 0 5.5 5.5A9.2 9.2 0 0 0 15.89 20.34"></path><path d="M14.55 22.19L15.89 20.34L13.62 20.19"></path><path d="M8.8 15.2c0-3.5 2.9-6.4 6.4-6.4 0 3.5-2.9 6.4-6.4 6.4z"></path><line x1="8.8" y1="15.2" x2="15.2" y2="8.8"></line></svg></span>
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #1f1a14;">Measure iv · The Network reports back</span>
+      </span>
+      <span style="display: flex; align-items: baseline; gap: 14px;"><span style="font-family: 'Lora', Georgia, serif; font-size: 13px; color: #9d877a;">A standing feedback loop</span><span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">05 / 07</span></span>
+    </div>
+    <div data-reveal="" data-stack="" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(28px, 4vw, 56px); margin-top: clamp(28px, 4vw, 52px); align-items: start;">
+      <div style="grid-column: 1 / span 6;">
+        <h2 style="font-size: clamp(28px, 3.8vw, 54px); font-weight: 800; line-height: 1.02; letter-spacing: -0.032em; color: #1f1a14; margin: 0; max-width: 22ch; text-wrap: balance;">The people who tend Sacred Places tell us what the data can't.</h2>
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: #57a143; font-weight: 700; letter-spacing: -0.01em; margin: 14px 0 0; max-width: 38ch;">Why this matters: Firesouls see what the studies can’t capture in real time.</p>
+        <p style="font-size: clamp(17px, 1.6vw, 21px); line-height: 1.65; color: #3a3128; margin: clamp(20px, 2.5vw, 30px) 0 0; max-width: 44ch;">Every Sacred Place has a Firesoul—the local champion who cares for it. They are on the ground every week, and they report back to us continuously. That loop is the fourth source of our evidence, and the one that keeps the other three honest.</p>
+        <a href="./final_The Network.dc.html" style="display: inline-block; margin-top: clamp(22px, 2.6vw, 32px); font-size: 15px; font-weight: 700; color: #57a143; border-bottom: 1.5px solid rgba(87,161,67,0.45); padding-bottom: 2px;" style-hover="color:#46852f; border-bottom-color:#46852f;">Meet the Firesoul Network →</a>
+      </div>
+      <div style="grid-column: 8 / span 5; display: flex; flex-direction: column;">
+        <div style="border-top: 1px solid #e7e0d2; padding: 18px 0;">
+          <div style="font-size: clamp(17px, 1.6vw, 20px); font-weight: 800; letter-spacing: -0.015em; color: #1f1a14;">What changes in a place</div>
+          <p style="font-size: clamp(15px, 1.4vw, 17px); line-height: 1.65; color: #5a4d3f; margin: 8px 0 0;">Who comes, when, and what they come for—the use patterns no study design would have predicted.</p>
+        </div>
+        <div style="border-top: 1px solid #e7e0d2; padding: 18px 0;">
+          <div style="font-size: clamp(17px, 1.6vw, 20px); font-weight: 800; letter-spacing: -0.015em; color: #1f1a14;">What the journals are saying</div>
+          <p style="font-size: clamp(15px, 1.4vw, 17px); line-height: 1.65; color: #5a4d3f; margin: 8px 0 0;">Firesouls read the entries first. Recurring themes reach us long before they reach a paper.</p>
+        </div>
+        
+        <div style="border-top: 1px solid #e7e0d2; padding: 18px 0 0;">
+          <div style="font-size: clamp(17px, 1.6vw, 20px); font-weight: 800; letter-spacing: -0.015em; color: #1f1a14;">What a community needs next</div>
+          <p style="font-size: clamp(15px, 1.4vw, 17px); line-height: 1.65; color: #5a4d3f; margin: 8px 0 0;">Programming, partners, repairs—the practical asks that decide whether a place lasts 30 years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06—JOY -->
+  <section style="width: 100%; background: #f5f1e8; border-top: 1px solid #e7e0d2; border-bottom: 1px solid #e7e0d2; margin-top: clamp(72px, 9vw, 128px); padding: clamp(44px, 5.5vw, 76px) 0; overflow: hidden;">
+    <div data-reveal="" data-stack="" style="max-width: 1360px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 3.5vw, 56px); align-items: center;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; border-top: 3px solid #f5d06a; padding-top: 14px;">
+          <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #1f1a14;">Joy, as a measure</span>
+          <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #9d877a; margin-left: auto;">06 / 07</span>
+        </div>
+        <h2 style="font-size: clamp(26px, 3.2vw, 44px); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin: clamp(18px, 2.2vw, 28px) 0 0; color: #1f1a14; text-wrap: balance;">The measure we're still building.</h2>
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 16px 0 0;">We've come to hold joy as a central outcome of this work, and not a byproduct of getting other things right. We're building a way to see it.</p>
+        <div style="display: inline-block; margin-top: 20px; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #9d877a; border: 1px solid #d8cfbe; border-radius: 999px; padding: 6px 14px;">In development</div>
+      </div>
+      <img src="./assets/journal-doodle-judy.png" alt="A journal page: a pen-and-ink drawing of a flowering plant in the grass, above the handwritten line &quot;Judy, Eleni and Claudia were here&quot;" style="display: block; justify-self: center; width: 100%; max-width: 520px; height: auto; opacity: 0.9; mix-blend-mode: multiply; pointer-events: none;">
+    </div>
+  </section>
+
+  <!-- 07—CLOSING -->
+  <section data-reveal="" style="max-width: 1360px; margin: clamp(72px, 9vw, 128px) auto 0; padding: 0 32px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 3px solid #57a143; padding-top: 14px;">
+      <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #1f1a14;">Research &amp; resources</span>
+      <span style="font-family: 'Lora', Georgia, serif; font-size: 15px; color: #57a143;">07 / 07</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(28px, 3.5vw, 48px); align-items: end;">
+      <h2 style="grid-column: 1 / span 7; font-size: clamp(34px, 5.4vw, 78px); font-weight: 800; line-height: 0.99; letter-spacing: -0.035em; color: #1f1a14; margin: 0; text-wrap: balance;">Rigorous proof you can feel.</h2>
+      <div style="grid-column: 9 / span 4;">
+        <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.7; color: #3a3128; margin: 0;">The numbers make the case to funders and cities. The journals make it to everyone.</p>
+        <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="#" style="background: #57a143; color: #fdfbf6; padding: 15px 30px; border-radius: 999px; font-size: 15px; font-weight: 700;" style-hover="background:#46852f; color:#fdfbf6;">Explore the library →</a>
+          <a href="Join the Movement.dc.html" style="background: transparent; color: #1f1a14; padding: 15px 30px; border-radius: 999px; font-size: 15px; font-weight: 700; border: 1px solid #1f1a14;" style-hover="background:#1f1a14; color:#fdfbf6;">Join the Movement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div style="overflow-x: clip;">
+  <footer style="position: relative; z-index: 10; width: 132%; margin-left: -16%; background: #926948; margin-top: clamp(150px, 17vw, 220px); padding: clamp(24px, 3vw, 40px) 32px 44px;">
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; bottom: 100%; width: 100%; height: min(9vw, 104px); display: block;"><path d="M0,260 L0,168 C0,84 176,30 468,14 C560,9 640,7 720,7 C800,7 880,9 972,14 C1264,30 1440,84 1440,168 L1440,260 Z" fill="#926948"></path></svg>
+    <div style="max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 40px 48px;">
+      <div style="grid-column: span 1; min-width: 240px;">
+        <img src="./assets/logo-30-wordmark-white-sm.png" alt="Nature Sacred" style="height: 48px; width: auto;">
+        <p style="font-size: 14px; color: rgba(253,251,246,0.9); line-height: 1.7; margin: 18px 0 0; max-width: 30ch;">105 Annapolis Street, Suite D<br>Annapolis, MD 21401<br>410.268.1376</p>
+        <p style="font-size: 12px; color: rgba(253,251,246,0.62); margin: 16px 0 0; line-height: 1.5;">A 501(c)(3) private operating foundation. Formerly the TKF Foundation.</p>
+      </div>
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+        <div>
+          <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a; font-weight: 800; margin-bottom: 16px;">{{ col.title }}</div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ col.items }}" as="item" hint-placeholder-count="4">
+              <li><a href="#" style="font-size: 14px; color: rgba(253,251,246,0.88);" style-hover="color:#ffffff;">{{ item }}</a></li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+    <div style="max-width: 620px; margin: 48px auto 0; padding-top: 40px; border-top: 1px solid rgba(253,251,246,0.2); text-align: center;">
+      <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #f5d06a; font-weight: 800;">Stay connected</div>
+      <h3 style="font-size: clamp(20px, 2.2vw, 26px); font-weight: 700; color: #fdfbf6; margin: 12px 0 0; line-height: 1.2;">Updates, inspiration, and news from Nature Sacred.</h3>
+      <form onSubmit="{{ onSubscribe }}" style="margin: 22px auto 0; max-width: 460px; display: flex; gap: 10px;">
+        <input type="email" required="" placeholder="Your email address" style="flex: 1 1 auto; min-width: 0; padding: 13px 18px; border-radius: 999px; border: 1px solid rgba(253,251,246,0.35); background: rgba(253,251,246,0.08); color: #fdfbf6; font-family: inherit; font-size: 15px;">
+        <button type="submit" style="flex: none; padding: 0 26px; height: 48px; border: none; border-radius: 999px; background: #57a143; color: #fff; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer;" style-hover="background:#46852f;">Sign up</button>
+      </form>
+    </div>
+    <div style="max-width: 760px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid rgba(253,251,246,0.2); display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: rgba(253,251,246,0.62);">© 1996–2026 Nature Sacred. All rights reserved.</span>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" aria-label="Instagram" style="display: flex; color: rgba(253,251,246,0.82);" style-hover="color:#f5d06a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+        <a href="#" aria-label="Facebook" style="display: flex; color: rgba(253,251,246,0.82);" style-hover="color:#f5d06a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"></path></svg></a>
+        <a href="#" aria-label="LinkedIn" style="display: flex; color: rgba(253,251,246,0.82);" style-hover="color:#f5d06a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5A1.94 1.94 0 1 1 3.06 5a1.94 1.94 0 0 1 3.88 0zM3.4 8.5h3.1V21H3.4zM9.2 8.5h2.97v1.7h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.32c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21H9.2z"></path></svg></a>
+      </div>
+      <span style="font-size: 12px; color: rgba(253,251,246,0.62);">Privacy · Terms · Contact</span>
+    </div>
+  </footer>
+  </div>
+
+  <!-- MENU -->
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 100; background: #fdfbf6; overflow-y: auto; animation: ns-fade 240ms cubic-bezier(0.22,1,0.36,1) both;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; gap: 24px;">
+        <img src="./assets/logo-30-horizontal.png" alt="Nature Sacred" style="height: 46px; width: auto;">
+        <button onClick="{{ closeMenu }}" aria-label="Close menu" style="margin-left: auto; display: flex; align-items: center; gap: 10px; background: transparent; border: 1px solid #e7e0d2; border-radius: 999px; padding: 9px 16px; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1f1a14;" style-hover="background:#f5f1e8;">
+          <span style="position: relative; width: 16px; height: 16px; display: inline-block;">
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(45deg);"></span>
+            <span style="position: absolute; top: 7px; left: 0; width: 16px; height: 2px; background: #ff4800; transform: rotate(-45deg);"></span>
+          </span>
+          Close
+        </button>
+      </div>
+      <img data-menu-sketch="" src="./assets/journal-butterfly.png" alt="" aria-hidden="true" style="position: absolute; right: clamp(40px, 13vw, 260px); top: clamp(90px, 14vh, 170px); width: clamp(270px, 39vw, 510px); height: auto; opacity: 0.85; mix-blend-mode: multiply; pointer-events: none; animation: ns-fade-sketch 900ms cubic-bezier(0.22,1,0.36,1) 200ms both;">
+      <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(24px, 5vw, 64px) 32px 80px; animation: ns-menu-panel 360ms cubic-bezier(0.22,1,0.36,1) both;">
+        <nav style="display: flex; flex-direction: column; gap: clamp(6px, 1vw, 12px);">
+          <sc-for list="{{ menu }}" as="group" hint-placeholder-count="4">
+            <a href="{{ group.href }}" style="font-size: clamp(30px, 5vw, 54px); font-weight: 800; letter-spacing: -0.025em; color: #1f1a14; line-height: 1.12;" style-hover="color:#57a143;">{{ group.title }}</a>
+          </sc-for>
+        </nav>
+        <div style="margin-top: clamp(44px, 7vw, 80px); padding-top: 28px; border-top: 1px solid #e7e0d2; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center;">
+          <sc-for list="{{ menuMinor }}" as="u" hint-placeholder-count="4">
+            <a href="#" onClick="{{ closeMenu }}" style="font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #6b5e51;" style-hover="color:#57a143;">{{ u }}</a>
+          </sc-for>
+          <a href="Donate.dc.html" style="margin-left: auto; display: inline-flex; align-items: center; gap: 8px; background: #ff4800; color: #fff; padding: 11px 24px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;" style-hover="background:#e64000;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Donate</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:720}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, flip1: false };
+
+  componentDidMount() {
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false }); };
+    document.addEventListener('keydown', this._onKey);
+
+    // Chart draws itself in on scroll
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      const line = document.querySelector('[data-chart-line]');
+      if (line) {
+        const band = document.querySelector('[data-chart-band]');
+        const dots = Array.from(document.querySelectorAll('[data-chart-dot]'));
+        const notes = Array.from(document.querySelectorAll('[data-chart-note]'));
+        const len = line.getTotalLength();
+        line.style.strokeDasharray = len;
+        line.style.strokeDashoffset = len;
+        if (band) { band.style.opacity = '0'; band.style.transition = 'opacity 700ms cubic-bezier(0.22,1,0.36,1)'; }
+        dots.forEach(d => { d.style.opacity = '0'; d.style.transition = 'opacity 400ms cubic-bezier(0.22,1,0.36,1)'; });
+        notes.forEach(n => { n.style.opacity = '0'; n.style.transition = 'opacity 600ms cubic-bezier(0.22,1,0.36,1)'; });
+        this._chartIO = new IntersectionObserver((entries) => {
+          entries.forEach(en => {
+            if (!en.isIntersecting) return;
+            this._chartIO.disconnect();
+            line.style.transition = 'stroke-dashoffset 2600ms cubic-bezier(0.33,0.9,0.4,1)';
+            requestAnimationFrame(() => { line.style.strokeDashoffset = '0'; });
+            setTimeout(() => { if (band) band.style.opacity = '0.16'; }, 700);
+            setTimeout(() => { dots[0] && (dots[0].style.opacity = '1'); }, 780);
+            setTimeout(() => { notes[0] && (notes[0].style.opacity = '1'); }, 950);
+            setTimeout(() => { dots[1] && (dots[1].style.opacity = '1'); }, 1200);
+            setTimeout(() => { notes[1] && (notes[1].style.opacity = '1'); }, 2500);
+          });
+        }, { threshold: 0.4 });
+        this._chartIO.observe(line.closest('svg') || line);
+      }
+    }
+
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && 'IntersectionObserver' in window) {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      els.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(22px)';
+        el.style.transition = 'opacity 720ms cubic-bezier(0.22,1,0.36,1), transform 720ms cubic-bezier(0.22,1,0.36,1)';
+      });
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.style.opacity = '1'; en.target.style.transform = 'none'; this._io.unobserve(en.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+      els.forEach(el => this._io.observe(el));
+    }
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this._onKey);
+    if (this._io) this._io.disconnect();
+  }
+
+  renderVals() {
+    const toggle1 = () => this.setState(s => ({ flip1: !s.flip1 }));
+    return {
+      flip1t: this.state.flip1 ? 'rotateY(180deg)' : 'rotateY(0deg)',
+      flip1: toggle1,
+      flip1Key: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle1(); } },
+      stop: (e) => e.stopPropagation(),
+      sources: [
+        { n: 'i', t: 'Peer-reviewed research', d: 'Published science on nature and human health.' },
+        { n: 'ii', t: 'The journals', d: 'Anonymous entries, unprompted, across three decades.' },
+        { n: 'iii', t: 'Real use cases', d: 'Hospitals, schools, prisons, neighborhoods—in situ.' },
+        { n: 'iv', t: 'The Network reports back', d: 'A standing feedback loop with our Firesouls<sup style="font-size: 0.55em; font-weight: 700; vertical-align: super; line-height: 0; margin-left: 1px;">™</sup>—what they observe on the ground, gathered continuously.' },
+      ],
+      burnoutLearn: [
+        'The economic burden of physician and nurse burnout—turnover cost and medical liability.',
+        'Evidence that biophilic interventions reduce emotional exhaustion.',
+        'How to calculate your own facility\u2019s potential savings.',
+        'Case studies from therapeutic gardens already in place.',
+      ],
+      burnoutWho: [
+        'Hospital administrators and C-suite executives',
+        'Healthcare facility planners and architects',
+        'HR directors in healthcare settings',
+        'Physician and nursing leadership',
+        'Consultants focused on workforce retention',
+      ],
+      reports: [
+        { tag: 'Title to come', title: 'Add your next translation here', blurb: 'Card pattern for the rest of the library—the finding, who it is for, and the year.', year: '—' },
+        { tag: 'Title to come', title: 'Add your next translation here', blurb: 'Card pattern for the rest of the library—the finding, who it is for, and the year.', year: '—' },
+        { tag: 'Title to come', title: 'Add your next translation here', blurb: 'Card pattern for the rest of the library—the finding, who it is for, and the year.', year: '—' },
+      ],
+      railPrev: () => { const el = document.getElementById('ns-report-rail'); if (el) el.scrollBy({ left: -Math.min(el.clientWidth * 0.8, 620), behavior: 'smooth' }); },
+      railNext: () => { const el = document.getElementById('ns-report-rail'); if (el) el.scrollBy({ left: Math.min(el.clientWidth * 0.8, 620), behavior: 'smooth' }); },
+      cases: [
+        { tag: 'Setting · Location', title: 'Add your next case study here', blurb: 'Card pattern for the rest of the library—the setting, the need, and what changed.', year: '—' },
+        { tag: 'Setting · Location', title: 'Add your next case study here', blurb: 'Card pattern for the rest of the library—the setting, the need, and what changed.', year: '—' },
+        { tag: 'Setting · Location', title: 'Add your next case study here', blurb: 'Card pattern for the rest of the library—the setting, the need, and what changed.', year: '—' },
+      ],
+      casePrev: () => { const el = document.getElementById('ns-case-rail'); if (el) el.scrollBy({ left: -Math.min(el.clientWidth * 0.8, 620), behavior: 'smooth' }); },
+      caseNext: () => { const el = document.getElementById('ns-case-rail'); if (el) el.scrollBy({ left: Math.min(el.clientWidth * 0.8, 620), behavior: 'smooth' }); },
+      caseChips: ['355 students', 'Spanish + English', 'Student-led charrette', 'Free curriculum'],
+
+      menuOpen: this.state.menuOpen,
+      openMenu: () => { this.setState({ menuOpen: true }); if (typeof document !== 'undefined') document.body.style.overflow = 'hidden'; },
+      closeMenu: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ menuOpen: false }); if (typeof document !== 'undefined') document.body.style.overflow = ''; },
+      onSubscribe: (e) => { e.preventDefault(); },
+
+      footerCols: [
+        { title: 'The Network', items: ['Our Sacred Places', 'The Firesoul Network', 'Our Design Process', 'Our Bench & Journal'] },
+        { title: 'Impact & Learning', items: ['Little Yellow Journal', 'Research & Resources', 'News & Stories', 'Why Sacred Places?'] },
+        { title: 'Join the Movement', items: ['Create a Sacred Place', 'Design with Us', 'Bring Your Service', 'Volunteer', 'Donate'] },
+        { title: 'About', items: ['Our History', 'Our Team', '2025 Gratitude Report', 'Invite Us to Speak'] },
+      ],
+      menu: [
+        { title: 'Why Sacred Places?', href: 'Why Sacred Places.dc.html' },
+        { title: 'The Network', href: 'The Network.dc.html' },
+        { title: 'Impact & Learning', href: 'Impact and Learning.dc.html' },
+        { title: 'Join the Movement', href: 'Join the Movement.dc.html' },
+        { title: 'About', href: 'About.dc.html' },
+        { title: 'Donate', href: 'Donate.dc.html' },
+      ],
+      menuMinor: ['About', 'The Gateway Dashboard', 'Subscribe', 'For Firesouls (login)'],
+    };
+  }
+}
+</script>
+</body>
+</html>

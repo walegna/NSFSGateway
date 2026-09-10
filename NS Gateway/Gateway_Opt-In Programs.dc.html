@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..900;1,400..800&amp;family=Lora:ital,wght@0,400..600;1,400..600&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ece7db; color: #1f1a14; font-family: 'Nunito', ui-sans-serif, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #57a143; text-decoration: none; }
+  a:hover { color: #46852f; }
+  ::selection { background: #afd274; color: #1f1a14; }
+  @media (min-width: 760px) {
+    [data-shell] { padding: 26px 0 34px; }
+    [data-app] { border-radius: 30px; box-shadow: 0 24px 60px rgba(31,26,20,0.16); border: 1px solid #ded6c6; height: calc(100svh - 60px) !important; }
+  }
+  @media (min-width: 1180px) {
+    [data-app] { max-width: 1060px; }
+    [data-tabs] { display: none !important; }
+    [data-pad] { padding-left: 40px !important; padding-right: 40px !important; }
+    [data-steps] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+    [data-programs] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 22px !important; }
+  }
+</style>
+</helmet>
+
+<div data-shell="" style="min-height: 100svh; background: #ece7db;">
+  <div data-app="" style="position: relative; overflow: hidden; max-width: 480px; margin: 0 auto; height: 100svh; background: #fdfbf6; display: flex; flex-direction: column;">
+
+    <header style="position: relative; z-index: 10; flex: none; display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: rgba(253,251,246,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #e7dfcd;">
+      <a href="./Gateway_Sacred Place Care Resources.dc.html" aria-label="Back to Care Resources" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: none; color: #1f1a14;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"></path></svg>
+      </a>
+      <span style="font-size: 16px; font-weight: 800; letter-spacing: -0.01em; color: #1f1a14; margin-right: auto;">Opt-In Programs</span>
+      <div style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #57a143; color: #fdfbf6; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800;">AW</div>
+    </header>
+
+    <div data-body="" id="top" style="flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 40px;">
+
+      <section style="position: relative; min-height: 240px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden;">
+        <img src="./assets/sm/hospital-yoga.jpg" alt="An outdoor yoga class in a Sacred Place" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(31,26,20,0.86) 0%, rgba(31,26,20,0.56) 46%, rgba(31,26,20,0.12) 82%, rgba(31,26,20,0) 100%);"></div>
+        <div style="position: relative; padding: 26px 22px 22px;">
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(253,251,246,0.92);">Opt-In Programs</div>
+          <h1 style="font-family: 'Lora', Georgia, serif; font-size: 32px; font-weight: 600; line-height: 1.1; color: #fff; margin: 10px 0 0; text-shadow: 0 2px 18px rgba(31,26,20,0.45);">No application. Just opt in.</h1>
+        </div>
+      </section>
+
+      <section data-pad="" style="padding: 24px 22px 0;">
+        <p style="font-size: 17px; line-height: 1.62; color: #3d352a; margin: 0; max-width: 62ch;">Throughout the year, Nature Sacred offers special opt-in programs that make it easy to bring new experiences to your Sacred Place. We find trusted partners, provide resources and promotional support, and cover program costs—you choose what works for your community and help bring it to life. No grant application. No grant reporting. Just opt in!</p>
+      </section>
+
+      <section data-pad="" style="padding: 28px 22px 0;">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68;">How Opt-In Programs work</div>
+        <div data-steps="" style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 14px;">
+          <div style="padding: 18px 18px 20px; background: #fdfbf6; border: 1px solid #e7dfcd; border-radius: 16px; box-shadow: 0 1px 3px rgba(31,26,20,0.05);">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #eef4e0; color: #46852f; font-size: 14px; font-weight: 800;">1</span>
+            <div style="font-size: 18px; font-weight: 800; color: #1f1a14; margin-top: 12px;">Choose What Fits</div>
+            <p style="font-size: 15px; line-height: 1.55; color: #6b6053; margin: 7px 0 0;">Explore the programs currently available to you and choose the ones that feel right for your Sacred Place and community.</p>
+          </div>
+          <div style="padding: 18px 18px 20px; background: #fdfbf6; border: 1px solid #e7dfcd; border-radius: 16px; box-shadow: 0 1px 3px rgba(31,26,20,0.05);">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #eef4e0; color: #46852f; font-size: 14px; font-weight: 800;">2</span>
+            <div style="font-size: 18px; font-weight: 800; color: #1f1a14; margin-top: 12px;">We Provide the Support</div>
+            <p style="font-size: 15px; line-height: 1.55; color: #6b6053; margin: 7px 0 0;">Depending on the program, Nature Sacred may provide the instructor or vendor, materials, equipment, funding, and promotional resources you need.</p>
+          </div>
+          <div style="padding: 18px 18px 20px; background: #fdfbf6; border: 1px solid #e7dfcd; border-radius: 16px; box-shadow: 0 1px 3px rgba(31,26,20,0.05);">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #eef4e0; color: #46852f; font-size: 14px; font-weight: 800;">3</span>
+            <div style="font-size: 18px; font-weight: 800; color: #1f1a14; margin-top: 12px;">You Make It Happen</div>
+            <p style="font-size: 15px; line-height: 1.55; color: #6b6053; margin: 7px 0 0;">You coordinate the date and details, invite your community, and host the experience at your Sacred Place.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin: 26px 18px 0; padding: 20px 20px 22px; background: #f5f1e8; border: 1px solid #eae3d3; border-radius: 18px;">
+        <h2 style="font-size: 21px; font-weight: 800; color: #1f1a14; margin: 0;">Nature Sacred Covers the Cost</h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #4a4137; margin: 10px 0 0; max-width: 58ch;">Opt-in programs are a benefit of being part of the Firesoul<sup style="font-size:0.55em; font-weight:700; vertical-align:super; line-height:0; margin-left:1px;">™</sup> Network. Nature Sacred covers the program costs so you can focus on creating a great experience for your community.</p>
+      </section>
+
+      <section data-pad="" data-programs="" style="display: grid; grid-template-columns: 1fr; gap: 18px; padding: 30px 22px 0;">
+        <div style="display: flex; flex-direction: column; background: #fdfbf6; border: 1px solid #e7dfcd; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 3px rgba(31,26,20,0.05);">
+          <img src="./assets/sm/hospital-yoga.jpg" alt="" style="width: 100%; height: 150px; object-fit: cover; display: block;">
+          <div style="padding: 20px 20px 22px;">
+            <h2 style="font-size: 23px; font-weight: 800; color: #1f1a14; margin: 0;">Yoga in the Garden</h2>
+            <div style="font-family: 'Lora', Georgia, serif; font-size: 17px; font-style: italic; color: #77441d; margin-top: 6px;">Move, Connect &amp; Restore in Nature</div>
+            <p style="font-size: 16px; line-height: 1.6; color: #4a4137; margin: 12px 0 0;">Yoga in the Garden helps Firesouls bring free, accessible wellness programming directly into their Sacred Places. These outdoor classes invite community members to slow down, move, connect with nature and one another, and experience their Sacred Place in a new way. Nature Sacred partners with Baltimore instructor Dee Satterfield and covers the cost, making it easy for you to bring yoga to your community.</p>
+            <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #9d877a; margin-top: 20px;">What Nature Sacred Provides</div>
+            <div style="display: flex; flex-direction: column; margin-top: 6px;">
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #96c43d; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Up to 8 yoga sessions at your Sacred Place per fall and spring season</p></div>
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #96c43d; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Direct payment and coordination with the instructor</p></div>
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #96c43d; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Promotional resources to help you spread the word</p></div>
+            </div>
+            <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #9d877a; margin-top: 20px;">What You'll Do</div>
+            <div style="display: flex; flex-direction: column; margin-top: 6px;">
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #f5d06a; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Host classes in your Sacred Place, moving indoors only when needed due to weather</p></div>
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #f5d06a; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Choose and coordinate dates with Dee</p></div>
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #f5d06a; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Share the classes through your community networks and invite people to participate</p></div>
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #f5d06a; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Include the Nature Sacred logo and "This program is supported by the Nature Sacred Firesoul Network" on promotional materials</p></div>
+            </div>
+            <a href="mailto:kerry@naturesacred.org" style="margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 999px; background: #57a143; color: #fdfbf6; font-size: 16px; font-weight: 700; box-shadow: 0 4px 14px rgba(87,161,67,0.28);" style-hover="background:#46852f; color:#fdfbf6;">Sign Up for Yoga in the Garden
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; background: #fdfbf6; border: 1px solid #e7dfcd; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 3px rgba(31,26,20,0.05);">
+          <img src="./assets/sm/support-gathering.jpg" alt="" style="width: 100%; height: 150px; object-fit: cover; display: block;">
+          <div style="padding: 20px 20px 22px;">
+            <h2 style="font-size: 23px; font-weight: 800; color: #1f1a14; margin: 0;">Music in the Garden</h2>
+            <div style="font-family: 'Lora', Georgia, serif; font-size: 17px; font-style: italic; color: #77441d; margin-top: 6px;">Bring Your Sacred Place to Life Through Music</div>
+            <p style="font-size: 16px; line-height: 1.6; color: #4a4137; margin: 12px 0 0;">Music in the Garden helps Firesouls bring free live music into their Sacred Places—creating joyful shared experiences that bring people together, welcome new visitors, and invite the community to experience the space in a new way. Nature Sacred partners with jazz musician and fellow Firesoul Todd Marcus to bring live concerts to Sacred Places in Baltimore and Washington, D.C. Space is limited.</p>
+            <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #9d877a; margin-top: 20px;">What You'll Do</div>
+            <div style="display: flex; flex-direction: column; margin-top: 6px;">
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #f5d06a; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Host the concert in or very near your Sacred Place</p></div>
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #f5d06a; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Coordinate the date and event details with Todd</p></div>
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #f5d06a; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Invite your community and help spread the word</p></div>
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #f5d06a; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Keep the Nature Sacred-supported event free and welcoming to the public</p></div>
+              <div style="display: flex; gap: 11px; padding: 11px 0; border-top: 1px solid #eae3d3;"><span style="flex: none; width: 7px; height: 7px; border-radius: 50%; background: #f5d06a; margin-top: 8px;"></span><p style="font-size: 15px; line-height: 1.5; color: #3d352a; margin: 0;">Include Nature Sacred recognition on promotional materials</p></div>
+            </div>
+            <a href="mailto:kerry@naturesacred.org" style="margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 999px; background: #57a143; color: #fdfbf6; font-size: 16px; font-weight: 700; box-shadow: 0 4px 14px rgba(87,161,67,0.28);" style-hover="background:#46852f; color:#fdfbf6;">Bring Music to My Sacred Place
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section data-pad="" style="padding: 30px 22px 10px;">
+        <a href="./Gateway_FREEsources.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 16px 4px; border-top: 1px solid #eae3d3; font-size: 17px; font-weight: 700; color: #1f1a14;" style-hover="color:#46852f;">FREEsources
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#96c43d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: auto;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
+      </section>
+    </div>
+
+    <nav data-tabs="" style="position: relative; z-index: 10; flex: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 8px 6px 10px; background: rgba(253,251,246,0.96); backdrop-filter: blur(10px); border-top: 1px solid #e7dfcd;">
+      <a href="./Gateway_Home.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"></path><path d="M6 10v10h12V10"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Gateway</span>
+      </a>
+      <a href="./Gateway_Firesoul Community.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19a4 4 0 0 0-8 0"></path><circle cx="12" cy="10" r="3.2"></circle><path d="M4.5 19a3.5 3.5 0 0 1 2.5-3.4M19.5 19a3.5 3.5 0 0 0-2.5-3.4"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Community</span>
+      </a>
+      <a href="./Gateway_Sacred Place Care Resources.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"></path><path d="M4 18.5V5.5"></path></svg>
+        <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.03em;">Resources</span>
+      </a>
+      <a href="./Gateway_Firesoul Profile.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.6"></circle><path d="M5 20c0-3.4 3.1-5.5 7-5.5s7 2.1 7 5.5"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Profile</span>
+      </a>
+    </nav>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:932}}"></script>
+</body>
+</html>

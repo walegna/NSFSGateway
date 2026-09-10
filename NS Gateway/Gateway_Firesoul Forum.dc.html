@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..900;1,400..800&amp;family=Lora:ital,wght@0,400..600;1,400..600&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ece7db; color: #1f1a14; font-family: 'Nunito', ui-sans-serif, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #57a143; text-decoration: none; }
+  a:hover { color: #46852f; }
+  ::selection { background: #afd274; color: #1f1a14; }
+  input::placeholder { color: #a0937f; }
+  @media (min-width: 760px) {
+    [data-shell] { padding: 26px 0 34px; }
+    [data-app] { border-radius: 30px; box-shadow: 0 24px 60px rgba(31,26,20,0.16); border: 1px solid #ded6c6; height: calc(100svh - 60px) !important; }
+  }
+  @media (min-width: 1180px) {
+    [data-app] { max-width: 1060px; }
+    [data-tabs] { display: none !important; }
+    [data-pad] { padding-left: 40px !important; padding-right: 40px !important; }
+  }
+</style>
+</helmet>
+
+<div data-shell="" style="min-height: 100svh; background: #ece7db;">
+  <div data-app="" style="position: relative; overflow: hidden; max-width: 480px; margin: 0 auto; height: 100svh; background: #fdfbf6; display: flex; flex-direction: column;">
+
+    <header style="position: relative; z-index: 10; flex: none; display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: rgba(253,251,246,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #e7dfcd;">
+      <a href="./Gateway_Firesoul Community.dc.html" aria-label="Back to Firesoul Community" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: none; color: #1f1a14;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"></path></svg>
+      </a>
+      <span style="font-size: 16px; font-weight: 800; letter-spacing: -0.01em; color: #1f1a14; margin-right: auto;">Firesoul Forum</span>
+      <div style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #57a143; color: #fdfbf6; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800;">AW</div>
+    </header>
+
+    <div data-pad="" id="top" style="flex: none; padding: 16px 18px 14px; background: #f5f1e8; border-bottom: 1px solid #eae3d3;">
+      <div style="position: relative; display: flex; align-items: center;">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#8a7b68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 15px; pointer-events: none;"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg>
+        <input type="search" placeholder="Search the Forum" aria-label="Search the Forum" style="width: 100%; padding: 13px 16px 13px 44px; border-radius: 999px; border: 1px solid #e2dac8; background: #fdfbf6; font-family: inherit; font-size: 16px; color: #1f1a14; outline: none;" style-focus="border-color:#96c43d;">
+      </div>
+      <div style="display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 12px 0 2px;">
+        <sc-for list="{{ topics }}" as="t" hint-placeholder-count="5">
+          <button onClick="{{ t.onClick }}" style="flex: none; padding: 8px 15px; border-radius: 999px; border: 1px solid {{ t.border }}; background: {{ t.bg }}; color: {{ t.fg }}; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap;">{{ t.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="flex: 1; min-height: 0; overflow-y: auto;">
+      <section data-pad="" style="padding: 18px 18px 0;">
+        <a href="#top" style="display: flex; gap: 14px; padding: 17px 18px 18px; background: #f5f1e8; border: 1px solid #e2dac8; border-radius: 16px;" style-hover="background:#f1ebdc;">
+          <span style="flex: none; width: 46px; height: 46px; border-radius: 50%; background-color: #ede5dd; background-image: url(./assets/sm/firesoul-street.jpg); background-size: cover; background-position: center;"></span>
+          <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+          <span style="display: flex; align-items: center; gap: 7px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#57a143" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 17v4"></path><path d="M9 3h6l-1 6 3 3v2H7v-2l3-3z"></path></svg>
+            <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #57a143;">Pinned · Nature Sacred</span>
+          </span>
+          <span style="font-size: 19px; font-weight: 800; line-height: 1.25; color: #1f1a14;">Spring Flash Funding opens Monday</span>
+          <span style="font-size: 15px; line-height: 1.55; color: #4a4137;">Small, fast grants for spring programming. Applications stay open for two weeks, and we'll review them as they come in. Bring us your ideas.</span>
+          <span style="font-size: 13px; font-weight: 700; color: #9d877a; margin-top: 4px;">Kerry McCullough · 4 days ago · 12 replies</span>
+          </span>
+        </a>
+      </section>
+
+      <section data-pad="" style="padding: 22px 18px 30px;">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #8a7b68; padding: 0 2px 4px;">Recent posts</div>
+        <div>
+          <sc-for list="{{ posts }}" as="p" hint-placeholder-count="6">
+            <a href="#top" style="display: flex; gap: 13px; padding: 17px 2px; border-top: 1px solid #eae3d3;" style-hover="background:#f7f3ea;">
+              <span style="flex: none; width: 46px; height: 46px; border-radius: 50%; background-color: #ede5dd; background-image: url({{ p.avatar }}); background-size: cover; background-position: center;"></span>
+              <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                <span style="font-size: 13px; font-weight: 700; color: #9d877a;">{{ p.meta }}</span>
+                <span style="font-size: 17px; font-weight: 800; line-height: 1.3; color: #1f1a14;">{{ p.title }}</span>
+                <span style="font-size: 15px; line-height: 1.5; color: #6b6053;">{{ p.excerpt }}</span>
+                <span style="display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 13px; font-weight: 700; color: #8a7b68;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M20 15.5A2.5 2.5 0 0 1 17.5 18H8l-4 3V6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5z"></path></svg>
+                  {{ p.replies }}
+                </span>
+              </span>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+    </div>
+
+    <div data-pad="" style="flex: none; padding: 12px 18px 14px; border-top: 1px solid #e7dfcd; background: #fdfbf6;">
+      <a href="#top" style="display: flex; align-items: center; justify-content: center; gap: 9px; padding: 14px 22px; border-radius: 999px; background: #57a143; color: #fdfbf6; font-size: 16px; font-weight: 700; box-shadow: 0 4px 14px rgba(87,161,67,0.28);" style-hover="background:#46852f; color:#fdfbf6;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+        Start a conversation
+      </a>
+    </div>
+
+    <nav data-tabs="" style="position: relative; z-index: 10; flex: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 8px 6px 10px; background: rgba(253,251,246,0.96); backdrop-filter: blur(10px); border-top: 1px solid #e7dfcd;">
+      <a href="./Gateway_Home.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"></path><path d="M6 10v10h12V10"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Gateway</span>
+      </a>
+      <a href="./Gateway_Firesoul Community.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19a4 4 0 0 0-8 0"></path><circle cx="12" cy="10" r="3.2"></circle><path d="M4.5 19a3.5 3.5 0 0 1 2.5-3.4M19.5 19a3.5 3.5 0 0 0-2.5-3.4"></path></svg>
+        <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.03em;">Community</span>
+      </a>
+      <a href="./Gateway_Bench Care.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"></path><path d="M4 18.5V5.5"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Resources</span>
+      </a>
+      <a href="./Gateway_Firesoul Profile.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; border-radius: 12px; color: #8a7b68;" style-hover="color:#57a143;">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.6"></circle><path d="M5 20c0-3.4 3.1-5.5 7-5.5s7 2.1 7 5.5"></path></svg>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.03em;">Profile</span>
+      </a>
+    </nav>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:932}}">
+const POSTS = [
+  { name: 'Renee Bowman', avatar: './assets/sm/plaza-bench.jpg', place: 'Kirby Lane Park', when: '2 days ago', topic: 'Programming', title: 'Has anyone hosted a seed swap at their Sacred Place?', excerpt: 'Looking for advice on timing and what to have on hand before we try one in May.', replies: '7 replies' },
+  { name: 'James Okoye', avatar: './assets/sm/hospital-yoga.jpg', place: 'Riverside Healing Garden', when: '4 days ago', topic: 'Bench &amp; journals', title: 'Tethered journals: what has held up outdoors?', excerpt: 'Our cable lasted one winter. Curious what other places are using before we reorder.', replies: '11 replies' },
+  { name: 'Elena Vasquez', avatar: './assets/sm/family-journal-tour.jpg', place: 'Cedar Creek Sanctuary', when: '1 week ago', topic: 'Volunteers', title: 'Keeping volunteers engaged through the slow months', excerpt: 'Turnout drops every January. Wondering how others keep people connected off-season.', replies: '5 replies' },
+  { name: 'Marcia Hall', avatar: './assets/sm/bench-hero.jpg', place: 'Amazing Grace Garden', when: '1 week ago', topic: 'Funding', title: 'What did you put in your last Enrichment Grant?', excerpt: 'Drafting ours now and would love to hear what other Firesouls asked for.', replies: '9 replies' },
+  { name: 'Aaron Dickerson', avatar: './assets/sm/labyrinth.jpg', place: 'Bliss Meadows', when: '2 weeks ago', topic: 'Programming', title: 'Youth summer session ideas that do not need much staff', excerpt: 'Two of us, about fifteen kids a week. Open to anything that has worked for you.', replies: '4 replies' },
+];
+const TOPICS = ['All', 'Programming', 'Bench &amp; journals', 'Funding', 'Volunteers'];
+
+class Component extends DCLogic {
+  state = { topic: 'All' };
+  renderVals() {
+    const t = this.state.topic;
+    return {
+      topics: TOPICS.map(label => ({
+        label: label.replace('&amp;', '&'),
+        onClick: () => this.setState({ topic: label }),
+        bg: t === label ? '#57a143' : '#fdfbf6',
+        fg: t === label ? '#fdfbf6' : '#4a4137',
+        border: t === label ? '#57a143' : '#e2dac8',
+      })),
+      posts: POSTS.filter(p => t === 'All' || p.topic === t).map(p => ({
+        avatar: p.avatar,
+        meta: p.name + ' · ' + p.place + ' · ' + p.when,
+        title: p.title,
+        excerpt: p.excerpt,
+        replies: p.replies,
+      })),
+    };
+  }
+}
+
+</script>
+</body>
+</html>
